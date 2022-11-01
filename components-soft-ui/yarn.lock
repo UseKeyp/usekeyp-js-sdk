@@ -3148,6 +3148,11 @@ check-types@^11.1.1:
   resolved "https://registry.yarnpkg.com/check-types/-/check-types-11.1.2.tgz#86a7c12bf5539f6324eb0e70ca8896c0e38f3e2f"
   integrity sha512-tzWzvgePgLORb9/3a0YenggReLKAIb2owL03H2Xdoe5pKcUyWRSEQ8xfCar8t2SIAuEDwtmx2da1YB52YuHQMQ==
 
+chicken@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/chicken/-/chicken-0.0.1.tgz#1e65b75d46280b19fae76463353d7c2a66d8fc2c"
+  integrity sha512-K5XIgbDTzVwDWueMxJXbYkp7DtzXRpndFAhNUR8Mg2FwdyE0llw9OMupNDm+4AW5mEDc0tOf9mk6dsDdTCamsw==
+
 chokidar@^3.4.2, chokidar@^3.5.3:
   version "3.5.3"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.5.3.tgz#1cf37c8707b932bd1af1ae22c0432e2acd1903bd"
@@ -5671,6 +5676,14 @@ istanbul-reports@^3.1.3, istanbul-reports@^3.1.4:
     html-escaper "^2.0.0"
     istanbul-lib-report "^3.0.0"
 
+jacob@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/jacob/-/jacob-1.0.5.tgz#b0d6ce2a77f076ced8d987926ea18139a48659ed"
+  integrity sha512-3EM4mLq1A3QcrSBCw3wPNwqxTia9STnye1a+/NkLBskWI8Aq/Oy5Oj4wnyHhVlXN19hyC4x21z4F10XNvsCfnQ==
+  dependencies:
+    junq "^1.0.1"
+    minimist "^1.1.0"
+
 jake@^10.8.5:
   version "10.8.5"
   resolved "https://registry.yarnpkg.com/jake/-/jake-10.8.5.tgz#f2183d2c59382cb274226034543b9c03b8164c46"
@@ -6409,6 +6422,11 @@ jss@10.9.2, jss@^10.9.0:
     array-includes "^3.1.5"
     object.assign "^4.1.3"
 
+junq@^1.0.1:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/junq/-/junq-1.0.2.tgz#111cfbf5d7e48f3fc2e86ebe46c40319aa124de3"
+  integrity sha512-emc3I0OMpyGhpdT0l08VvoeyShGudJW+1pZlB+STGtqtautxdXcK6Q2uNhsC7i75+IRUERvZXqikHwT5D0MkNg==
+
 kind-of@^6.0.2:
   version "6.0.3"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.3.tgz#07c05034a6c349fa06e24fa35aa76db4580ce4dd"
@@ -6761,7 +6779,7 @@ minimatch@^5.0.1:
   dependencies:
     brace-expansion "^2.0.1"
 
-minimist@^1.2.0, minimist@^1.2.5, minimist@^1.2.6:
+minimist@^1.1.0, minimist@^1.2.0, minimist@^1.2.5, minimist@^1.2.6:
   version "1.2.7"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.7.tgz#daa1c4d91f507390437c6a8bc01078e7000c4d18"
   integrity sha512-bzfL1YUZsP41gmu/qjrEk0Q6i2ix/cVeAhbCbqH9u3zYutS1cLg00qhrD0M2MVdCcx4Sc0UpP2eBWo9rotpq6g==

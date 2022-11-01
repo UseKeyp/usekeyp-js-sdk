@@ -1,0 +1,4 @@
+{
+  "private": true,
+  "workspaces": ["components-soft-ui", "tailwind-presets"]
+}
