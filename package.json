@@ -1,4 +1,5 @@
 {
+  "name": "@nifty-chess/frontend-components",
   "private": true,
   "workspaces": ["components-soft-ui", "tailwind-presets"]
 }

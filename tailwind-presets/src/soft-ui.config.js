@@ -1,8 +1,8 @@
 module.exports =
     {
-        presets: [],
         darkMode: "class",
         theme: {
+            extend: {
             screens: {
                 sm: "576px",
                 "sm-max": {max: "576px"},
@@ -15,15 +15,8 @@ module.exports =
                 "2xl": "1400px",
                 "2xl-max": {max: "1320px"},
             },
-            colors: ({colors}) => ({
-                inherit: colors.inherit,
-                current: colors.current,
-                transparent: colors.transparent,
-                black: colors.black,
-                white: colors.white,
-
+            colors: {
                 slate: {
-                    DEFAULT: colors.slate,
                     50: "#f8fafc",
                     100: "#dee2e6",
                     150: "#cbd3da",
@@ -34,7 +27,6 @@ module.exports =
                     500: "#67748e",
                     600: "#627594",
                     650: "#8097bf",
-                    650: "#5974a2",
                     700: "#344767",
                     750: "#1e2e4a",
                     800: "#3a416f",
@@ -43,7 +35,6 @@ module.exports =
                     950: "#141728",
                 },
                 gray: {
-                    DEFAULT: colors.gray,
                     50: "#f8f9fa",
                     100: "#ebeff4",
                     200: "#e9ecef",
@@ -59,7 +50,6 @@ module.exports =
                 },
 
                 zinc: {
-                    DEFAULT: colors.zinc,
                     50: "#fafafa",
                     100: "#f4f4f5",
                     200: "#e4e4e7",
@@ -73,7 +63,6 @@ module.exports =
                 },
 
                 neutral: {
-                    DEFAULT: colors.neutral,
                     50: "#fafafa",
                     100: "#f5f5f5",
                     200: "#e5e5e5",
@@ -87,7 +76,6 @@ module.exports =
                 },
 
                 stone: {
-                    DEFAULT: colors.stone,
                     50: "#fafaf9",
                     100: "#f5f5f4",
                     200: "#e7e5e4",
@@ -101,7 +89,6 @@ module.exports =
                 },
 
                 red: {
-                    DEFAULT: colors.red,
                     50: "#fef2f2",
                     100: "#fee2e2",
                     200: "#fc9797",
@@ -116,7 +103,6 @@ module.exports =
                 },
 
                 orange: {
-                    DEFAULT: colors.orange,
                     50: "#fef5d3",
                     100: "#ffedd5",
                     200: "#fed7aa",
@@ -131,7 +117,6 @@ module.exports =
                 },
 
                 amber: {
-                    DEFAULT: colors.amber,
                     50: "#fffbeb",
                     100: "#fef3c7",
                     200: "#fde68a",
@@ -145,7 +130,6 @@ module.exports =
                 },
 
                 yellow: {
-                    DEFAULT: colors.yellow,
                     50: "#fefce8",
                     100: "#fef9c3",
                     200: "#fef08a",
@@ -159,7 +143,6 @@ module.exports =
                 },
 
                 lime: {
-                    DEFAULT: colors.lime,
                     50: "#f7fee7",
                     100: "#ecfccb",
                     200: "#cdf59b",
@@ -173,7 +156,6 @@ module.exports =
                 },
 
                 green: {
-                    DEFAULT: colors.green,
                     50: "#f0fdf4",
                     100: "#dcfce7",
                     200: "#bbf7d0",
@@ -187,7 +169,6 @@ module.exports =
                 },
 
                 emerald: {
-                    DEFAULT: colors.emerald,
                     50: "#ecfdf5",
                     100: "#d1fae5",
                     200: "#a7f3d0",
@@ -201,7 +182,6 @@ module.exports =
                 },
 
                 teal: {
-                    DEFAULT: colors.teal,
                     50: "#f0fdfa",
                     100: "#ccfbf1",
                     200: "#99f6e4",
@@ -216,7 +196,6 @@ module.exports =
                 },
 
                 cyan: {
-                    DEFAULT: colors.cyan,
                     50: "#ecfeff",
                     100: "#cffafe",
                     200: "#a5f3fc",
@@ -230,7 +209,6 @@ module.exports =
                 },
 
                 sky: {
-                    DEFAULT: colors.sky,
                     50: "#f0f9ff",
                     100: "#e0f2fe",
                     200: "#abe9f7",
@@ -244,7 +222,6 @@ module.exports =
                 },
 
                 blue: {
-                    DEFAULT: colors.blue,
                     50: "#eff6ff",
                     100: "#dbeafe",
                     200: "#bfdbfe",
@@ -258,7 +235,6 @@ module.exports =
                 },
 
                 indigo: {
-                    DEFAULT: colors.indigo,
                     50: "#eef2ff",
                     100: "#e0e7ff",
                     200: "#c7d2fe",
@@ -272,7 +248,6 @@ module.exports =
                 },
 
                 violet: {
-                    DEFAULT: colors.violet,
                     50: "#f5f3ff",
                     100: "#ede9fe",
                     200: "#ddd6fe",
@@ -286,7 +261,6 @@ module.exports =
                 },
 
                 purple: {
-                    DEFAULT: colors.purple,
                     50: "#faf5ff",
                     100: "#f3e8ff",
                     200: "#e9d5ff",
@@ -300,7 +274,6 @@ module.exports =
                 },
 
                 fuchsia: {
-                    DEFAULT: colors.fuchsia,
                     50: "#fdf4ff",
                     100: "#fae8ff",
                     200: "#f5d0fe",
@@ -314,7 +287,6 @@ module.exports =
                 },
 
                 pink: {
-                    DEFAULT: colors.pink,
                     50: "#fdf2f8",
                     100: "#fce7f3",
                     200: "#fbcfe8",
@@ -328,7 +300,6 @@ module.exports =
                 },
 
                 rose: {
-                    DEFAULT: colors.rose,
                     50: "#fff1f2",
                     100: "#ffe4e6",
                     200: "#fecdd3",
@@ -340,7 +311,8 @@ module.exports =
                     800: "#9f1239",
                     900: "#881337",
                 },
-            }),
+            },
+
             columns: {
                 auto: "auto",
                 1: "1",
@@ -537,12 +509,10 @@ module.exports =
                 200: "2",
             },
             borderColor: ({theme}) => ({
-                ...theme("colors"),
                 DEFAULT: theme("colors.gray.200", "currentColor"),
             }),
             borderOpacity: ({theme}) => theme("opacity"),
-            borderRadius: ({theme}) => ({
-                ...theme("spacing"),
+            borderRadius: {
                 none: "0px",
                 inherit: "inherit",
                 xs: "0.0625rem",
@@ -557,9 +527,8 @@ module.exports =
                 full: "9999px",
                 circle: "50%",
                 blur: "40px",
-            }),
-            borderWidth: ({theme}) => ({
-                ...theme("spacing"),
+            },
+            borderWidth: ({
                 DEFAULT: "1px",
                 0: "0px",
                 2: "2px",
@@ -591,10 +560,9 @@ module.exports =
             },
             boxShadowColor: ({theme}) => theme("colors"),
             caretColor: ({theme}) => theme("colors"),
-            accentColor: ({theme}) => ({
-                ...theme("colors"),
+            accentColor: {
                 auto: "auto",
-            }),
+            },
             contrast: {
                 0: "0",
                 50: ".5",
@@ -688,7 +656,6 @@ module.exports =
             },
             flexBasis: ({theme}) => ({
                 auto: "auto",
-                ...theme("spacing"),
                 "1/2": "50%",
                 "1/3": "33.333333%",
                 "2/3": "66.666667%",
@@ -732,8 +699,7 @@ module.exports =
                 awesome: ["FontAwesome"],
                 "awesome-5-free": ["Font Awesome\\ 5 Free"],
             },
-            fontSize: ({theme}) => ({
-                ...theme("spacing"),
+            fontSize: {
                 inherit: "inherit",
                 "3xs": ["0.5rem", {lineHeight: "1rem"}],
                 xxs: ["0.65rem", {lineHeight: "1rem"}],
@@ -752,7 +718,7 @@ module.exports =
                 "9xl": ["6rem", {lineHeight: "1"}],
                 "10xl": ["8rem", {lineHeight: "1"}],
                 "size-banner-calculate": ["calc(1.625rem+4.5vw)"],
-            }),
+            },
             fontWeight: {
                 thin: "100",
                 extralight: "200",
@@ -882,7 +848,6 @@ module.exports =
             },
             height: ({theme}) => ({
                 auto: "auto",
-                ...theme("spacing"),
                 "1/2": "50%",
                 "1/3": "33.333333%",
                 "2/3": "66.666667%",
@@ -906,9 +871,8 @@ module.exports =
                 max: "max-content",
                 fit: "fit-content",
             }),
-            inset: ({theme}) => ({
+            inset: {
                 auto: "auto",
-                ...theme("spacing"),
                 "1/2": "50%",
                 "1/3": "33.333333%",
                 "2/3": "66.666667%",
@@ -916,7 +880,7 @@ module.exports =
                 "2/4": "50%",
                 "3/4": "75%",
                 full: "100%",
-            }),
+            },
             keyframes: {
                 "fade-up": {
                     from: {
@@ -965,7 +929,6 @@ module.exports =
                 widest: "0.1em",
             },
             lineHeight: ({theme}) => ({
-                ...theme("spacing"),
                 none: "1",
                 tighter: "1.2",
                 tight: "1.25",
@@ -982,12 +945,10 @@ module.exports =
                 disc: "disc",
                 decimal: "decimal",
             },
-            margin: ({theme}) => ({
-                auto: "auto",
-                ...theme("spacing"),
-            }),
-            maxHeight: ({theme}) => ({
-                ...theme("spacing"),
+            // margin: {
+            //     auto: "auto",
+            // },
+            maxHeight: {
                 full: "100%",
                 screen: "100vh",
                 min: "min-content",
@@ -997,9 +958,8 @@ module.exports =
                 "75-screen": "75vh",
                 "70-screen": "70vh",
                 "50-screen": "50vh",
-            }),
-            maxWidth: ({theme, breakpoints}) => ({
-                ...theme("spacing"),
+            },
+            maxWidth: {
                 sidebar: "15.625rem",
                 none: "none",
                 0: "0rem",
@@ -1019,11 +979,9 @@ module.exports =
                 max: "max-content",
                 fit: "fit-content",
                 prose: "65ch",
-                ...breakpoints(theme("screens")),
-            }),
-            minHeight: ({theme}) => ({
+            },
+            minHeight: {
                 auto: "auto",
-                ...theme("spacing"),
                 0: "0px",
                 6: "1.5rem",
                 full: "100%",
@@ -1035,17 +993,15 @@ module.exports =
                 min: "min-content",
                 max: "max-content",
                 fit: "fit-content",
-            }),
-            minWidth: ({theme}) => ({
+            },
+            minWidth: {
                 auto: "auto",
-                ...theme("spacing"),
                 0: "0px",
                 full: "100%",
                 min: "min-content",
                 max: "max-content",
                 fit: "fit-content",
-            }),
-
+            },
             objectPosition: {
                 bottom: "bottom",
                 center: "center",
@@ -1115,7 +1071,6 @@ module.exports =
             },
             ringColor: ({theme}) => ({
                 DEFAULT: theme("colors.blue.500", "#3b82f6"),
-                ...theme("colors"),
             }),
             ringOffsetColor: ({theme}) => theme("colors"),
             ringOffsetWidth: {
@@ -1127,7 +1082,6 @@ module.exports =
             },
             ringOpacity: ({theme}) => ({
                 DEFAULT: "0.5",
-                ...theme("opacity"),
             }),
             ringWidth: {
                 DEFAULT: "3px",
@@ -1171,9 +1125,6 @@ module.exports =
                 125: "1.25",
                 150: "1.5",
             },
-            scrollMargin: ({theme}) => ({
-                ...theme("spacing"),
-            }),
             scrollPadding: ({theme}) => theme("spacing"),
             sepia: {
                 0: "0",
@@ -1188,13 +1139,9 @@ module.exports =
                 10: "10deg",
                 12: "12deg",
             },
-            space: ({theme}) => ({
-                ...theme("spacing"),
-            }),
-            stroke: ({theme}) => ({
-                ...theme("colors"),
+            stroke: {
                 none: "none",
-            }),
+            },
             strokeWidth: {
                 0: "0",
                 1: "1",
@@ -1219,9 +1166,6 @@ module.exports =
                 4: "4px",
                 8: "8px",
             },
-            textIndent: ({theme}) => ({
-                ...theme("spacing"),
-            }),
             textOpacity: ({theme}) => theme("opacity"),
             transformOrigin: {
                 center: "center",
@@ -1288,8 +1232,7 @@ module.exports =
                 "soft-in-out": "cubic-bezier(0.42, 0, 0.58, 1)",
                 "soft-out": "cubic-bezier(0, 0, 0.58, 1)",
             },
-            translate: ({theme}) => ({
-                ...theme("spacing"),
+            translate: {
                 "1/2": "50%",
                 "1/3": "33.333333%",
                 "2/3": "66.666667%",
@@ -1297,10 +1240,9 @@ module.exports =
                 "2/4": "50%",
                 "3/4": "75%",
                 full: "100%",
-            }),
-            width: ({theme}) => ({
+            },
+            width: {
                 auto: "auto",
-                ...theme("spacing"),
                 "1/100": "1%",
                 "3/100": "3%",
                 "5/100": "5%",
@@ -1340,7 +1282,7 @@ module.exports =
                 min: "min-content",
                 max: "max-content",
                 fit: "fit-content",
-            }),
+            },
             willChange: {
                 auto: "auto",
                 scroll: "scroll-position",
@@ -1367,6 +1309,6 @@ module.exports =
             display: ["responsive", "dropdown"],
         },
         variantOrder: ["first", "last", "odd", "even", "visited", "checked", "empty", "read-only", "group-hover", "group-focus", "focus-within", "hover", "focus", "focus-visible", "active", "disabled"],
-
         plugins: [],
+        },
     };

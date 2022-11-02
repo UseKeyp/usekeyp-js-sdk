@@ -1,6 +1,5 @@
 {
   "name": "@nifty-chess/components-soft-ui",
-  "type": "module",
   "version": "0.1.0",
   "private": false,
   "main": "src/components/index.js",
@@ -11,10 +10,11 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "@nifty-chess/tailwind-presets": "0.1.0"
   },
   "scripts": {
-    "tailwindcli": "npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch",
+    "tailwindcss": "npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
