@@ -1,3 +1,3 @@
-import SampleComponent from './SampleComponent.js'
+import Button from './Button.js'
 
-export {SampleComponent}
+export {Button}

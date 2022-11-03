@@ -4,14 +4,16 @@
   "private": false,
   "main": "src/components/index.js",
   "dependencies": {
+    "@nifty-chess/tailwind-presets": "0.1.0",
+    "@redwoodjs/router": "^3.3.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4",
-    "@nifty-chess/tailwind-presets": "0.1.0"
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "tailwindcss": "npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch",

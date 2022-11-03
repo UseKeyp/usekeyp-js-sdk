@@ -14,6 +14,7 @@
 # misc
 .idea
 .DS_Store
+/dist
 .env.local
 .env.development.local
 .env.test.local
