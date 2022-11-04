@@ -20,7 +20,7 @@ const Button = ({
 
     if (to) {
         return (
-            <Link className={`block text-center text-lg leading-button font-bold py-3 px-3 rounded-lg transition-all transitionDuration-250 hover:scale-102 hover:brightness-90
+            <Link className={`block text-center text-lg leading-button font-bold font-body tracking-wide py-3 px-3 rounded-lg transition-all transitionDuration-250 hover:scale-102 hover:brightness-90
             ${className} ${textColor ? textColor : 'text-white'} 
             ${variant === 'transparent' ? 'bg-transparent' : ''} 
             ${variant === 'grey' ? 'bg-gray-400' : ''}
@@ -46,12 +46,12 @@ const Button = ({
 
 
     return (
-        <Element className={`block text-center text-lg leading-button font-bold py-3 px-3 rounded-lg transition-all transitionDuration-250 hover:scale-102 hover:brightness-90
+        <Element className={`block text-center text-lg leading-button font-bold font-body tracking-wide py-3 px-3 rounded-lg transition-all transitionDuration-250 hover:scale-102 hover:brightness-90
             ${className} ${textColor ? textColor : 'text-white'} 
             ${variant === 'transparent' ? 'bg-transparent' : ''} 
-            ${variant === 'grey' ? 'bg-gray-400' : ''}
-            ${variant === 'green' ? 'bg-green-400' : ''}
-            ${variant === 'blue' ? 'bg-blue-400' : ''}
+            ${variant === 'grey' ? 'bg-gray-1200' : ''}
+            ${variant === 'green' ? 'bg-green-1200' : ''}
+            ${variant === 'blue' ? 'bg-blue-1200' : ''}
             ${variant === 'white' ? 'bg-white' : ''}
             ${variant === 'black' ? 'bg-black' : ''}
             ${fluid === true ? 'w-full' : 'w-fit'}

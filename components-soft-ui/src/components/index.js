@@ -1,3 +1,5 @@
-import Button from './Button.js'
+import Button from './Button/Button.js'
+import AppCard from './AppCard/AppCard'
+import AppHeader from './AppHeader/AppHeader'
 
-export {Button}
+export {Button, AppCard, AppHeader}
