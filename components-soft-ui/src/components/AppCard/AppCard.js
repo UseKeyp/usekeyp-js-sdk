@@ -2,11 +2,11 @@ const AppCard = (props) => {
     const accessListItems = props.accessList.map((access) =>
         <li>{access}</li>
     );
-    return (<div className="flex font-body tracking-wide border border-gray-800 rounded-md w-fit p-2">
+    return (<div className="flex tracking-wide border border-gray-800 rounded-md w-fit p-2">
         <div className="flex flex-col">
             <div className="flex flex-row gap-x-2">
                 <div>{props.src}</div>
-                <div className="font-bold">{props.name}</div>
+                <div className="text-gray-2400 font-bold">{props.name}</div>
             </div>
             <ul className="font-light">
                 {accessListItems}

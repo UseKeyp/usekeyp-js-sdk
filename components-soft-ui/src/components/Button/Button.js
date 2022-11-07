@@ -8,6 +8,7 @@ const Button = ({
                     onClick,
                     size,
                     textColor,
+                    borderColor,
                     isSelected,
                     className,
                     fluid,
@@ -17,11 +18,11 @@ const Button = ({
                     ...rest
                 }) => {
     const Element = href ? 'a' : 'button'
-
     if (to) {
         return (
-            <Link className={`block text-center text-lg leading-button font-bold font-body tracking-wide py-3 px-3 rounded-lg transition-all transitionDuration-250 hover:scale-102 hover:brightness-90
-            ${className} ${textColor ? textColor : 'text-white'} 
+            <Link className={`block text-center text-lg leading-button font-bold tracking-wide py-3 px-3 rounded-lg transition-all transitionDuration-250 hover:scale-102 hover:brightness-90
+            ${textColor ? textColor : 'text-white'} 
+            ${borderColor ? borderColor : ''}
             ${variant === 'transparent' ? 'bg-transparent' : ''} 
             ${variant === 'grey' ? 'bg-gray-400' : ''}
             ${variant === 'green' ? 'bg-green-400' : ''}
@@ -46,8 +47,9 @@ const Button = ({
 
 
     return (
-        <Element className={`block text-center text-lg leading-button font-bold font-body tracking-wide py-3 px-3 rounded-lg transition-all transitionDuration-250 hover:scale-102 hover:brightness-90
-            ${className} ${textColor ? textColor : 'text-white'} 
+        <Element className={`block text-center text-lg leading-button font-bold tracking-wide py-3 px-6 rounded-lg transition-all transitionDuration-250 hover:scale-102 hover:brightness-90
+            ${textColor ? textColor : 'text-white'} 
+            ${borderColor ? 'border ' + borderColor : ''}
             ${variant === 'transparent' ? 'bg-transparent' : ''} 
             ${variant === 'grey' ? 'bg-gray-1200' : ''}
             ${variant === 'green' ? 'bg-green-1200' : ''}
