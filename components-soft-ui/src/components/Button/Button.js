@@ -10,7 +10,6 @@ const Button = ({
                     textColor,
                     borderColor,
                     isSelected,
-                    className,
                     fluid,
                     to,
                     href,
@@ -20,8 +19,9 @@ const Button = ({
     const Element = href ? 'a' : 'button'
     if (to) {
         return (
-            <Link className={`block text-center text-lg leading-button font-bold tracking-wide py-3 px-3 rounded-lg transition-all transitionDuration-250 hover:scale-102 hover:brightness-90
+            <Link className={`block text-center text-lg leading-button font-bold tracking-wide rounded-lg transition-all transitionDuration-250 hover:scale-102 hover:brightness-90
             ${textColor ? textColor : 'text-white'} 
+            ${size === 'regular' ? 'py-3 px-6' : size}
             ${borderColor ? borderColor : ''}
             ${variant === 'transparent' ? 'bg-transparent' : ''} 
             ${variant === 'grey' ? 'bg-gray-400' : ''}
@@ -47,8 +47,9 @@ const Button = ({
 
 
     return (
-        <Element className={`block text-center text-lg leading-button font-bold tracking-wide py-3 px-6 rounded-lg transition-all transitionDuration-250 hover:scale-102 hover:brightness-90
+        <Element className={`block text-center text-lg leading-button font-bold tracking-wide rounded-lg transition-all transitionDuration-250 hover:scale-102 hover:brightness-90
             ${textColor ? textColor : 'text-white'} 
+            ${size === 'regular' ? 'py-3 px-6' : size}
             ${borderColor ? 'border ' + borderColor : ''}
             ${variant === 'transparent' ? 'bg-transparent' : ''} 
             ${variant === 'grey' ? 'bg-gray-1200' : ''}
@@ -78,7 +79,6 @@ Button.defaultProps = {
     size: 'regular',
     textColor: 'text-white',
     isSelected: false,
-    className: '',
     fluid: false,
     onClick: () => {
     },
@@ -92,7 +92,6 @@ Button.propTypes = {
     textColor: PropTypes.string,
     isSelected: PropTypes.bool,
     fluid: PropTypes.bool,
-    className: PropTypes.string,
     to: PropTypes.any,
     href: PropTypes.string,
     alt: PropTypes.string,
