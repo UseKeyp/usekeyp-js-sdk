@@ -19,7 +19,7 @@ const Button = ({
     const Element = href ? 'a' : 'button'
     if (to) {
         return (
-            <Link className={`block text-center text-lg leading-button font-bold tracking-wide rounded-lg transition-all transitionDuration-250 hover:scale-102 hover:brightness-90
+            <Link className={`block text-center text-lg leading-button font-bold tracking-wide rounded-[6px] transition-all transitionDuration-250 hover:scale-102 hover:brightness-75
             ${textColor ? textColor : 'text-white'} 
             ${size === 'regular' ? 'py-3 px-6' : size}
             ${borderColor ? borderColor : ''}
@@ -29,7 +29,7 @@ const Button = ({
             ${variant === 'blue' ? 'bg-blue-400' : ''}
             ${variant === 'white' ? 'bg-white' : ''}
             ${variant === 'black' ? 'bg-black' : ''}
-            ${fluid === true ? 'w-full' : 'w-fit'}
+            ${fluid === true ? 'w-full' : 'w-content'}
             `}
                   onClick={() => onClick()}
                   data-variant={variant}
@@ -47,7 +47,7 @@ const Button = ({
 
 
     return (
-        <Element className={`block text-center text-lg leading-button font-bold tracking-wide rounded-lg transition-all transitionDuration-250 hover:scale-102 hover:brightness-90
+        <Element className={`block text-center text-lg leading-button font-bold tracking-wide rounded-[6px] transition-all transitionDuration-250 hover:scale-102 hover:brightness-75
             ${textColor ? textColor : 'text-white'} 
             ${size === 'regular' ? 'py-3 px-6' : size}
             ${borderColor ? 'border ' + borderColor : ''}
@@ -57,7 +57,7 @@ const Button = ({
             ${variant === 'blue' ? 'bg-blue-1200' : ''}
             ${variant === 'white' ? 'bg-white' : ''}
             ${variant === 'black' ? 'bg-black' : ''}
-            ${fluid === true ? 'w-full' : 'w-fit'}
+            ${fluid === true ? 'w-full' : 'w-content'}
             `}
                  onClick={() => onClick()}
                  data-variant={variant}
