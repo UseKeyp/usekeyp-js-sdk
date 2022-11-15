@@ -9,33 +9,34 @@ const Button = ({
                     size,
                     textColor,
                     borderColor,
-                    isSelected,
                     fluid,
                     to,
                     href,
                     alt,
+                    classNameVariant,
                     ...rest
                 }) => {
     const Element = href ? 'a' : 'button'
     if (to) {
         return (
-            <Link className={`block text-center text-lg leading-button font-bold tracking-wide rounded-[6px] transition-all transitionDuration-250 hover:scale-102 hover:brightness-75
+            <Link className={`${classNameVariant ? classNameVariant : ''} block group text-center text-lg leading-button font-bold tracking-wide rounded-[6px]
             ${textColor ? textColor : 'text-white'} 
-            ${size === 'regular' ? 'py-3 px-6' : size}
+            ${size === 'regular' && !fluid ? 'h-[48px] w-[200px]' : ''}
+            ${size === 'small' && !fluid ? 'h-[32px] w-[200px]' : ''}
+            ${size === 'square' && !fluid ? 'h-[48px] w-[48px]' : ''}
+            ${fluid && !size ? 'h-[48px] w-full' : 'h-[48px] w-content'}
             ${borderColor ? borderColor : ''}
             ${variant === 'transparent' ? 'bg-transparent' : ''} 
-            ${variant === 'grey' ? 'bg-gray-400' : ''}
-            ${variant === 'green' ? 'bg-green-400' : ''}
-            ${variant === 'blue' ? 'bg-blue-400' : ''}
+            ${variant === 'grey' ? 'bg-gray-1200' : ''}
+            ${variant === 'green' ? 'bg-green-1200' : ''}
+            ${variant === 'blue' ? 'bg-blue-1200' : ''}
             ${variant === 'white' ? 'bg-white' : ''}
             ${variant === 'black' ? 'bg-black' : ''}
-            ${fluid === true ? 'w-full' : 'w-content'}
             `}
                   onClick={() => onClick()}
                   data-variant={variant}
                   data-size={size}
                   data-textcolor={textColor}
-                  data-selected={isSelected}
                   data-fluid={String(fluid)}
                   to={to}
                   {...rest}
@@ -47,9 +48,12 @@ const Button = ({
 
 
     return (
-        <Element className={`block text-center text-lg leading-button font-bold tracking-wide rounded-[6px] transition-all transitionDuration-250 hover:scale-102 hover:brightness-75
+        <Element className={`${classNameVariant ? classNameVariant : ''} block group text-center text-lg leading-button font-bold tracking-wide rounded-[6px]
             ${textColor ? textColor : 'text-white'} 
-            ${size === 'regular' ? 'py-3 px-6' : size}
+            ${size === 'regular' && !fluid ? 'h-[48px] w-[200px]' : ''}
+            ${size === 'small' && !fluid ? 'h-[32px] w-[200px]' : ''}
+            ${size === 'square' && !fluid ? 'h-[48px] w-[48px]' : ''}
+            ${fluid && !size ? 'h-[48px] w-full' : 'h-[48px] w-content'}
             ${borderColor ? 'border ' + borderColor : ''}
             ${variant === 'transparent' ? 'bg-transparent' : ''} 
             ${variant === 'grey' ? 'bg-gray-1200' : ''}
@@ -57,13 +61,11 @@ const Button = ({
             ${variant === 'blue' ? 'bg-blue-1200' : ''}
             ${variant === 'white' ? 'bg-white' : ''}
             ${variant === 'black' ? 'bg-black' : ''}
-            ${fluid === true ? 'w-full' : 'w-content'}
             `}
                  onClick={() => onClick()}
                  data-variant={variant}
                  data-size={size}
                  data-textcolor={textColor}
-                 data-selected={String(isSelected)}
                  data-fluid={String(fluid)}
                  href={href || ''}
                  alt={alt || ''}
@@ -78,7 +80,6 @@ Button.defaultProps = {
     variant: 'transparent',
     size: 'regular',
     textColor: 'text-white',
-    isSelected: false,
     fluid: false,
     onClick: () => {
     },
@@ -90,7 +91,6 @@ Button.propTypes = {
     size: PropTypes.string,
     label: PropTypes.any,
     textColor: PropTypes.string,
-    isSelected: PropTypes.bool,
     fluid: PropTypes.bool,
     to: PropTypes.any,
     href: PropTypes.string,

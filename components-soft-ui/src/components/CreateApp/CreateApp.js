@@ -1,6 +1,7 @@
 import Button from "../Button/Button";
 import TextInput from "../TextInput/TextInput";
 import Tooltip from "../Tooltip/Tooltip";
+import Icon from "../Icon/Icon";
 
 const CreateApp = () => {
     return (
@@ -8,21 +9,13 @@ const CreateApp = () => {
             <div className="flex flex-row gap-x-2">
                 <div className="text-gray-800 text-xs">
                     IMAGE
-                    <Button size="px-2 py-2 mt-1" variant="green" fluid={false}>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                  d="M0 3C0 1.34314 1.34315 0 3 0H21C22.6569 0 24 1.34315 24 3V21C24 22.6569 22.6569 24 21 24H3C1.34314 24 0 22.6569 0 21V3ZM3 2C2.44771 2 2 2.44772 2 3V21C2 21.5523 2.44772 22 3 22H21C21.5523 22 22 21.5523 22 21V3C22 2.44771 21.5523 2 21 2H3Z"
-                                  fill="white"/>
-                            <path d="M5 17L8 12L11 15L15 9L19 17H5Z" fill="white"/>
-                            <path
-                                d="M9.5 9C10.3284 9 11 8.32843 11 7.5C11 6.67157 10.3284 6 9.5 6C8.67157 6 8 6.67157 8 7.5C8 8.32843 8.67157 9 9.5 9Z"
-                                fill="white"/>
-                        </svg>
+                    <Button classNameVariant="hover:bg-green-1800" size="square" variant="green" fluid={false}>
+                        <Icon name="landscape" />
                     </Button>
                 </div>
                 <div className="text-gray-800 text-xs">
                     EMOJI
-                    <Button size="px-2 py-2 mt-1" variant="green" fluid={false}>
+                    <Button classNameVariant="hover:bg-green-1800" variant="green" size="square" fluid={false}>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
                                   d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12Z"
@@ -68,9 +61,9 @@ const CreateApp = () => {
                 </div>
             </div>
             <div className="flex flex-row gap-x-2">
-                <Button size="px-6 py-3" borderColor="border-gray-300" variant="transparent"
+                <Button size="regular" borderColor="border-gray-300" variant="transparent"
                         textColor="text-gray-800">Cancel</Button>
-                <Button size="px-10 py-3" variant="green">Create App</Button>
+                <Button fluid={true} size="" variant="green">Create App</Button>
             </div>
         </div>)
 }
