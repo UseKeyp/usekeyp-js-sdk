@@ -19,19 +19,20 @@ const Button = ({
     const Element = href ? 'a' : 'button'
     if (to) {
         return (
-            <Link className={`${classNameVariant ? classNameVariant : ''} block group text-center text-lg leading-button font-bold tracking-wide rounded-[6px]
+            <Link className={`flex justify-center items-center group text-center text-lg leading-button font-bold tracking-wide rounded-[6px]  
             ${textColor ? textColor : 'text-white'} 
             ${size === 'regular' && !fluid ? 'h-[48px] w-[200px]' : ''}
             ${size === 'small' && !fluid ? 'h-[32px] w-[200px]' : ''}
             ${size === 'square' && !fluid ? 'h-[48px] w-[48px]' : ''}
-            ${fluid && !size ? 'h-[48px] w-full' : 'h-[48px] w-content'}
+            ${fluid && 'h-[48px] w-full'}
             ${borderColor ? borderColor : ''}
             ${variant === 'transparent' ? 'bg-transparent' : ''} 
-            ${variant === 'grey' ? 'bg-gray-1200' : ''}
-            ${variant === 'green' ? 'bg-green-1200' : ''}
-            ${variant === 'blue' ? 'bg-blue-1200' : ''}
+            ${variant === 'grey' ? 'bg-gray-1200 hover:bg-gray-2000' : ''}
+            ${variant === 'green' ? 'bg-green-1200 hover:bg-green-1800' : ''}
+            ${variant === 'blue' ? 'bg-blue-1200 hover:bg-blue-2000' : ''}
             ${variant === 'white' ? 'bg-white' : ''}
             ${variant === 'black' ? 'bg-black' : ''}
+            ${classNameVariant ? classNameVariant : ''}
             `}
                   onClick={() => onClick()}
                   data-variant={variant}
@@ -48,19 +49,20 @@ const Button = ({
 
 
     return (
-        <Element className={`${classNameVariant ? classNameVariant : ''} block group text-center text-lg leading-button font-bold tracking-wide rounded-[6px]
+        <Element className={`flex justify-center items-center group text-center text-lg leading-button font-bold tracking-wide rounded-[6px]
             ${textColor ? textColor : 'text-white'} 
             ${size === 'regular' && !fluid ? 'h-[48px] w-[200px]' : ''}
             ${size === 'small' && !fluid ? 'h-[32px] w-[200px]' : ''}
             ${size === 'square' && !fluid ? 'h-[48px] w-[48px]' : ''}
-            ${fluid && !size ? 'h-[48px] w-full' : 'h-[48px] w-content'}
+            ${fluid && 'h-[48px] w-full'}
             ${borderColor ? 'border ' + borderColor : ''}
             ${variant === 'transparent' ? 'bg-transparent' : ''} 
-            ${variant === 'grey' ? 'bg-gray-1200' : ''}
-            ${variant === 'green' ? 'bg-green-1200' : ''}
-            ${variant === 'blue' ? 'bg-blue-1200' : ''}
+            ${variant === 'grey' ? 'bg-gray-1200 hover:bg-gray-2000' : ''}
+            ${variant === 'green' ? 'bg-green-1200 hover:bg-green-1800' : ''}
+            ${variant === 'blue' ? 'bg-blue-1200 hover:bg-blue-2000' : ''}
             ${variant === 'white' ? 'bg-white' : ''}
             ${variant === 'black' ? 'bg-black' : ''}
+            ${classNameVariant ? classNameVariant : ''} 
             `}
                  onClick={() => onClick()}
                  data-variant={variant}

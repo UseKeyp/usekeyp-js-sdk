@@ -2,9 +2,9 @@
 import Icon from '../Icon/Icon';
 
 <div>
-    <Button classNameVariant="hover:bg-green-1800" variant="green" size='' fluid={true}>Accept Highest Bid</Button>
+    <Button variant="green" size='' fluid={true}>Accept Highest Bid</Button>
     <div className="gap-y-4">---</div>
-    <Button classNameVariant="hover:bg-blue-2000" href="https://www.google.com/" variant="blue" fluid={false}>Link to Google</Button>
+    <Button href="https://www.google.com/" variant="blue" size="regular" fluid={false}><div>Link to Google</div></Button>
     <div className="gap-y-4">---</div>
     <Button classNameVariant="hover:bg-[#4285F4] hover:border-[#4285F4]" borderColor="border-[#E5E7EB]" fluid={false}>
         <div className="flex justify-center">
