@@ -7,5 +7,6 @@ import TextInput from './TextInput/TextInput'
 import CreateApp from './CreateApp/CreateApp'
 import Tooltip from './Tooltip/Tooltip'
 import Icon from './Icon/Icon'
+import LineChart from './LineChart/LineChart'
 
-export {Button, AppCard, AppHeader, ContractRow, NFTCard, TextInput, CreateApp, Tooltip, Icon}
+export {Button, AppCard, AppHeader, ContractRow, NFTCard, TextInput, CreateApp, Tooltip, Icon, LineChart}
