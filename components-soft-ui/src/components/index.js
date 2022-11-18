@@ -8,5 +8,6 @@ import CreateApp from './CreateApp/CreateApp'
 import Tooltip from './Tooltip/Tooltip'
 import Icon from './Icon/Icon'
 import LineChart from './LineChart/LineChart'
+import Table from './Table/Table'
 
-export {Button, AppCard, AppHeader, ContractRow, NFTCard, TextInput, CreateApp, Tooltip, Icon, LineChart}
+export {Button, AppCard, AppHeader, ContractRow, NFTCard, TextInput, CreateApp, Tooltip, Icon, LineChart, Table}
