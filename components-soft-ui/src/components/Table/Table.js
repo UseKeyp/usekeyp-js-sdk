@@ -1,6 +1,13 @@
 import React from "react";
 import {useTable, useGlobalFilter, useAsyncDebounce, useFilters, useSortBy, usePagination} from "react-table";
 
+/**
+ * A search filter for the table
+ * @param preGlobalFilteredRows - the rows of the table
+ * @param globalFilter - the current filter
+ * @param setGlobalFilter - the function to set the filter
+ * @returns {JSX.Element} - a search filter
+ */
 function GlobalFilter({
                           preGlobalFilteredRows, globalFilter, setGlobalFilter,
                       }) {
@@ -26,6 +33,12 @@ function GlobalFilter({
   )
 }
 
+/**
+ * Interactive table supporting searching and filtering
+ * @param columns - an array of objects that define the columns of the table
+ * @param data - an array of objects that define the data of the table
+ * @returns {JSX.Element} - a JSX table
+ */
 function Table({columns, data}) {
     const {
         getTableProps,

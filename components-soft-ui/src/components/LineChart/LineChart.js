@@ -21,6 +21,13 @@ ChartJS.register(
     Legend
 )
 
+/**
+ * Line chart with Soft UI styling using ChartJS line chart component
+ * @param data - ChartJS data object
+ * @param title - Chart title
+ * @returns {JSX.Element} - Line chart component
+ * @constructor
+ */
 const LineChart = ({data, title}) => {
     return (
         <div className="w-full max-w-full px-3 mt-0 lg:w-7/12 lg:flex-none">

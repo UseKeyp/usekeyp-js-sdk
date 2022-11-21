@@ -1,6 +1,24 @@
 import {Link} from '@redwoodjs/router'
 import PropTypes from 'prop-types'
 
+/**
+ * Generic button component
+ * @param children - children components to render inside the button
+ * @param label - text to render inside the button
+ * @param variant - variant colors and styles in SoftUI style
+ * @param onClick - function to call when the button is clicked
+ * @param size - size of the button (regular (default), small, large)
+ * @param textColor - text color of the button (white (default), TailwindCSS colors)
+ * @param borderColor - an optional border color
+ * @param fluid - if true, the button will take the full width of its container
+ * @param to - if provided, the button will be a Link to the given path
+ * @param href - if provided, the button will be an anchor to the given path
+ * @param alt - if provided, the button will have an alt attribute
+ * @param classNameVariant - if provided, the button will have a TailwindCSS variant class
+ * @param rest - any other props will be passed to the button
+ * @returns {JSX.Element} - a button component
+ * @constructor
+ */
 const Button = ({
                     children,
                     label,

@@ -4,6 +4,10 @@ import Tooltip from "../Tooltip/Tooltip";
 import Icon from "../Icon/Icon";
 import {useState} from 'react';
 
+/**
+ * Component for studios to create a new app
+ * @returns {JSX.Element}
+ */
 const CreateApp = () => {
     const [isImageActive, setIsImageActive] = useState(false);
     const [isEmojiActive, setIsEmojiActive] = useState(false);

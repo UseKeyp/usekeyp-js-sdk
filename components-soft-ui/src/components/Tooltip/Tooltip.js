@@ -2,17 +2,15 @@ import ReactTooltip from 'react-tooltip'
 
 /**
  * Text will be rendered as text within the tooltip; if not provided, it will be blank or render 'TooltipChild'
- * TooltipChild accepts components that are rendered within the tooltip; it will take precedence over text
- * Position Options: Top (Default), Right, Bottom, Left
- * TooltipType Options: Dark (Default), Success, Warning, Error, Info, Light
- * Effect Options: Float (Default), Solid
- * BackgroundColor: A string with general color names or hexadecimal values
- * BorderColor: A string with general color names or hexadecimal values
- * DelayHideTime: Milliseconds to delay the tooltip from disappearing so the user can interact w/tooltip content
- *
- * A unique ID for each tooltip must be provided to prevent duplicate rendering of tooltips
+ * @param {Object} tooltipChild accepts components that are rendered within the tooltip; it will take precedence over text
+ * @param {string} position Options: Top (Default), Right, Bottom, Left
+ * @param {string} tooltipType Options: Dark (Default), Success, Warning, Error, Info, Light
+ * @param {string} effect Options: Solid (Default), Float
+ * @param {string} bgColor: A string with proper TailwindCSS color classes or hexadecimal values
+ * @param {string} borderColor: A string with proper TailwindCSS color classes or hexadecimal values
+ * @param {number} id: A unique identifier for the tooltip that MUST be used if multiple tooltips are rendered in a page
+ * @param {number} delayHideTime: The time in milliseconds that the tooltip will remain visible after the mouse leaves the tooltip
  **/
-
 const Tooltip = ({
                      children,
                      position,

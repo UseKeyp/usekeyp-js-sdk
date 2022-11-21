@@ -1,3 +1,13 @@
+/**
+ * A card with an active app's details
+ * @param src - the app's icon
+ * @param name - the app's name
+ * @param lastChange - the app's last change
+ * @param MAU - the app's monthly active users
+ * @param accessListItems - a user's permissions for their assets in the app
+ * @returns {JSX.Element}
+ * @constructor
+ */
 const AppCard = (props) => {
     const accessListItems = props.accessList.map((access) =>
         <li>{access}</li>
