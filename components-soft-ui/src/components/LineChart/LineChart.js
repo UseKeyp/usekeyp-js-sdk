@@ -34,7 +34,7 @@ const LineChart = ({data, title}) => {
             <div
                 className="relative z-20 flex flex-col min-w-0 break-words bg-white border-0 border-solid dark:bg-gray-950 border-black-125 dark:shadow-soft-dark-xl rounded-2xl bg-clip-border">
                 <div className="p-6 pb-0 mb-0 border-b-0 border-solid border-black-125 rounded-t-2xl">
-                    <h6 className="dark:text-white">{title}</h6>
+                    <h6 className="dark:text-white text-black text-lg font-light">{title}</h6>
                     <p className="leading-normal text-sm dark:opacity-60">
                         <i className="fa fa-arrow-up text-lime-500" aria-hidden="true"></i>
                     </p>

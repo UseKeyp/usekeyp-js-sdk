@@ -12,7 +12,7 @@ export function SelectColumnFilter({
     }, [id, preFilteredRows]);
     return (
         <label className="flex gap-x-2 items-center pl-2">
-            <span className="text-gray-700">{render("Header")}:</span>
+            <span className="text-gray-800">{render("Header")}:</span>
             <select
                 name={id}
                 className="flex w-full h-[32px] pl-4 rounded-md border-gray-300 shadow-sm focus:ring-green-500 focus:border-green-500"

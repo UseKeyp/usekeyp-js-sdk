@@ -55,10 +55,10 @@ const columns = React.useMemo(
 
 const data = React.useMemo(() => getData(), []);
 
-<div className="text-gray-900 w-full">
+<div className="w-full">
     <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
         <div>
-            <h1 className="text-xl font-semibold">Collection Contracts</h1>
+            <h1 className="text-xl text-gray-800 text-3xl font-semibold">Collection Contracts</h1>
         </div>
         <div className="mt-4">
             <Table columns={columns} data={data}/>
