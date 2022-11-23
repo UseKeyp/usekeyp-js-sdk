@@ -1,5 +1,7 @@
 import React from "react";
 import {useTable, useGlobalFilter, useAsyncDebounce, useFilters, useSortBy, usePagination} from "react-table";
+import TextInput from "../TextInput/TextInput";
+import Icon from "../Icon/Icon";
 
 /**
  * A search filter for the table
@@ -18,17 +20,11 @@ function GlobalFilter({
     }, 200)
 
     return (<label className="flex gap-x-2 items-baseline">
-        <span className="text-gray-700">Search: </span>
-            <input
-                type="text"
-                className="h-[32px] rounded-md border border-gray-300 pl-4"
-                value={value || ""}
-                onChange={e => {
-                    setValue(e.target.value);
-                    onChange(e.target.value);
-                }}
-                placeholder={`${count} records...`}
-            />
+        <span className="text-gray-800">Search: </span>
+            <TextInput size="small" value={value || ""} onChange={e => {
+                setValue(e.target.value);
+                onChange(e.target.value);
+            }} placeholder={`${count} records...`}/>
     </label>
   )
 }
@@ -49,8 +45,6 @@ function Table({columns, data}) {
         canPreviousPage,
         canNextPage,
         pageOptions,
-        pageCount,
-        gotoPage,
         nextPage,
         previousPage,
         setPageSize,
@@ -133,29 +127,23 @@ function Table({columns, data}) {
                 </div>
             </div>
         </div>
-        <div className="flex flex-row w-full gap-x-4 mt-2">
+        <div className="flex flex-row gap-x-4 mt-2 mx-auto">
             <div className="flex gap-x-2">
-            <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
-                {'<<'}
-            </button>{' '}
             <button onClick={() => previousPage()} disabled={!canPreviousPage}>
-                {'<'}
-            </button>{' '}
+                <Icon color="fill-gray-800" key="leftarrow" name="leftarrow" size="80px" />
+            </button>
             <button onClick={() => nextPage()} disabled={!canNextPage}>
-                {'>'}
-            </button>{' '}
-            <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
-                {'>>'}
-            </button>{' '}
+                <Icon color="fill-gray-800" key="rightarrow" name="rightarrow" size="80px" />
+            </button>
             </div>
-            <div className="flex gap-x-1 mt-1">
-          Page{' '}
+            <div className="flex gap-x-1 mt-1 text-gray-800">
+          Page
                 <strong>
             {state.pageIndex + 1} of {pageOptions.length}
-          </strong>{' '}
+          </strong>
         </div>
             <select
-                className="flex w-content h-[32px] pl-4 rounded-md border-gray-300 shadow-sm focus:ring-green-500 focus:border-green-500"
+                className="flex w-content h-[32px] pl-4 rounded-md border-gray-300 shadow-sm"
                 value={state.pageSize}
                 onChange={e => {
                     setPageSize(Number(e.target.value))

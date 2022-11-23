@@ -10,7 +10,7 @@
  */
 const AppCard = (props) => {
     const accessListItems = props.accessList.map((access) =>
-        <li>{access}</li>
+        <li key={access}>{access}</li>
     );
     return (<div className="flex tracking-wide border border-gray-800 rounded-md w-fit p-2">
         <div className="flex flex-col">

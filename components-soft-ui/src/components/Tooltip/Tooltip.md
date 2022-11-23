@@ -1,7 +1,7 @@
 ```jsx
 import Icon from '../Icon/Icon';
 
-<div>
+<div className="flex">
     <Tooltip delayHideTime={250} effect="float" borderColor="#C6CED2" bgColor="#eef0f2" position="top"
              tooltipChild={<div className="text-black">Tooltip explainer. Make it short and sweet but still clear. Can
                  have

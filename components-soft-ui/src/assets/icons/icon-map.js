@@ -1,6 +1,6 @@
 const Apple = () => {
     return (<svg xmlns="http://www.w3.org/2000/svg" width="21" height="24" fill="none">
-            <path class="fill-black group-hover:fill-white"
+            <path className="fill-black group-hover:fill-white"
                   d="M19.76 18.704c-.362.838-.79 1.61-1.288 2.32-.677.967-1.232 1.637-1.66 2.008-.662.61-1.372.924-2.132.941-.546 0-1.204-.155-1.97-.47-.769-.315-1.475-.47-2.121-.47-.678 0-1.404.155-2.181.47-.779.315-1.406.48-1.885.495-.729.031-1.456-.29-2.181-.966-.463-.404-1.042-1.097-1.736-2.08-.744-1.048-1.356-2.265-1.835-3.651C.257 15.803 0 14.353 0 12.949 0 11.34.347 9.953 1.042 8.79A6.118 6.118 0 0 1 3.224 6.58a5.864 5.864 0 0 1 2.95-.834c.58 0 1.34.179 2.283.532.941.353 1.545.533 1.81.533.198 0 .87-.21 2.007-.628 1.076-.388 1.984-.549 2.728-.485 2.016.163 3.531.959 4.538 2.393-1.803 1.094-2.695 2.626-2.677 4.592.016 1.532.571 2.806 1.661 3.818.494.47 1.046.832 1.66 1.09-.133.387-.274.757-.423 1.113ZM15.138.48c0 1.2-.438 2.32-1.31 3.358-1.054 1.233-2.327 1.946-3.709 1.833a3.743 3.743 0 0 1-.027-.455c0-1.152.5-2.385 1.39-3.393.444-.51 1.008-.935 1.693-1.274.684-.333 1.33-.518 1.938-.55.018.16.025.321.025.48Z"/>
         </svg>
     )
@@ -8,7 +8,7 @@ const Apple = () => {
 
 const Discord = () => {
     return (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="19" fill="none">
-            <path class="fill-[#5865F2] group-hover:fill-white"
+            <path className="fill-[#5865F2] group-hover:fill-white"
                   d="M20.317 1.516A19.791 19.791 0 0 0 15.432.001a.074.074 0 0 0-.079.037c-.21.376-.444.865-.608 1.25a18.271 18.271 0 0 0-5.487 0 12.644 12.644 0 0 0-.617-1.25.077.077 0 0 0-.079-.037 19.736 19.736 0 0 0-4.885 1.515.07.07 0 0 0-.032.028C.533 6.192-.32 10.727.099 15.204a.082.082 0 0 0 .031.057 19.902 19.902 0 0 0 5.993 3.029.077.077 0 0 0 .084-.028 14.22 14.22 0 0 0 1.226-1.994c.021-.04.001-.09-.041-.106a13.109 13.109 0 0 1-1.872-.892.077.077 0 0 1-.008-.127c.126-.095.252-.193.372-.292a.074.074 0 0 1 .078-.01c3.927 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .079.01c.12.098.245.197.372.291.044.033.04.1-.006.128-.598.35-1.22.645-1.873.892a.077.077 0 0 0-.041.106c.36.698.772 1.363 1.225 1.993a.076.076 0 0 0 .084.029 19.836 19.836 0 0 0 6.002-3.03.077.077 0 0 0 .032-.055c.5-5.177-.838-9.674-3.549-13.66a.06.06 0 0 0-.031-.029ZM8.02 12.478c-1.182 0-2.157-1.086-2.157-2.42 0-1.332.956-2.418 2.157-2.418 1.21 0 2.176 1.095 2.157 2.419 0 1.333-.956 2.419-2.157 2.419Zm7.975 0c-1.183 0-2.157-1.086-2.157-2.42 0-1.332.955-2.418 2.157-2.418 1.21 0 2.176 1.095 2.157 2.419 0 1.333-.946 2.419-2.157 2.419Z"/>
         </svg>
     )
@@ -16,15 +16,15 @@ const Discord = () => {
 
 const Google = () => {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="overflow-visible group-hover:fill-white">
-            <g clip-path="url(#a)">
-                <path class="group-hover:fill-[#FFFFFF] fill-[#FBBB00]"
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="overflow-visible group-hover:fill-white">
+            <g clipPath="url(#a)">
+                <path className="group-hover:fill-[#FFFFFF] fill-[#FBBB00]"
                       d="m5.319 14.504-.835 3.118-3.054.065A11.946 11.946 0 0 1 0 12c0-1.99.484-3.866 1.342-5.519l2.719.499 1.19 2.702A7.134 7.134 0 0 0 4.868 12c0 .881.16 1.725.452 2.504Z"/>
-                <path class="group-hover:fill-white fill-[#518EF8]"
+                <path className="group-hover:fill-white fill-[#518EF8]"
                       d="M23.79 9.758a12.028 12.028 0 0 1-.053 4.747 11.998 11.998 0 0 1-4.225 6.853l-3.424-.176-.485-3.025a7.152 7.152 0 0 0 3.077-3.652h-6.416V9.758H23.79Z"/>
-                <path class="group-hover:fill-white fill-[#28B446]"
+                <path className="group-hover:fill-white fill-[#28B446]"
                       d="m19.511 21.357.001.001A11.95 11.95 0 0 1 11.999 24c-4.57 0-8.543-2.554-10.57-6.313l3.89-3.183a7.135 7.135 0 0 0 10.284 3.654l3.908 3.2Z"/>
-                <path class="group-hover:fill-white fill-[#F14336]"
+                <path className="group-hover:fill-white fill-[#F14336]"
                       d="m19.66 2.763-3.888 3.182a7.137 7.137 0 0 0-10.52 3.736l-3.91-3.2A11.998 11.998 0 0 1 12 0a11.95 11.95 0 0 1 7.66 2.763Z"/>
             </g>
             <defs>
@@ -38,13 +38,20 @@ const Google = () => {
 
 const Landscape = ({color}) => {
     return (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd"
+            <path fillRule="evenodd" clipRule="evenodd"
                   d="M0 3C0 1.34314 1.34315 0 3 0H21C22.6569 0 24 1.34315 24 3V21C24 22.6569 22.6569 24 21 24H3C1.34314 24 0 22.6569 0 21V3ZM3 2C2.44771 2 2 2.44772 2 3V21C2 21.5523 2.44772 22 3 22H21C21.5523 22 22 21.5523 22 21V3C22 2.44771 21.5523 2 21 2H3Z"
-                  class={`${color}`}/>
-            <path d="M5 17L8 12L11 15L15 9L19 17H5Z" class={`${color}`}/>
+                  className={`${color}`}/>
+            <path d="M5 17L8 12L11 15L15 9L19 17H5Z" className={`${color}`}/>
             <path
                 d="M9.5 9C10.3284 9 11 8.32843 11 7.5C11 6.67157 10.3284 6 9.5 6C8.67157 6 8 6.67157 8 7.5C8 8.32843 8.67157 9 9.5 9Z"
-                class={`${color}`}/>
+                className={`${color}`}/>
+        </svg>
+    )
+}
+
+const LeftArrow = ({color}) => {
+    return (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className={`${color}`}>
+            <path className={`${color}`} fillRule="evenodd" d="M3.2 2A1.2 1.2 0 0 0 2 3.2v17.6A1.2 1.2 0 0 0 3.2 22h17.6a1.2 1.2 0 0 0 1.2-1.2V3.2A1.2 1.2 0 0 0 20.8 2H3.2ZM0 3.2A3.2 3.2 0 0 1 3.2 0h17.6A3.2 3.2 0 0 1 24 3.2v17.6a3.2 3.2 0 0 1-3.2 3.2H3.2A3.2 3.2 0 0 1 0 20.8V3.2ZM12.414 8l-3 3H18v2H9.414l3 3L11 17.414 5.586 12 11 6.586 12.414 8Z" clipRule="evenodd"/>
         </svg>
     )
 }
@@ -52,7 +59,7 @@ const Landscape = ({color}) => {
 const NFT = () => {
     return (<svg width="112" height="112" viewBox="0 0 112 112" fill="none" xmlns="http://www.w3.org/2000/svg"
                  xmlnsXlink="http://www.w3.org/1999/xlink">
-            <g clip-path="url(#clip0_46_344)">
+            <g clipPath="url(#clip0_46_344)">
                 <rect width="112" height="112" rx="3.74704" fill="#516380"/>
                 <rect width="112" height="112" fill="url(#pattern0)"/>
             </g>
@@ -70,44 +77,50 @@ const NFT = () => {
     )
 }
 
+const RightArrow = ({color}) => {
+    return (<svg xmlns="http://www.w3.org/2000/svg" width="8" height="14" className={`${color}`}>
+            <path className={`${color}`} fillRule="evenodd" d="M1.282 0 8 7l-6.718 7L0 12.665 5.437 7 0 1.335 1.282 0Z" clipRule="evenodd"/>
+        </svg>)
+}
+
 const SmilingFace = ({color}) => {
     return (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
-        <path class={`${color}`} fill-rule="evenodd"
+        <path className={`${color}`} fillRule="evenodd"
               d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2ZM0 12C0 5.373 5.373 0 12 0s12 5.373 12 12-5.373 12-12 12S0 18.627 0 12Z"
-              clip-rule="evenodd"/>
-        <path class={`${color}`}
+              clipRule="evenodd"/>
+        <path className={`${color}`}
               d="M7.5 11a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm9 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/>
-        <path class={`${color}`} fill-rule="evenodd"
+        <path className={`${color}`} fillRule="evenodd"
               d="M7.445 15.168a1 1 0 0 1 1.387.277C9.58 16.566 11.041 17 12 17c.8 0 1.387-.113 1.86-.34.462-.22.888-.585 1.308-1.215a1 1 0 0 1 1.664 1.11c-.58.87-1.265 1.506-2.109 1.91-.833.398-1.745.535-2.723.535-1.342 0-3.58-.566-4.832-2.445a1 1 0 0 1 .277-1.387Z"
-              clip-rule="evenodd"/>
+              clipRule="evenodd"/>
     </svg>)
 }
 
 const Tooltip = ({color, solid}) => {
     return (
-        solid ? <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" class={`${color}`}>
-                <path class={`${color}`} fill-rule="evenodd"
+        solid ? <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" className={`${color}`}>
+                <path className={`${color}`} fillRule="evenodd"
                       d="M6 12A6 6 0 1 0 6 0a6 6 0 0 0 0 12Zm.041-4.605a.6.6 0 0 1-.596-.596v-.167c0-.911.66-1.365.92-1.544l.01-.006c.294-.2.39-.334.39-.54a.726.726 0 0 0-.724-.724.726.726 0 0 0-.723.723.6.6 0 0 1-.597.596.6.6 0 0 1-.596-.596 1.917 1.917 0 0 1 3.832 0c0 .906-.668 1.36-.914 1.527-.31.206-.406.341-.406.564v.167c0 .334-.27.596-.596.596Zm0 1.98a.595.595 0 1 1-.002-1.19.595.595 0 0 1 .002 1.19Z"
-                      clip-rule="evenodd"/>
+                        clipRule="evenodd"/>
             </svg>
             :
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" class={`${color}`}>
-                <path class={`${color}`}
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" className={`${color}`}>
+                <path className={`${color}`}
                       d="M6 12c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6ZM6 .837A5.169 5.169 0 0 0 .837 6 5.169 5.169 0 0 0 6 11.163 5.169 5.169 0 0 0 11.163 6 5.169 5.169 0 0 0 6 .837Z"/>
-                <path class={`${color}`}
+                <path className={`${color}`}
                       d="M5.445 6.799a.595.595 0 1 0 1.193 0v-.167c0-.223.095-.358.405-.564.246-.167.914-.62.914-1.527a1.917 1.917 0 0 0-3.832 0 .6.6 0 0 0 .596.596.6.6 0 0 0 .597-.596c0-.397.325-.723.723-.723.398 0 .723.326.723.723 0 .207-.095.342-.39.54l-.008.007c-.261.18-.921.633-.921 1.544v.167Zm0 1.98a.595.595 0 1 0 1.19.001.595.595 0 0 0-1.19-.001Z"/>
             </svg>)
 }
 
 const Twitter = () => {
     return (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" fill="none">
-            <path class="fill-[#2AA9E0] group-hover:fill-white"
+            <path className="fill-[#2AA9E0] group-hover:fill-white"
                   d="M24 2.309a9.843 9.843 0 0 1-2.828.775A4.939 4.939 0 0 0 23.337.36a9.857 9.857 0 0 1-3.127 1.195 4.924 4.924 0 0 0-8.39 4.491A13.979 13.979 0 0 1 1.67.9a4.9 4.9 0 0 0-.666 2.476c0 1.708.87 3.215 2.19 4.098a4.904 4.904 0 0 1-2.23-.616v.062a4.927 4.927 0 0 0 3.95 4.828 4.927 4.927 0 0 1-2.224.085 4.929 4.929 0 0 0 4.6 3.419 9.879 9.879 0 0 1-6.115 2.108c-.398 0-.79-.024-1.175-.07a13.936 13.936 0 0 0 7.548 2.213c9.057 0 14.01-7.503 14.01-14.01 0-.213-.005-.425-.015-.637A10.003 10.003 0 0 0 24 2.31Z"/>
         </svg>
     )
 }
 
-export default {
+const iconMap = {
     tooltip: Tooltip,
     smilingFace: SmilingFace,
     sampleNFT: NFT,
@@ -116,4 +129,8 @@ export default {
     apple: Apple,
     discord: Discord,
     twitter: Twitter,
+    leftarrow: LeftArrow,
+    rightarrow: RightArrow
 }
+
+export default iconMap;
