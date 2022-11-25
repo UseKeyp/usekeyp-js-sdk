@@ -6,6 +6,15 @@ const Apple = () => {
     )
 }
 
+const Copy = ({color, width='2rem', height='2rem'}) => {
+    return (<svg xmlns="http://www.w3.org/2000/svg" className={`${color}`} width={width}
+                 height={height}>
+            <path className={`${color}`} fillRule="evenodd" d="M7 8h13v16H7V8Zm2 2v12h9V10H9Z" clipRule="evenodd"/>
+            <path className={`${color}`} fillRule="evenodd" d="M0 0h13v6h-2V2H2v12h3v2H0V0Z" clipRule="evenodd"/>
+        </svg>
+    )
+}
+
 const Discord = () => {
     return (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="19" fill="none">
             <path className="fill-[#5865F2] group-hover:fill-white"
@@ -121,6 +130,7 @@ const Twitter = () => {
 }
 
 const iconMap = {
+    copy: Copy,
     tooltip: Tooltip,
     smilingFace: SmilingFace,
     sampleNFT: NFT,
