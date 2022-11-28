@@ -9,6 +9,7 @@ import Tooltip from './Tooltip/Tooltip'
 import Icon from './Icon/Icon'
 import LineChart from './LineChart/LineChart'
 import Table from './Table/Table'
-import APIKeyGenerator from "./APIKeyGenerator/APIKeyGenerator";
+import APIKeyGenerator from './APIKeyGenerator/APIKeyGenerator';
+import AccountCard from './AccountCard/AccountCard';
 
-export {Button, AppCard, AppHeader, ContractRow, NFTCard, TextInput, CreateApp, Tooltip, Icon, LineChart, Table, APIKeyGenerator}
+export {Button, AppCard, AppHeader, ContractRow, NFTCard, TextInput, CreateApp, Tooltip, Icon, LineChart, Table, APIKeyGenerator, AccountCard}

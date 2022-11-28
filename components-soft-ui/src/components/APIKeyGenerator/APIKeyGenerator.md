@@ -6,7 +6,7 @@
             createdBy="supermombartz"
             created="3 days ago"
             lastUsed="2 minutes ago"
-            clientSecret="CS-RuneMultip-01-yBrBfG0PJX57972Z5jdU"
+            clientSecret="CS-472ec5f7-c1e5-4bc8-8228-f27ab5bb2d81"
         />
     </div>
     ---

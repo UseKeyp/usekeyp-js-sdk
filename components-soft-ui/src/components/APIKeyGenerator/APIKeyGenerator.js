@@ -7,11 +7,13 @@ import { v4 as uuidv4 } from 'uuid';
 const APIKeyGenerator = (props) => {
     const [apiKey, setApiKey] = useState(props.clientSecret);
     const [copySuccess, setCopySuccess] = useState('Click to copy key');
+    const [regenerateConfirmation, setRegenerateConfirmation] = useState(false);
     let clientSecretSection;
 
     async function generateAPIKey() {
         const apiKey = uuidv4();
         setApiKey('CS-' + apiKey);
+        setRegenerateConfirmation(false);
     }
 
     function handleCopy() {
@@ -21,6 +23,15 @@ const APIKeyGenerator = (props) => {
             setCopySuccess('Click to copy key');
         }, 2000);
     }
+
+    let regenerateConfirmationSection = <div className="flex flex-col">
+        <div className="font-light">Regenerate your API Key? The current one wil become invalid.</div>
+        <div className="flex flex-row gap-x-2 justify-end">
+            <Button variant="green" onClick={() => generateAPIKey()}>Confirm</Button>
+            <Button onClick={() => setRegenerateConfirmation(false)} size="regular" borderColor="border-gray-300" variant="transparent"
+                    textColor="text-gray-800">Cancel</Button>
+        </div>
+    </div>
 
     if (apiKey) {
         clientSecretSection = (<div className="flex w-fit h-fit bg-red-100 rounded-md p-2">
@@ -109,7 +120,7 @@ const APIKeyGenerator = (props) => {
         </div>
         <div className="flex flex-row justify-between gap-x-2 w-full">
             {clientSecretSection}
-            <Button variant="green" onClick={() => generateAPIKey()}>Regenerate Key</Button>
+           <div className="flex items-end">{regenerateConfirmation ? regenerateConfirmationSection : <Button variant="green" onClick={() => setRegenerateConfirmation(true)}>Regenerate</Button>}</div>
         </div>
     </div>)
 }

@@ -86,8 +86,8 @@ const NFT = () => {
     )
 }
 
-const RightArrow = ({color}) => {
-    return (<svg xmlns="http://www.w3.org/2000/svg" width="8" height="14" className={`${color}`}>
+const RightArrow = ({color, width="8px", height="14px"}) => {
+    return (<svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} className={`${color}`}>
             <path className={`${color}`} fillRule="evenodd" d="M1.282 0 8 7l-6.718 7L0 12.665 5.437 7 0 1.335 1.282 0Z" clipRule="evenodd"/>
         </svg>)
 }
