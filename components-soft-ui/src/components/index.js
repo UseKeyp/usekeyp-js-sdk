@@ -11,5 +11,23 @@ import LineChart from './LineChart/LineChart'
 import Table from './Table/Table'
 import APIKeyGenerator from './APIKeyGenerator/APIKeyGenerator';
 import AccountCard from './AccountCard/AccountCard';
+import UserCard from './UserCard/UserCard';
+import UserDetailsCard from './UserDetailsCard/UserDetailsCard';
 
-export {Button, AppCard, AppHeader, ContractRow, NFTCard, TextInput, CreateApp, Tooltip, Icon, LineChart, Table, APIKeyGenerator, AccountCard}
+export {
+    Button,
+    AppCard,
+    AppHeader,
+    ContractRow,
+    NFTCard,
+    TextInput,
+    CreateApp,
+    Tooltip,
+    Icon,
+    LineChart,
+    Table,
+    APIKeyGenerator,
+    AccountCard,
+    UserCard,
+    UserDetailsCard
+}
