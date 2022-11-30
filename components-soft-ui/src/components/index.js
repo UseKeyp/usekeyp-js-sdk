@@ -13,6 +13,7 @@ import APIKeyGenerator from './APIKeyGenerator/APIKeyGenerator';
 import AccountCard from './AccountCard/AccountCard';
 import UserCard from './UserCard/UserCard';
 import UserDetailsCard from './UserDetailsCard/UserDetailsCard';
+import AssetSwitcher from './AssetSwitcher/AssetSwitcher';
 
 export {
     Button,
@@ -29,5 +30,6 @@ export {
     APIKeyGenerator,
     AccountCard,
     UserCard,
-    UserDetailsCard
+    UserDetailsCard,
+    AssetSwitcher
 }
