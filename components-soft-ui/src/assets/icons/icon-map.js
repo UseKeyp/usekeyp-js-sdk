@@ -92,6 +92,14 @@ const RightArrow = ({color, width="8px", height="14px"}) => {
         </svg>)
 }
 
+const MagnifyingGlass = () => {
+    return (<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none">
+        <circle cx="9.767" cy="9.767" r="8.989" stroke="#1D3A70" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+        <path stroke="#1D3A70" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.019 16.485 19.543 20"/>
+    </svg>)
+
+}
+
 const SmilingFace = ({color}) => {
     return (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
         <path className={`${color}`} fillRule="evenodd"
@@ -140,7 +148,8 @@ const iconMap = {
     discord: Discord,
     twitter: Twitter,
     leftarrow: LeftArrow,
-    rightarrow: RightArrow
+    rightarrow: RightArrow,
+    magnifyingglass: MagnifyingGlass
 }
 
 export default iconMap;

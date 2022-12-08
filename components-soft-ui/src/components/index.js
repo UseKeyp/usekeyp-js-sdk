@@ -15,6 +15,8 @@ import UserCard from './UserCard/UserCard';
 import UserDetailsCard from './UserDetailsCard/UserDetailsCard';
 import AssetSwitcher from './AssetSwitcher/AssetSwitcher';
 import Keyboard from './Keyboard/Keyboard';
+import SearchBar from "./SearchBar/SearchBar";
+import ContactsList from './ContactsList/ContactsList';
 
 export {
     Button,
@@ -33,5 +35,7 @@ export {
     UserCard,
     UserDetailsCard,
     AssetSwitcher,
-    Keyboard
+    Keyboard,
+    ContactsList,
+    SearchBar
 }

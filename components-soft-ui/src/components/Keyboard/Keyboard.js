@@ -45,7 +45,7 @@ const Keyboard = (props) => {
     return (<div className="flex flex-col items-center justify-center h-full">
             <div className="flex flex-col gap-y-2 mb-4">
                 <div className="flex flex-row gap-x-2 justify-between bg-white rounded-md p-2">
-                    <div className="flex"><AssetSwitcher assets={assets}/></div>
+                    <div className="flex flex-col"><div>&nbsp;</div><AssetSwitcher assets={assets}/></div>
                     <div className="flex flex-col text-right">
                         <div className="font-light text-sm">{formattedBalance}</div>
                     <input
