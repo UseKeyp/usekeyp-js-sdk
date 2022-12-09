@@ -3,16 +3,20 @@ import SearchBar from "../SearchBar/SearchBar";
 import UserCard from "../UserCard/UserCard";
 
 const ContactsList = ({ contacts }) => {
-    const [filteredContacts, setFilteredContacts] = React.useState(contacts);
+    const [searchTerm, setSearchTerm] = React.useState("");
 
-    const handleSearch = (searchTerm) => {
-        const filteredContacts = contacts.filter((contact) => {
+    // Memoize the filteredContacts variable to prevent excessive re-renders
+    const filteredContacts = React.useMemo(() => {
+        return contacts.filter((contact) => {
             return (
                 contact.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                 contact.phoneNumber.includes(searchTerm)
             );
         });
-        setFilteredContacts(filteredContacts);
+    }, [contacts, searchTerm]);
+
+    const handleSearch = (searchTerm) => {
+        setSearchTerm(searchTerm);
     };
 
     return (

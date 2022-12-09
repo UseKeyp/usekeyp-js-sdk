@@ -1,16 +1,24 @@
 import React, {useState} from "react";
 import AssetSwitcher from "../AssetSwitcher/AssetSwitcher";
+import {getETHExchangeRate} from "../../api/getETHExchangeRate";
 
 const Keyboard = (props) => {
     const [input, setInput] = useState("");
+    const [selectedCurrency] = useState("USD");
     const [userBalance] = useState(props?.userBalance);
     const formattedBalance = formatBalance(userBalance)
-    const assets = ["USD", "COP", "ETH"];
+    const assets = ["USD", "ETH"];
     const MAX_VALUE = 10000;
+    const numbersAndSymbols = ["1", "2", "3", "4", "5", "6", "7", "8", "9", ".", "0", "⌫"];
 
     function formatBalance(balance) {
-        return balance.toLocaleString('en-US', {style: 'currency', currency: 'USD'});
+        if (selectedCurrency === "USD") {
+            return balance.toLocaleString('en-US', {style: 'currency', currency: 'USD'});
+        } else if (selectedCurrency === "ETH") {
+            return (balance * getETHExchangeRate()).toLocaleString('en-US', {style: 'currency', currency: 'ETH'});
+        }
     }
+
     const isNumeric = function (val) {
         const objRegExp = /^\s*-?\d+(\.\d{1,2})?\s*$/;
         if (objRegExp.test(val) && val <= MAX_VALUE && input !== "0") {
@@ -41,99 +49,35 @@ const Keyboard = (props) => {
             isNumeric(input + key) && setInput(input + key);
         }
     };
-
     return (<div className="flex flex-col items-center justify-center h-full">
-            <div className="flex flex-col gap-y-2 mb-4">
-                <div className="flex flex-row gap-x-2 justify-between bg-white rounded-md p-2">
-                    <div className="flex flex-col"><div>&nbsp;</div><AssetSwitcher assets={assets}/></div>
-                    <div className="flex flex-col text-right">
-                        <div className="font-light text-sm">{formattedBalance}</div>
+        <div className="flex flex-col gap-y-2 mb-4">
+            <div className="flex flex-row gap-x-2 justify-between bg-white rounded-md p-2">
+                <div className="flex flex-col">
+                    <div>&nbsp;</div>
+                    <AssetSwitcher assets={assets}/></div>
+                <div className="flex flex-col text-right">
+                    <div className="font-light text-sm">{formattedBalance}</div>
                     <input
                         readOnly={true}
-                        className="flex text-black focus:outline-none text-right"
+                        className={`flex ${input > userBalance ? 'text-red-600' : 'text-black'} font-bold focus:outline-none text-right`}
                         type="text"
                         placeholder="0"
                         value={input}
                         onChange={(e) => setInput(e.target.value)}
                     />
-                    </div>
                 </div>
-                <div className="grid grid-cols-3 bg-white rounded-md">
-                    <button
+            </div>
+            <div className="grid grid-cols-3 bg-white rounded-md">
+                {numbersAndSymbols.map((numberOrSymbol) => (<button
+                        key={numberOrSymbol}
                         className="flex justify-center items-center hover:bg-gray-400 text-center text-black font-bold p-4 rounded"
                         onClick={handleKeyPress}
                     >
-                        1
-                    </button>
-                    <button
-                        className="flex justify-center hover:bg-gray-400 text-black font-bold p-4 rounded items-center"
-                        onClick={handleKeyPress}
-                    >
-                        2
-                    </button>
-                    <button
-                        className="flex justify-center hover:bg-gray-400 text-black font-bold p-4 rounded inline-flex items-center"
-                        onClick={handleKeyPress}
-                    >
-                        3
-                    </button>
-                    <button
-                        className="flex justify-center hover:bg-gray-400 text-black font-bold p-4 rounded inline-flex items-center"
-                        onClick={handleKeyPress}
-                    >
-                        4
-                    </button>
-                    <button
-                        className="flex justify-center hover:bg-gray-400 text-black font-bold p-4 rounded inline-flex items-center"
-                        onClick={handleKeyPress}
-                    >
-                        5
-                    </button>
-                    <button
-                        className="flex justify-center hover:bg-gray-400 text-black font-bold p-4 rounded inline-flex items-center"
-                        onClick={handleKeyPress}
-                    >
-                        6
-                    </button>
-                    <button
-                        className="flex justify-center hover:bg-gray-400 text-black font-bold p-4 rounded inline-flex items-center"
-                        onClick={handleKeyPress}
-                    >
-                        7
-                    </button>
-                    <button
-                        className="flex justify-center hover:bg-gray-400 text-black font-bold p-4 rounded inline-flex items-center"
-                        onClick={handleKeyPress}
-                    >
-                        8
-                    </button>
-                    <button
-                        className="flex justify-center hover:bg-gray-400 text-black font-bold p-4 rounded inline-flex items-center"
-                        onClick={handleKeyPress}
-                    >
-                        9
-                    </button>
-                    <button
-                        className="flex justify-center hover:bg-gray-400 text-black font-bold p-4 rounded inline-flex items-center"
-                        onClick={handleKeyPress}
-                    >
-                        .
-                    </button>
-                    <button
-                        className="flex justify-center hover:bg-gray-400 text-black font-bold p-4 rounded inline-flex items-center"
-                        onClick={handleKeyPress}
-                    >
-                        0
-                    </button>
-                    <button
-                        className="flex justify-center hover:bg-gray-400 text-black font-bold p-4 rounded inline-flex items-center"
-                        onClick={handleKeyPress}
-                    >
-                        ⌫
-                    </button>
-                </div>
+                        {numberOrSymbol}
+                    </button>))}
             </div>
-        </div>)
+        </div>
+    </div>)
 }
 
 export default Keyboard;

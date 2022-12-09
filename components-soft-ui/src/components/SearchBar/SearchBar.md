@@ -5,5 +5,7 @@ const contacts = [
   { name: "Bob Johnson", phoneNumber: "345-678-9012" }
 ];
 
+<div className="bg-[#E5E5E5] p-2">
 <SearchBar contacts={contacts} onSearch={(searchTerm) => console.log(searchTerm)} />
+</div>
 ```

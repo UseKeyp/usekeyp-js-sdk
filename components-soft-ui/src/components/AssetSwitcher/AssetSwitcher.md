@@ -1,4 +1,4 @@
 ```js
-const assets = ["USD", "COP", "ETH"];
+const assets = ["USD", "ETH"];
 <AssetSwitcher assets={assets} />
 ```

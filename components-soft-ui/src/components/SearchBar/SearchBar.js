@@ -1,7 +1,7 @@
 import React from "react";
 import Icon from "../Icon/Icon";
 
-const SearchBar = ({ contacts, onSearch }) => {
+const SearchBar = ({ onSearch }) => {
     const [searchTerm, setSearchTerm] = React.useState("");
 
     const handleSearchChange = (event) => {
@@ -19,7 +19,7 @@ const SearchBar = ({ contacts, onSearch }) => {
                     <Icon name="magnifyingglass" />
                 </div>
                 <input
-                    className="form-input pl-10 pr-3 py-2 block w-full rounded-md text-gray-900 placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 sm:text-sm"
+                    className="flex pl-12 pr-3 py-3 block w-full rounded-md text-gray-900 placeholder-gray-400 focus:outline-none focus:placeholder-gray-400 sm:text-sm"
                     type="text"
                     placeholder="Search"
                     value={searchTerm}
