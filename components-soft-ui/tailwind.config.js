@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-const { softUi } = require('@nifty-chess/tailwind-presets')
+const { softUi } = require('@usekeyp/tailwind-presets')
 
 module.exports = {
   content: [

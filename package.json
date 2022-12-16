@@ -1,5 +1,5 @@
 {
-  "name": "@nifty-chess/frontend-components",
+  "name": "@usekeyp/frontend-components",
   "private": true,
   "workspaces": ["components-soft-ui", "tailwind-presets"]
 }
