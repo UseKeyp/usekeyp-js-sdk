@@ -186,7 +186,7 @@ const Twitter = () => {
 }
 
 const iconMap = {
-    chesscom: ChessCom,
+    chess_com: ChessCom,
     copy: Copy,
     keypnameandlogo: KeypNameAndLogo,
     tooltip: Tooltip,
