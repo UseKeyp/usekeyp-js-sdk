@@ -1,5 +1,5 @@
 <h1 align="center"><img width="600" style="border-radius: 30px;" src="https://raw.githubusercontent.com/UseKeyp/.github/main/Keyp-Logo-Color.svg"/></h1>
-<h1 align="center">Welcome to ______ 👋</h1>
+<h1 align="center">Welcome to @usekeyp/js-sdk 👋</h1>
 <p align="center">
   <a href="#" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-blue.svg" />
@@ -9,14 +9,14 @@
   </a>
 </p>
 
-> A DESCRIPTION OF THE SERVICE
+> Keyp SDK for browser and node.js applications
 
 ## Usage 📖
 
 1. Install necessary dependencies
 
 ```bash
- yarn add
+ yarn add @usekeyp/js-sdk
 ```
 
 ## Resources 🧑‍💻
