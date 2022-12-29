@@ -9,25 +9,13 @@
   </a>
 </p>
 
-If you'd like to join our team please let us know. Happy hacking!
-
-## Resources 🧑‍💻
-
-- [Keyp Frontend Components](https://github.com/UseKeyp/frontend-components)
-- [Yarn Link Docs](https://yarnpkg.com/cli/link)
-- [Surge](https://surge.sh/)
-
-## Usage 📙
-
-This monorepo contains our frontend components used for `keyp-app` and other Keyp applications.
+> This monorepo contains our frontend components used for `keyp-app` and future Keyp applications.
 Our components are in the `components-soft-ui` directory and our Tailwind presets are in the `tailwind-presets`
 directory.
 
-## Development 🛠
+## Usage 📖
 
-Here's how to get started developing on our component library:
-
-1) Clone the repo and run `yarn install`. Make sure you're using a recent version of node (>= 16.0.0)
+1) Clone the repo and run `yarn install` to install the necessary dependencies. Make sure you're using a recent version of node (>= 16.0.0)
 2) Navigate to the root directory of `components-soft-ui` and run `yarn start`. This script starts the styleguidist
    server.
 3) In the same directory, run `yarn tailwindcss`. This script ensures our Tailwind styles are built and available to the
@@ -71,18 +59,15 @@ frontend-components, here's how to create a symlink for @usekeyp/components-soft
 
 You can unlink a package by running `yarn unlink <package-name>`.
 
-## Contributors ✨
 
-👤 **Keyp Team <maintainers@UseKeyp.com>**
-
-- Website: https://UseKeyp.com
-- Twitter: [@UseKeyp](https://twitter.com/UseKeyp)
-- GitHub: [@UseKeyp](https://github.com/UseKeyp)
+## Resources 🧑‍💻
+- [Keyp Frontend Components](https://github.com/UseKeyp/frontend-components)
+- [Yarn Link Docs](https://yarnpkg.com/cli/link)
+- [Surge](https://surge.sh/)
 
 ## License 📝
 
-Copyright © 2022 Nifty Chess, Inc.<br />
+Copyright © 2023 Nifty Chess, Inc.<br />
 This project is MIT licensed.
 
-
-
+[sponsor-keyp]: https://UseKeyp.com

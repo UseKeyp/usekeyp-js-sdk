@@ -1,40 +1,42 @@
-<h1 align="center"><img width="600" style="border-radius: 30px;" src="https://github.com/treasure-chess/treasure-chess/blob/main/github-header.png?raw=true"/></h1>
+<h1 align="center"><img width="600" style="border-radius: 30px;" src="https://raw.githubusercontent.com/UseKeyp/.github/main/Keyp-Logo-Color.svg"/></h1>
 <h1 align="center">Welcome to @usekeyp/tailwind-presets 👋</h1>
 <p align="center">
   <a href="#" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-blue.svg" />
   </a>
-  <a href="https://twitter.com/treasurechess_" target="_blank">
-    <img alt="Twitter: treasurechess_" src="https://img.shields.io/twitter/follow/treasurechess_.svg?style=social" />
+  <a href="https://twitter.com/UseKeyp" target="_blank">
+    <img alt="Twitter: UseKeyp" src="https://img.shields.io/twitter/follow/UseKeyp.svg?style=social" />
   </a>
 </p>
 
-If you'd like to join our team please let us know. Happy hacking!
+> Tailwind CSS presets for use in keyp-app and other Keyp projects
 
-## Resources 🧑‍💻
+## Usage 📖
 
+1. Install necessary dependencies
 
-## Install ⟱
-
-```sh
+```bash
 yarn add @usekeyp/tailwind-presets
 ```
 
-## Usage 📙
+2. Ensure Tailwind CSS is properly configured in your application. Configure your `tailwind.config.js` file to use a particular preset. Here's an example of how to use the soft-ui preset:
 
+    ```js
+   const { softUi } = require('@usekeyp/tailwind-presets')
+    module.exports = {
+    // ...
+        presets: [softUi],
+    // ...
+    }
+    ```
+   
+## Resources 🧑‍💻
+- [Tailwind CSS Presets Documentation](https://tailwindcss.com/docs/presets)
 
-
-## Contributors ✨
-
-👤 **Nifty Chess Team <maintainers@niftychess.com>**
-
-- Website: https://treasurechess.com
-- Twitter: [@treasurechess\_](https://twitter.com/treasurechess_)
-- GitHub: [@Treasure-Chess](https://github.com/Treasure-Chess)
 
 ## License 📝
 
-Copyright © 2022 Nifty Chess, Inc.<br />
+Copyright © 2023 Nifty Chess, Inc.<br />
 This project is MIT licensed.
 
-
+[sponsor-keyp]: https://UseKeyp.com

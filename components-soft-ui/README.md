@@ -1,40 +1,49 @@
-<h1 align="center"><img width="600" style="border-radius: 30px;" src="https://github.com/treasure-chess/treasure-chess/blob/main/github-header.png?raw=true"/></h1>
+<h1 align="center"><img width="600" style="border-radius: 30px;" src="https://raw.githubusercontent.com/UseKeyp/.github/main/Keyp-Logo-Color.svg"/></h1>
 <h1 align="center">Welcome to @usekeyp/components-soft-ui 👋</h1>
 <p align="center">
   <a href="#" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-blue.svg" />
   </a>
-  <a href="https://twitter.com/treasurechess_" target="_blank">
-    <img alt="Twitter: treasurechess_" src="https://img.shields.io/twitter/follow/treasurechess_.svg?style=social" />
+  <a href="https://twitter.com/UseKeyp" target="_blank">
+    <img alt="Twitter: UseKeyp" src="https://img.shields.io/twitter/follow/UseKeyp.svg?style=social" />
   </a>
 </p>
 
-If you'd like to join our team please let us know. Happy hacking!
+> Components for use in keyp-app and other Keyp projects. Uses @usekeyp/tailwind-presets for styling 
 
-## Resources 🧑‍💻
+## Usage 📖
 
-
-## Install ⟱
+1. Install necessary dependencies
 
 ```sh
 yarn add @usekeyp/components-soft-ui
 ```
+2. Ensure Tailwind CSS is properly configured in your application. For best results, use `@usekeyp/tailwind-presets` as your base preset in your `tailwind.config.js` file. Here's an example of what that should look like:
+    
+    ```js
+   const { softUi } = require('@usekeyp/tailwind-presets')
+    module.exports = {
+        content: [
+            // Tailwind should always watch this path for changes
+            "./src/**/*.{js,jsx,ts,tsx}",
+            // Tailwind needs to watch the path of our component library to properly reflect compiled styles
+            "./node_modules/@usekeyp/components-soft-ui/**/*.js",
+    ],
+        presets: [softUi],
+    // ...
+    }
+    ```
+3. Import the components you need into your application. Here's an example of how to import the `Button` component:
+    ```js
+   import { Button } from '@usekeyp/components-soft-ui'
+   ```
 
-## Usage 📙
-
-
-
-## Contributors ✨
-
-👤 **Nifty Chess Team <maintainers@niftychess.com>**
-
-- Website: https://treasurechess.com
-- Twitter: [@treasurechess\_](https://twitter.com/treasurechess_)
-- GitHub: [@Treasure-Chess](https://github.com/Treasure-Chess)
+## Resources 🧑‍💻
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs/installation)
 
 ## License 📝
 
-Copyright © 2022 Nifty Chess, Inc.<br />
+Copyright © 2023 Nifty Chess, Inc.<br />
 This project is MIT licensed.
 
-
+[sponsor-keyp]: https://UseKeyp.com
