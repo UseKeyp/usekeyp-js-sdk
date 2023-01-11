@@ -1,4 +1,4 @@
-import iconMap from '../../assets/icons/icon-map'
+import iconMap from '../../assets/icons/icon-map.js'
 
 const EmptyIcon = () => <div />
 

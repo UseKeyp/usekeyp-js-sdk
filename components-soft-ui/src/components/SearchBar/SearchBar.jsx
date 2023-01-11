@@ -1,5 +1,5 @@
 import React from "react";
-import Icon from "../Icon/Icon";
+import Icon from "../Icon/Icon.jsx";
 
 const SearchBar = ({ onSearch }) => {
     const [searchTerm, setSearchTerm] = React.useState("");

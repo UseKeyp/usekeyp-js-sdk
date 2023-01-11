@@ -1,6 +1,6 @@
-import Tooltip from "../Tooltip/Tooltip";
-import Icon from "../Icon/Icon";
-import Button from "../Button/Button";
+import Tooltip from "../Tooltip/Tooltip.jsx";
+import Icon from "../Icon/Icon.jsx";
+import Button from "../Button/Button.jsx";
 import {useState} from "react";
 import { v4 as uuidv4 } from 'uuid';
 

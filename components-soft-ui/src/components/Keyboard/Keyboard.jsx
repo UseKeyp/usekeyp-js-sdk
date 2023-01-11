@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import AssetSwitcher from "../AssetSwitcher/AssetSwitcher";
-import {getETHExchangeRate} from "../../api/getETHExchangeRate";
+import AssetSwitcher from "../AssetSwitcher/AssetSwitcher.jsx";
+import {getETHExchangeRate} from "../../api/getETHExchangeRate.js";
 
 const Keyboard = (props) => {
     const [input, setInput] = useState("");

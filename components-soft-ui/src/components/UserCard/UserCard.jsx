@@ -1,4 +1,4 @@
-import Icon from "../Icon/Icon";
+import Icon from "../Icon/Icon.jsx";
 
 const UserCard = (props) => {
     return (<div className="flex flex-row justify-between border border-white bg-white rounded-md p-2">
