@@ -16,11 +16,11 @@ jobs:
       - name: Install packages
         run: npm install
       - name: Build the app w/styleguidist
-        working-directory: ./components-soft-ui
-        run: styleguidist build
+        working-directory: ./packages/components-soft-ui
+        run: styleguidist build --config styleguide.config.cjs
       - name: Install Surge
-        working-directory: ./components-soft-ui
+        working-directory: ./packages/components-soft-ui
         run: npm install -g surge
       - name: Deploy to surge
-        working-directory: ./components-soft-ui
+        working-directory: ./packages/components-soft-ui
         run: surge ./styleguide keyp-frontend-components.surge.sh/ --token ${{secrets.TOKEN}}
