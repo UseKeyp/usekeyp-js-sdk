@@ -4,6 +4,6 @@
   "private": false,
   "main": "src/index.js",
   "scripts": {
-    "build": ""
+    "build": "exit 0"
   }
 }

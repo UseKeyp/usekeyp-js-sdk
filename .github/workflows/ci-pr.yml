@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Publish Package
-        uses: UseKeyp/publish-pr-packages@v1.0.0
+        uses: UseKeyp/publish-pr-packages@v1.0.1
         with:
           token: ${{ secrets.PAT }}
-
+          build-command: "exit 0"
