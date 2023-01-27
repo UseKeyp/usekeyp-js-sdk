@@ -59,4 +59,4 @@ You can unlink a package by running `yarn unlink <package-name>`.
 
 ## License 📝
 
-Copyright © 2023 Nifty Chess, Inc.<br />
+Copyright © 2023 Nifty Chess, Inc.<br /> 
