@@ -3,6 +3,7 @@ name: Deploy Component Library
 on:
   push:
     branches: [main]
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -18,7 +19,7 @@ jobs:
         run: npm install
       - name: Build the app w/styleguidist
         working-directory: ./packages/components-soft-ui
-        run: styleguidist build --config styleguide.config.cjs
+        run: ./node_modules/.bin/styleguidist build --config styleguide.config.cjs
       - name: Install Surge
         working-directory: ./packages/components-soft-ui
         run: npm install -g surge
