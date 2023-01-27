@@ -17,9 +17,12 @@ jobs:
       - name: Install packages
         working-directory: ./packages/components-soft-ui
         run: npm install
+      - name: Generate CSS Output
+        working-directory: ./packages/components-soft-ui
+        run: npx tailwindcss -i ./src/index.css -o ./dist/output.css
       - name: Build the app w/styleguidist
         working-directory: ./packages/components-soft-ui
-        run: ./node_modules/.bin/styleguidist build --config styleguide.config.cjs
+        run: ../../node_modules/.bin/styleguidist build --config styleguide.config.cjs
       - name: Install Surge
         working-directory: ./packages/components-soft-ui
         run: npm install -g surge
