@@ -1,0 +1,118 @@
+name: Publish Release Package
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      image_tag_prefix:
+        description: 'Image Tag Prefix (prod or staging)'
+        required: true
+        default: 'staging'
+env:
+  ENVIRONMENT: ${{ github.event.inputs.image_tag_prefix }}
+  GITHUB_SHA: ${{ github.sha }}
+  GITHUB_BRANCH: ${{ github.ref_name }}
+  GITHUB_REPOSIOTORY: ${{ github.repository }}
+jobs:
+  setup:
+    name: Publish Package
+    runs-on: ubuntu-20.04
+    outputs:
+      RELEASE_HTML_URL: ${{ steps.get_release.outputs.html_url }}
+      BRANCH: ${{ steps.get_variables.outputs.VERSION }}
+      ENVIRONMENT: ${{ steps.get_variables.outputs.ENVIRONMENT }}
+      VERSION: ${{ steps.get_version.outputs.VERSION }}
+    steps:
+      - name: Show context
+        run: |
+          echo github.event_name: ${{ github.event_name }}
+          echo github.sha: ${{ github.sha }}
+          echo github.repository: ${{ github.repository }}
+          echo github.ref: ${{ github.ref }}
+          echo github.head_ref: ${{ github.head_ref }}
+          echo github.base_ref: ${{ github.base_ref }}
+          echo github.event.inputs.image_tag_prefix: ${{ github.event.inputs.image_tag_prefix }}
+      - name: Get release
+        continue-on-error: true
+        id: get_release
+        uses: bruceadams/get-release@v1.2.3
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+      - name: Get variables
+        id: get_variables
+        run: |
+          ENVIRONMENT=staging
+          BRANCH=${{ steps.get_release.outputs.tag_name }}
+          if [ ${{ github.event.inputs.image_tag_prefix }} ] ; then
+             ENVIRONMENT=${{ github.event.inputs.image_tag_prefix }}
+             BRANCH=${{ github.ref_name }}
+          elif ! grep -q "staging" <<< "${{ steps.get_release.outputs.tag_name }}" ; then
+             ENVIRONMENT=prod
+          fi
+          echo BRANCH: $BRANCH
+          echo ENVIRONMENT: $ENVIRONMENT
+          echo "::set-output name=BRANCH::$BRANCH"
+          echo "::set-output name=ENVIRONMENT::$ENVIRONMENT"
+      - name: Checkout branch
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.PAT }}
+          ref: ${{ steps.get_variables.outputs.BRANCH }}
+      - name: Get version
+        id: get_version
+        env:
+          GH_TOKEN: ${{ secrets.PAT }}
+        run: |
+          VERSION=${{ steps.get_variables.outputs.BRANCH }}
+          if [ ${{ github.event.inputs.image_tag_prefix }} ] ;  then
+            VERSION=${{ steps.get_variables.outputs.BRANCH }}-$(echo $GITHUB_SHA | cut -c 1-7)
+          fi
+          echo "::set-output name=VERSION::$VERSION"
+      - name: Discord notify building
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_RELEASE }}
+        uses: Ilshidur/action-discord@0c4b27844ba47cb1c7bee539c8eead5284ce9fa9
+        with:
+          args: 🏭 Building packages for ${{ github.repository }}... `${{ steps.get_version.outputs.VERSION }}`
+
+      - name: Build package
+        shell: bash
+        # NOTE: Building is unnecessary for now
+        run: yarn lerna exec --no-bail --no-private -- exit 0
+      
+      - name: Create packages
+        shell: bash
+        run: |
+          dirName="bin/"
+          mkdir -p $dirName
+          for d in packages/*/ ; do (
+            cd "$d"
+            tgz=$(npm pack)
+            cp $tgz "../$dirName/"
+          ) done
+          cd $dirName
+          sha="${{ github.event.pull_request.head.sha }}"
+          for f in * ; do
+            mv -- "$f" "${f%.tgz}-${sha:0:7}.tgz"
+          done
+          
+      - name: Publish packages to registry
+        shell: bash
+        run: |
+          ls -la
+          tasks/npmrc-use-${{ inputs.registry }}.sh > packages/.npmrc # using PAT
+          cd packages/
+          for f in `ls` ; do
+            npm --userconfig .npmrc publish $f --tag "latest"
+          done
+        env:
+          PAT: ${{ secrets.PAT }}
+
+      - name: Discord notify finished
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_RELEASE }}
+        uses: Ilshidur/action-discord@0c4b27844ba47cb1c7bee539c8eead5284ce9fa9
+        with:
+          args: |
+          🚢 Shipped! `${{ needs.setup.outputs.VERSION }}` ${{ needs.setup.outputs.RELEASE_HTML_URL }}

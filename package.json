@@ -1,5 +1,10 @@
 {
   "name": "@usekeyp/frontend-components",
   "private": true,
-  "workspaces": ["components-soft-ui", "tailwind-presets"]
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "lerna": "^6.4.0"
+  }
 }

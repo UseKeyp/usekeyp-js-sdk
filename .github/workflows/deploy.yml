@@ -1,0 +1,26 @@
+name: Deploy Component Library
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    name: Styleguidist Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Install packages
+        run: npm install
+      - name: Build the app w/styleguidist
+        working-directory: ./packages/components-soft-ui
+        run: styleguidist build --config styleguide.config.cjs
+      - name: Install Surge
+        working-directory: ./packages/components-soft-ui
+        run: npm install -g surge
+      - name: Deploy to surge
+        working-directory: ./packages/components-soft-ui
+        run: surge ./styleguide keyp-frontend-components.surge.sh/ --token ${{secrets.TOKEN}}
