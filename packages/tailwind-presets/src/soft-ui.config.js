@@ -443,7 +443,7 @@ module.exports =
                 backdropSaturate: ({theme}) => theme("saturate"),
                 backdropSepia: ({theme}) => theme("sepia"),
                 backgroundColor: ({theme}) => theme("colors"),
-                backgroundImage: ({theme}) => ({
+                backgroundImage: () => ({
                     none: "none",
                     "gradient-to-t": "linear-gradient(to top, var(--tw-gradient-stops))",
                     "gradient-to-tr": "linear-gradient(to top right, var(--tw-gradient-stops))",
@@ -639,7 +639,7 @@ module.exports =
                     none: "none",
                     0: "0 0 auto",
                 },
-                flexBasis: ({theme}) => ({
+                flexBasis: () => ({
                     auto: "auto",
                     "1/2": "50%",
                     "1/3": "33.333333%",
@@ -686,23 +686,13 @@ module.exports =
                 },
                 fontSize: {
                     inherit: "inherit",
-                    "3xs": ["0.5rem", {lineHeight: "1rem"}],
-                    xxs: ["0.65rem", {lineHeight: "1rem"}],
-                    xs: ["0.75rem", {lineHeight: "1rem"}],
-                    sm: ["0.875rem", {lineHeight: "1.5rem"}],
-                    base: ["1rem", {lineHeight: "1.5rem"}],
-                    lg: ["1.125rem", {lineHeight: "1.75rem"}],
-                    xl: ["1.25rem", {lineHeight: "1.75rem"}],
-                    "2xl": ["1.5rem", {lineHeight: "2rem"}],
-                    "3xl": ["1.875rem", {lineHeight: "2.25rem"}],
-                    "4xl": ["2.25rem", {lineHeight: "2.5rem"}],
-                    "5xl": ["3rem", {lineHeight: "1"}],
-                    "6xl": ["3.75rem", {lineHeight: "1"}],
-                    "7xl": ["4.5rem", {lineHeight: "1"}],
-                    "8xl": ["5rem", {lineHeight: "1"}],
-                    "9xl": ["6rem", {lineHeight: "1"}],
-                    "10xl": ["8rem", {lineHeight: "1"}],
-                    "size-banner-calculate": ["calc(1.625rem+4.5vw)"],
+                    xs: ["0.56rem", {lineHeight: "1.3rem"}],
+                    sm: ["0.75rem", {lineHeight: "1.3rem"}],
+                    base: ["1rem", {lineHeight: "1.3rem"}],
+                    lg: ["1.25rem", {lineHeight: "1.2rem"}],
+                    xl: ["1.38rem", {lineHeight: "1.3rem"}],
+                    "2xl": ["1.5rem", {lineHeight: "1.2rem"}],
+                    "3xl": ["2.13rem", {lineHeight: "1.2rem"}],
                 },
                 fontWeight: {
                     thin: "100",
@@ -831,7 +821,7 @@ module.exports =
                     5: "repeat(5, minmax(0, 1fr))",
                     6: "repeat(6, minmax(0, 1fr))",
                 },
-                height: ({theme}) => ({
+                height: () => ({
                     auto: "auto",
                     "1/2": "50%",
                     "1/3": "33.333333%",
@@ -913,8 +903,9 @@ module.exports =
                     wider: "0.05em",
                     widest: "0.1em",
                 },
-                lineHeight: ({theme}) => ({
+                lineHeight: () => ({
                     none: "1",
+                    form: "1rem",
                     tighter: "1.2",
                     tight: "1.25",
                     snug: "1.375",
@@ -1065,7 +1056,7 @@ module.exports =
                     4: "4px",
                     8: "8px",
                 },
-                ringOpacity: ({theme}) => ({
+                ringOpacity: () => ({
                     DEFAULT: "0.5",
                 }),
                 ringWidth: {
