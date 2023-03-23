@@ -22,5 +22,8 @@
   },
   "bugs": {
     "url": "https://github.com/UseKeyp/keyp-frontend-components/issues"
+  },
+  "dependencies": {
+    "react-styleguidist": "^13.1.1"
   }
 }
