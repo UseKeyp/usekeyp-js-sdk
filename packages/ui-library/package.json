@@ -18,6 +18,9 @@
     "url": "git+https://github.com/UseKeyp/keyp-frontend-components.git"
   },
   "scripts": {
+    "start": "styleguidist server --config styleguide.config.cjs",
+    "tailwindcss": "npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch",
+    "build": "styleguidist build --config styleguide.config.cjs",
     "test": "node ./__tests__/ui-library.test.js"
   },
   "bugs": {
@@ -25,5 +28,8 @@
   },
   "dependencies": {
     "react-styleguidist": "^13.1.1"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.2.7"
   }
 }
