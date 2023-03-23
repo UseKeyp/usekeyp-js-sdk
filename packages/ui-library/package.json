@@ -1,0 +1,35 @@
+{
+  "name": "ui-library",
+  "version": "0.1.1",
+  "description": "> TODO: description",
+  "author": "alekseevayana <alekseevayana@bk.ru>",
+  "homepage": "https://github.com/UseKeyp/keyp-frontend-components#readme",
+  "license": "ISC",
+  "main": "lib/ui-library.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UseKeyp/keyp-frontend-components.git"
+  },
+  "scripts": {
+    "start": "styleguidist server --config styleguide.config.cjs",
+    "tailwindcss": "npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch",
+    "build": "styleguidist build --config styleguide.config.cjs",
+    "test": "node ./__tests__/ui-library.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/UseKeyp/keyp-frontend-components/issues"
+  },
+  "dependencies": {
+    "react-styleguidist": "^13.1.1"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.2.7"
+  }
+}
