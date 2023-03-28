@@ -3295,7 +3295,7 @@
     "@typescript-eslint/types" "5.42.0"
     eslint-visitor-keys "^3.3.0"
 
-"@usekeyp/components-soft-ui@file:/Users/alekseevayana/programming/keyp/keyp-frontend-components/packages/components-soft-ui":
+"@usekeyp/components-soft-ui@^0.1.1", "@usekeyp/components-soft-ui@file:/Users/alekseevayana/programming/keyp/keyp-frontend-components/packages/components-soft-ui":
   version "0.1.1"
   resolved "file:packages/components-soft-ui"
   dependencies:
@@ -13272,6 +13272,7 @@ uglify-js@^3.1.4:
   version "0.1.1"
   resolved "file:packages/ui-library"
   dependencies:
+    "@usekeyp/components-soft-ui" "^0.1.1"
     react-styleguidist "^13.1.1"
 
 unbox-primitive@^1.0.2:

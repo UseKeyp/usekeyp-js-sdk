@@ -19,7 +19,7 @@
   },
   "scripts": {
     "start": "styleguidist server --config styleguide.config.cjs",
-    "tailwindcss": "npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch",
+    "tailwindcss": "npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch -c tailwind.config.cjs",
     "build": "styleguidist build --config styleguide.config.cjs",
     "test": "node ./__tests__/ui-library.test.js"
   },
@@ -27,7 +27,9 @@
     "url": "https://github.com/UseKeyp/keyp-frontend-components/issues"
   },
   "dependencies": {
-    "react-styleguidist": "^13.1.1"
+    "react-styleguidist": "^13.1.1",
+    "@usekeyp/components-soft-ui": "^0.1.1",
+    "@usekeyp/tailwind-presets": "^0.1.1"
   },
   "devDependencies": {
     "tailwindcss": "^3.2.7"
