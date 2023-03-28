@@ -10,28 +10,29 @@ take provider and depending on a provider give button and icon props: background
 */
 
 const LoginButton = ({ provider }) => {
-  /*
-    if provider === 'discord' => hover background color is..., hover icon color is...
-    if provider === 'twitter'
-  */
-  const hoverColor = () => {
-    if (provider === "discord") {
-      return "#5865F2";
-    }
+  const colorVariants = {
+    discord: "hover:bg-[#5865F2]",
+    twitter: "hover:bg-[#1DA1F2]",
+    google: "hover:bg-[#4285F4]",
   };
   return (
     <div className="mb-4">
       <Button
         size="regular"
         fluid={true}
-        classNameVariant={`justify-start bg-[white] hover:bg-[#5865F2] hover:text-white`}
+        classNameVariant={`justify-start bg-[white]  hover:text-white 
+        ${provider === "discord" && colorVariants.discord}
+        ${provider === "twitter" && colorVariants.twitter}
+        ${provider === "google" && colorVariants.google}
+        `}
         borderColor="#E9EBED"
+        textColor="text-[#80858E]"
       >
         <div className="flex">
           <div className="mr-4 ml-2">
             <Icon name={provider}></Icon>
           </div>
-          <div className="text-[#80858E] hover:text-white leading-[130%] text-base font-normal capitalize">
+          <div className=" leading-[130%] text-base font-normal capitalize">
             {provider}
           </div>
         </div>
