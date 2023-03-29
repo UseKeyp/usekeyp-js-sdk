@@ -1,6 +1,6 @@
 ```jsx
 <LoginPortal
   providers={["discord", "google", "twitter"]}
-  additionalProviders={["twitch"]}
+  additionalProviders={["apple", "twitter", "apple"]}
 />
 ```
