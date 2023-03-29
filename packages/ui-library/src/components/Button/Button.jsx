@@ -82,6 +82,7 @@ const Button = ({
       alt={alt || ""}
       {...rest}
     >
+      {console.log("fluid", fluid)}
       {label || children}
     </Element>
   );
