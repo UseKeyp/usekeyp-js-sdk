@@ -2,11 +2,15 @@ import LoginButton from "../LoginButton/LoginButton";
 import LoginFrame from "../LoginFrame/LoginFrame";
 import { MoreAccordion } from "../MoreAccordion/MoreAccordion";
 
-const LoginPortal = ({ providers, additionalProviders }) => {
+const LoginPortal = ({ providers, additionalProviders, onClick }) => {
   return (
     <LoginFrame>
       {providers.map((provider) => (
-        <LoginButton provider={provider} key={provider}></LoginButton>
+        <LoginButton
+          provider={provider}
+          key={provider}
+          onClick={onClick}
+        ></LoginButton>
       ))}
       {additionalProviders && (
         <div className="mb-4">
@@ -18,6 +22,7 @@ const LoginPortal = ({ providers, additionalProviders }) => {
                     provider={provider}
                     key={provider}
                     size="square"
+                    onClick={onClick}
                   ></LoginButton>
                 );
               })}

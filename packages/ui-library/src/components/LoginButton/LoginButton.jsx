@@ -1,7 +1,7 @@
 import Button from "../Button/Button";
 import Icon from "../Icon/Icon";
 
-const LoginButton = ({ provider, size }) => {
+const LoginButton = ({ provider, size, onClick }) => {
   const colorVariants = {
     discord: "hover:bg-[#5865F2]",
     twitter: "hover:bg-[#1DA1F2]",
@@ -29,7 +29,9 @@ const LoginButton = ({ provider, size }) => {
       {size === "square" ? (
         <Button
           size={size}
-          classNameVariant={`justify-center bg-[white] 
+          onClick={onClick}
+          classNameVariant={`justify-center bg-[white]
+          
         ${getHoverBg()}
         `}
           borderColor="#E9EBED"
@@ -43,6 +45,7 @@ const LoginButton = ({ provider, size }) => {
         <Button
           size={size}
           fluid={true}
+          onClick={onClick}
           classNameVariant={`justify-start bg-[white]  hover:text-white 
           ${getHoverBg()}
         `}
