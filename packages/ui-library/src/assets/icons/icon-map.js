@@ -424,7 +424,46 @@ const Twitter = () => {
   );
 };
 
+const ArrowUp = ({ height, width }) => {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 15 8"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M0.333374 6.71849L7.33338 -3.57351e-08L14.3334 6.71849L12.9982 8L7.33338 2.56302L1.66858 8L0.333374 6.71849Z"
+        fill="#B0B6C1"
+      />
+    </svg>
+  );
+};
+const ArrowDown = ({ height, width }) => {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 14 8"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M14 1.28151L7 8L-5.60165e-08 1.28151L1.3352 -5.53596e-07L7 5.43698L12.6648 -5.83637e-08L14 1.28151Z"
+        fill="#B0B6C1"
+      />
+    </svg>
+  );
+};
+
 const iconMap = {
+  arrow_up: ArrowUp,
+  arrow_down: ArrowDown,
   chess_com: ChessCom,
   copy: Copy,
   keypnameandlogo: KeypNameAndLogo,
