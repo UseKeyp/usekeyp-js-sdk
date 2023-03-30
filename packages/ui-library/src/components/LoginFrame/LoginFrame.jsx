@@ -3,7 +3,7 @@ import Icon from "../Icon/Icon";
 const LoginFrame = ({ children }) => {
   return (
     <div className="border rounded-[6px] border-[#E5E7EB] max-w-[357px] p-6">
-      <div className="font-normal text-base text-[#63676F] leading-[130%] mb-4">
+      <div className="font-normal text-base text-gray-1600 mb-4">
         Log in with
       </div>
       <div>{children}</div>

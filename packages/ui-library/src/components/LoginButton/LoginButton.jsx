@@ -30,12 +30,12 @@ const LoginButton = ({ provider, size, onClick }) => {
         <Button
           size={size}
           onClick={onClick}
-          classNameVariant={`justify-center bg-[white]
+          classNameVariant={`justify-center bg-white
           
         ${getHoverBg()}
         `}
-          borderColor="#E9EBED"
-          textColor="text-[#80858E]"
+          borderColor="border-gray-200"
+          textColor="text-gray-1200"
         >
           <div className="flex justify-center">
             <Icon name={provider} />
@@ -46,19 +46,17 @@ const LoginButton = ({ provider, size, onClick }) => {
           size={size}
           fluid={true}
           onClick={onClick}
-          classNameVariant={`justify-start bg-[white]  hover:text-white 
+          classNameVariant={`justify-start bg-white  hover:text-white 
           ${getHoverBg()}
         `}
-          borderColor="#E9EBED"
-          textColor="text-[#80858E]"
+          borderColor="border-gray-200"
+          textColor="text-gray-1200"
         >
           <div className="flex mr-4 ml-2">
             <div className="mr-2">
               <Icon name={provider} className="mr-2" />
             </div>
-            <div className=" leading-[130%] text-base font-normal capitalize">
-              {provider}
-            </div>
+            <div className="text-base font-normal capitalize">{provider}</div>
           </div>
         </Button>
       )}
