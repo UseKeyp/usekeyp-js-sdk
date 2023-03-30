@@ -461,11 +461,85 @@ const ArrowDown = ({ height, width }) => {
   );
 };
 
+const ImageMark = ({ width, height }) => {
+  return (
+    <svg
+      id="image-mark-stroke"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      viewBox="0 0 17.94 17.94"
+      shape-rendering="geometricPrecision"
+      text-rendering="geometricPrecision"
+    >
+      <g
+        id="image-mark-stroke-u-line_tr"
+        transform="translate(8.959798,8.979207) rotate(0)"
+      >
+        <g
+          id="image-mark-stroke-u-line"
+          transform="translate(-8.959797,-8.979206)"
+        >
+          <path
+            id="image-mark-stroke-u-05"
+            d="M3.94,13.05c-2.27-2.78-1.85-6.87.93-9.13c1.85-1.51,4.29-1.83,6.38-1.05"
+            fill="none"
+            stroke="#ffffff"
+            stroke-width="1.25"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            id="image-mark-stroke-u-04"
+            d="M13.05,14c-1.28,1.06-2.96,1.64-4.74,1.47-.89-.08-1.72-.34-2.47-.74"
+            opacity="0.8"
+            fill="none"
+            stroke="#ffffff"
+            stroke-width="1.25"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            id="image-mark-stroke-u-03"
+            d="M15.43,8.5c.08,1.31-.24,2.59-.88,3.68"
+            opacity="0.7"
+            fill="none"
+            stroke="#ffffff"
+            stroke-width="1.25"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            id="image-mark-stroke-u-02"
+            d="M14.63,5.93c.1.19.19.39.27.59"
+            opacity="0.6"
+            fill="none"
+            stroke="#ffffff"
+            stroke-width="1.25"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            id="image-mark-stroke-u-01"
+            d="M13.2,4.09c0,0,.01,0,0-.02s0-.01-.02,0"
+            opacity="0"
+            fill="none"
+            stroke="#ffffff"
+            stroke-width="1.25"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </g>
+      </g>
+    </svg>
+  );
+};
+
 const iconMap = {
   arrow_up: ArrowUp,
   arrow_down: ArrowDown,
   chess_com: ChessCom,
   copy: Copy,
+  image_mark: ImageMark,
   keypnameandlogo: KeypNameAndLogo,
   tooltip: Tooltip,
   smilingFace: SmilingFace,
