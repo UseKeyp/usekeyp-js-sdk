@@ -10,11 +10,16 @@ module.exports = {
           200: "#E9EBED",
           300: "#DCDEE0",
           400: "#C5C8CC",
-          800: "#B0BBC1",
+          800: "#B0B6C1",
           1200: "#80858E",
           1600: "#63676F",
           2000: "#4A4D53",
           2400: "#3A3C41",
+        },
+        brand: {
+          discord: "#5865F2",
+          google: "#4285F4",
+          twitter: "#1DA1F2",
         },
       },
       fontWeight: {

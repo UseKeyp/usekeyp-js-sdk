@@ -3,9 +3,9 @@ import Icon from "../Icon/Icon";
 
 const LoginButton = ({ provider, size, onClick }) => {
   const colorVariants = {
-    discord: "hover:bg-[#5865F2]",
-    twitter: "hover:bg-[#1DA1F2]",
-    google: "hover:bg-[#4285F4]",
+    discord: "hover:bg-brand-discord",
+    twitter: "hover:bg-brand-twitter",
+    google: "hover:bg-brand-google",
     apple: "hover:bg-black",
     black: "hover:bg-black",
   };

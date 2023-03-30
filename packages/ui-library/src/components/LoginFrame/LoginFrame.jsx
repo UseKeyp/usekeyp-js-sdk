@@ -2,13 +2,13 @@ import Icon from "../Icon/Icon";
 
 const LoginFrame = ({ children }) => {
   return (
-    <div className="border rounded-[6px] border-[#E5E7EB] max-w-[357px] p-6">
+    <div className="border rounded-[6px] border-gray-200 max-w-[357px] p-6">
       <div className="font-normal text-base text-gray-1600 mb-4">
         Log in with
       </div>
       <div>{children}</div>
       <div className="flex">
-        <div className="font-normal text-[9px] text-[#B0B6C1] mr-0.5">
+        <div className="font-normal text-[9px] text-gray-800 mr-0.5">
           Powered by{" "}
         </div>
         <div className="flex mt-px">
