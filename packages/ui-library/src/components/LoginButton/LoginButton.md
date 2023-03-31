@@ -1,5 +1,5 @@
 ```jsx
 <div>
-  <LoginButton label="discord" provider="discord"></LoginButton>
+  <LoginButton label="discord" provider="discord" loading="true"></LoginButton>
 </div>
 ```

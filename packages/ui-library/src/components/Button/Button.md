@@ -8,16 +8,15 @@ import Icon from "../Icon/Icon";
     <Button
       size="regular"
       fluid={true}
-      classNameVariant={`justify-start bg-[white] hover:bg-[#5865F2] hover:text-white`}
-      borderColor="#E9EBED"
+      classNameVariant={`justify-start bg-white hover:text-white hover:bg-brand-discord`}
+      borderColor="border-gray-200"
+      textColor="text-gray-1200"
     >
       <div className="flex">
-        <div className="mr-4 ml-2">
+        <div className="mr-2 ml-2">
           <Icon name="discord"></Icon>
         </div>
-        <div className="text-[#80858E] hover:text-white leading-[130%] text-base font-normal capitalize">
-          Discord
-        </div>
+        <div className="text-base font-normal capitalize">Discord</div>
       </div>
     </Button>
   </div>
