@@ -19,7 +19,7 @@
   },
   "scripts": {
     "start": "styleguidist server --config styleguide.config.cjs",
-    "tailwindcss": "npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch",
+    "tailwindcss": "npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch -c tailwind.config.cjs",
     "build": "styleguidist build --config styleguide.config.cjs",
     "test": "node ./__tests__/ui-library.test.js"
   },
