@@ -461,7 +461,7 @@ const ArrowDown = ({ height, width }) => {
   );
 };
 
-const ImageMark = ({ width, height }) => {
+const LoadingAnimated = ({ width, height }) => {
   return (
     <>
       <style>
@@ -498,37 +498,73 @@ const ImageMark = ({ width, height }) => {
             }
           }
 
-          @keyframes image-mark-stroke-u-05_s_do { 0% {stroke-dashoffset: 16.966138} 
-	25% {stroke-dashoffset: 16.966138;animation-timing-function: cubic-bezier(0.27,0.02,0.335,0.995)} 
-	68.75% {stroke-dashoffset: 0} 100% {stroke-dashoffset: 0}}
+          @keyframes image-mark-stroke-u-05_s_do { 
+            0% {
+              stroke-dashoffset: 16.966138
+            } 
+	          25% {
+              stroke-dashoffset: 16.966138;
+              animation-timing-function: cubic-bezier(0.27,0.02,0.335,0.995)
+            } 
+	          68.75% {
+              stroke-dashoffset: 0
+            } 
+            100% {
+              stroke-dashoffset: 0
+            }
+          }
 
-  @keyframes image-mark-stroke-u-04_s_do { 
-	0% {stroke-dashoffset: 7.689743} 
-	18.75% {stroke-dashoffset: 7.689743;animation-timing-function: cubic-bezier(0.455,0.03,0.515,0.955)} 
-	37.5% {stroke-dashoffset: 0} 
-	100% {stroke-dashoffset: 0}} 
+          @keyframes image-mark-stroke-u-04_s_do { 
+	          0% {
+              stroke-dashoffset: 7.689743
+            } 
+	          18.75% {
+              stroke-dashoffset: 7.689743;
+              animation-timing-function: cubic-bezier(0.455,0.03,0.515,0.955)
+            } 
+	          37.5% {
+              stroke-dashoffset: 0
+            } 
+	          100% {
+              stroke-dashoffset: 0
+            }
+          } 
 
-  @keyframes image-mark-stroke-u-03_s_do { 
-		0% {stroke-dashoffset: 3.839496} 
-		12.5% {stroke-dashoffset: 3.839496;animation-timing-function: cubic-bezier(0.645,0.045,0.355,1)} 
-		25% {stroke-dashoffset: 0} 
-		100% {stroke-dashoffset: 0}} 
+          @keyframes image-mark-stroke-u-03_s_do { 
+            0% {stroke-dashoffset: 3.839496} 
+            12.5% {stroke-dashoffset: 3.839496;animation-timing-function: cubic-bezier(0.645,0.045,0.355,1)} 
+            25% {stroke-dashoffset: 0} 
+            100% {stroke-dashoffset: 0}} 
 
-    @keyframes image-mark-stroke-u-02_s_do { 
-		0% {stroke-dashoffset: 0.649135} 
-		6.25% {stroke-dashoffset: 0.649135;animation-timing-function: cubic-bezier(0.645,0.045,0.355,1)} 
-		18.75% {stroke-dashoffset: 0} 
-		100% {stroke-dashoffset: 0}} 
+          @keyframes image-mark-stroke-u-02_s_do { 
+            0% {stroke-dashoffset: 0.649135} 
+            6.25% {stroke-dashoffset: 0.649135;animation-timing-function: cubic-bezier(0.645,0.045,0.355,1)} 
+            18.75% {stroke-dashoffset: 0} 
+            100% {stroke-dashoffset: 0}} 
 
-    @keyframes image-mark-stroke-u-01_c_o { 
-			0% {opacity: 0;animation-timing-function: cubic-bezier(0.645,0.045,0.355,1)} 
-			12.5% {opacity: 1} 
-			100% {opacity: 1}}
-			@keyframes image-mark-stroke-u-01_s_do { 
-			0% {stroke-dashoffset: 0.054686} 
-			12.5% {stroke-dashoffset: 0} 
-			100% {stroke-dashoffset: 0}}
-          /* Add the rest of the keyframes following the same pattern as above */
+          @keyframes image-mark-stroke-u-01_c_o { 
+            0% {
+              opacity: 0;
+              animation-timing-function: cubic-bezier(0.645,0.045,0.355,1)
+            } 
+            12.5% {
+              opacity: 1
+            } 
+            100% {
+              opacity: 1
+            }
+          }
+			    @keyframes image-mark-stroke-u-01_s_do { 
+            0% {
+              stroke-dashoffset: 0.054686
+            } 
+            12.5% {
+              stroke-dashoffset: 0
+            } 
+            100% {
+              stroke-dashoffset: 0
+            }
+          }
         `}
       </style>
       <svg
@@ -538,6 +574,8 @@ const ImageMark = ({ width, height }) => {
         viewBox="0 0 17.94 17.94"
         shape-rendering="geometricPrecision"
         text-rendering="geometricPrecision"
+        width={width}
+        height={height}
       >
         <g
           id="image-mark-stroke-u-line_tr"
@@ -640,7 +678,7 @@ const iconMap = {
   arrow_down: ArrowDown,
   chess_com: ChessCom,
   copy: Copy,
-  image_mark: ImageMark,
+  loading_animated: LoadingAnimated,
   keypnameandlogo: KeypNameAndLogo,
   tooltip: Tooltip,
   smilingFace: SmilingFace,
