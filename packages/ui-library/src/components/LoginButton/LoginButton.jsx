@@ -51,7 +51,7 @@ const LoginButton = ({ provider, size, onClick, loading }) => {
           textColor="text-gray-1200"
         >
           <div className="flex items-center mr-4 ml-2 w-full">
-            <div className="mr-2">
+            <div className="mr-4">
               <Icon name={provider} className="mr-2" />
             </div>
             <div className="text-base font-normal capitalize">{provider}</div>
