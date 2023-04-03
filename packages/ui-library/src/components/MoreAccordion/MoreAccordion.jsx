@@ -10,7 +10,7 @@ export const MoreAccordion = ({ title, children }) => {
         className="flex items-center pt-3 px-3 justify-between cursor-pointer"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <h2 className="text-base text-gray-2400 font-normal">{title}</h2>
+        <h2 className="text-base text-gray-1200 font-normal">{title}</h2>
         <button className="flex items-center justify-center rounded-full">
           {isOpen ? (
             <Icon key="arrow_up" name="arrow_up" height="8" width="14" />
