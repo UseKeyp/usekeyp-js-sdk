@@ -100,7 +100,7 @@ jobs:
       - name: Publish packages to registry
         shell: bash
         run: |
-          tasks/npmrc-use-github.sh > packages/.npmrc # using PAT
+          tasks/npmrc-use-npm.sh > packages/.npmrc # using NPM_PAT
           cd packages/
           ls -la
           ls
@@ -109,7 +109,7 @@ jobs:
             npm --userconfig .npmrc publish "$f"/ --tag "latest"
           ) done
         env:
-          PAT: ${{ secrets.PAT }}
+          PAT: ${{ secrets.NPM_PAT }}
       - name: Discord notify finished
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_RELEASE }}
