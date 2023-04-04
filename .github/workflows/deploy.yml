@@ -13,19 +13,19 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: "18"
       - name: Install packages
         working-directory: ./packages/components-soft-ui
         run: npm install
       - name: Generate CSS Output
-        working-directory: ./packages/components-soft-ui
+        working-directory: ./packages/ui-library
         run: npx tailwindcss -i ./src/index.css -o ./dist/output.css
       - name: Build the app w/styleguidist
-        working-directory: ./packages/components-soft-ui
+        working-directory: ./packages/ui-library
         run: ../../node_modules/.bin/styleguidist build --config styleguide.config.cjs
       - name: Install Surge
-        working-directory: ./packages/components-soft-ui
+        working-directory: ./packages/ui-library
         run: npm install -g surge
       - name: Deploy to surge
-        working-directory: ./packages/components-soft-ui
-        run: surge ./styleguide keyp-frontend-components.surge.sh/ --token ${{secrets.TOKEN}}
+        working-directory: ./packages/ui-library
+        run: surge ./styleguide keyp-ui-library.surge.sh/ --token ${{secrets.TOKEN}}
