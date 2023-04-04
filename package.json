@@ -1,5 +1,5 @@
 {
-  "name": "@usekeyp/frontend-components",
+  "name": "@usekeyp/ui-library",
   "private": true,
   "workspaces": [
     "packages/*"
