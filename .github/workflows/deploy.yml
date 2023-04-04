@@ -27,5 +27,11 @@ jobs:
         working-directory: ./packages/ui-library
         run: npm install -g surge
       - name: Deploy to surge
-        working-directory: ./packages/ui-library
-        run: surge ./styleguide keyp-ui-library.surge.sh/ --token ${{secrets.TOKEN}}
+        working-directory: ./packages/components-soft-ui
+        run: surge ./styleguide keyp-frontend-components.surge.sh/ --token ${{secrets.TOKEN}}
+      - name: Discord notify finished
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_RELEASE }}
+        uses: Ilshidur/action-discord@0c4b27844ba47cb1c7bee539c8eead5284ce9fa9
+        with:
+          args: 🚢 Shipped! `${{ github.repository }}` New surge deployment https://keyp-ui-library-test.surge.sh

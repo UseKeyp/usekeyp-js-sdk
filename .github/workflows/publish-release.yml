@@ -6,9 +6,9 @@ on:
   workflow_dispatch:
     inputs:
       image_tag_prefix:
-        description: 'Image Tag Prefix (prod or staging)'
+        description: "Image Tag Prefix (prod or staging)"
         required: true
-        default: 'staging'
+        default: "staging"
 env:
   ENVIRONMENT: ${{ github.event.inputs.image_tag_prefix }}
   GITHUB_SHA: ${{ github.sha }}
@@ -74,44 +74,45 @@ jobs:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_RELEASE }}
         uses: Ilshidur/action-discord@0c4b27844ba47cb1c7bee539c8eead5284ce9fa9
         with:
-          args: 🏭 Building packages for ${{ github.repository }}... `${{ steps.get_version.outputs.VERSION }}`
+          args: 🏭 Building packages for `${{ github.repository }}` __${{ steps.get_version.outputs.VERSION }}__
 
-      - name: Build package
-        shell: bash
         # NOTE: Building is unnecessary for now
-        run: yarn lerna exec --no-bail --no-private -- exit 0
-      
+      # - name: Build package
+      #   shell: bash
+      #   run: yarn && yarn lerna exec --no-bail --no-private -- exit 0
+
       - name: Create packages
         shell: bash
         run: |
-          dirName="bin/"
+          dirName="bin"
           mkdir -p $dirName
           for d in packages/*/ ; do (
             cd "$d"
             tgz=$(npm pack)
-            cp $tgz "../$dirName/"
+            cp $tgz "../../$dirName/"
           ) done
           cd $dirName
           sha="${{ github.event.pull_request.head.sha }}"
           for f in * ; do
             mv -- "$f" "${f%.tgz}-${sha:0:7}.tgz"
           done
-          
+
       - name: Publish packages to registry
         shell: bash
         run: |
-          ls -la
-          tasks/npmrc-use-${{ inputs.registry }}.sh > packages/.npmrc # using PAT
+          tasks/npmrc-use-npm.sh > packages/.npmrc # using NPM_PAT
           cd packages/
-          for f in `ls` ; do
-            npm --userconfig .npmrc publish $f --tag "latest"
-          done
+          ls -la
+          ls
+          for f in `ls` ; do (
+            echo $f
+            npm --userconfig .npmrc publish "$f"/ --tag "latest"
+          ) done
         env:
-          PAT: ${{ secrets.PAT }}
-
+          PAT: ${{ secrets.NPM_PAT }}
       - name: Discord notify finished
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_RELEASE }}
         uses: Ilshidur/action-discord@0c4b27844ba47cb1c7bee539c8eead5284ce9fa9
         with:
-          args: 🚢 Shipped! `${{ needs.setup.outputs.VERSION }}` ${{ needs.setup.outputs.RELEASE_HTML_URL }}
+          args: 🚢 Shipped! `${{ github.repository }}` __${{ steps.get_version.outputs.VERSION }}__ ${{ steps.get_release.outputs.html_url }}
