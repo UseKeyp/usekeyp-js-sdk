@@ -2,37 +2,47 @@ import { useState } from "react";
 import Button from "../Button/Button";
 import Icon from "../Icon/Icon";
 
-const LoginButton = ({ provider, size, onClick, loading }) => {
-  const colorVariants = {
-    discord: "hover:bg-brand-discord",
-    twitter: "hover:bg-brand-twitter",
-    google: "hover:bg-brand-google",
-    apple: "hover:bg-black",
-    black: "hover:bg-black",
+const colorVariants = {
+  discord: "hover:bg-brand-discord",
+  twitter: "hover:bg-brand-twitter",
+  google: "hover:bg-brand-google",
+  apple: "hover:bg-black",
+  black: "hover:bg-black",
+};
+
+const getHoverBg = (provider) => {
+  switch (provider) {
+    case "discord":
+      return colorVariants.discord;
+    case "twitter":
+      return colorVariants.twitter;
+    case "google":
+      return colorVariants.google;
+    case "apple":
+      return colorVariants.apple;
+    default:
+      return colorVariants.black;
+  }
+};
+
+const LoginButton = ({ provider, size, onLogin }) => {
+  const [loading, setLoading] = useState(false);
+
+  const handleClick = () => {
+    setLoading(!loading);
+    onLogin(provider);
   };
 
-  const getHoverBg = () => {
-    switch (provider) {
-      case "discord":
-        return colorVariants.discord;
-      case "twitter":
-        return colorVariants.twitter;
-      case "google":
-        return colorVariants.google;
-      case "apple":
-        return colorVariants.apple;
-      default:
-        return colorVariants.black;
-    }
-  };
+  const hoverBg = getHoverBg(provider);
+
   return (
     <div className="mb-4">
       {size === "square" ? (
         <Button
           size={size}
-          onClick={onClick}
+          onClick={handleClick}
           classNameVariant={`justify-center bg-white
-          ${getHoverBg()}`}
+          ${hoverBg}`}
           borderColor="border-gray-200"
           textColor="text-gray-1200"
         >
@@ -48,9 +58,9 @@ const LoginButton = ({ provider, size, onClick, loading }) => {
         <Button
           size={size}
           fluid={true}
-          onClick={onClick}
+          onClick={handleClick}
           classNameVariant={`justify-start bg-white hover:text-white 
-          ${getHoverBg()}
+          ${hoverBg}
         `}
           borderColor="border-gray-200"
           textColor="text-gray-1200"

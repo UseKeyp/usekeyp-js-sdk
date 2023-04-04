@@ -9,7 +9,7 @@ const LoginPortal = ({ providers, additionalProviders, onClick }) => {
         <LoginButton
           provider={provider}
           key={provider}
-          onClick={onClick}
+          onLogin={onClick}
         ></LoginButton>
       ))}
       {additionalProviders && (
@@ -22,7 +22,7 @@ const LoginPortal = ({ providers, additionalProviders, onClick }) => {
                     provider={provider}
                     key={provider}
                     size="square"
-                    onClick={onClick}
+                    onLogin={onClick}
                   ></LoginButton>
                 );
               })}
