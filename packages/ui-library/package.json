@@ -5,14 +5,7 @@
   "author": "alekseevayana <alekseevayana@bk.ru>",
   "homepage": "https://github.com/UseKeyp/keyp-frontend-components#readme",
   "license": "ISC",
-  "main": "lib/ui-library.js",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
-  },
-  "files": [
-    "lib"
-  ],
+  "main": "src/components/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/UseKeyp/keyp-frontend-components.git"
