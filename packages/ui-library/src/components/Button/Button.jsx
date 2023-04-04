@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "@redwoodjs/router";
 import PropTypes from "prop-types";
 
 /**
