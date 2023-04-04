@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Button from "../Button/Button";
 import Icon from "../Icon/Icon";
 
@@ -36,7 +37,11 @@ const LoginButton = ({ provider, size, onClick, loading }) => {
           textColor="text-gray-1200"
         >
           <div className="flex justify-center">
-            <Icon name={provider} />
+            {loading ? (
+              <Icon name="loading_animated" width="30" height="30" />
+            ) : (
+              <Icon name={provider} />
+            )}
           </div>
         </Button>
       ) : (
