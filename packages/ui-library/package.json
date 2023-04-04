@@ -5,6 +5,7 @@
   "author": "alekseevayana <alekseevayana@bk.ru>",
   "homepage": "https://github.com/UseKeyp/keyp-frontend-components#readme",
   "license": "ISC",
+  "type": "module",
   "main": "src/components/index.js",
   "repository": {
     "type": "git",
