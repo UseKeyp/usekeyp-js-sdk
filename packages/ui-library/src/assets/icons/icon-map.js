@@ -1,3 +1,5 @@
+import "./icons.css";
+
 const Apple = () => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="21" height="24" fill="none">
@@ -462,214 +464,88 @@ const ArrowDown = ({ height, width }) => {
 };
 
 const LoadingAnimated = ({ width, height }) => {
+  console.log("svg", width, height);
   return (
-    <>
-      <style>
-        {`
-          @keyframes image-mark-stroke-u-line_tr__tr {
-            0% {
-              transform: translate(8.959798px, 8.979207px) rotate(0deg);
-            }
-            37.5% {
-              transform: translate(8.959798px, 8.979207px) rotate(0deg);
-              animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
-            }
-            93.75% {
-              transform: translate(8.959798px, 8.979207px) rotate(360deg);
-            }
-            100% {
-              transform: translate(8.959798px, 8.979207px) rotate(360deg);
-            }
-          }
-
-          @keyframes image-mark-stroke-u-line_c_o { 
-	          0% {
-              opacity: 1
-            } 
-	          56.25% {
-              opacity: 1;
-              animation-timing-function: cubic-bezier(0.455,0.03,0.515,0.955)
-            } 
-	          93.75% {
-              opacity: 0
-            } 
-            100% {
-              opacity: 0
-            }
-          }
-
-          @keyframes image-mark-stroke-u-05_s_do { 
-            0% {
-              stroke-dashoffset: 16.966138
-            } 
-	          25% {
-              stroke-dashoffset: 16.966138;
-              animation-timing-function: cubic-bezier(0.27,0.02,0.335,0.995)
-            } 
-	          68.75% {
-              stroke-dashoffset: 0
-            } 
-            100% {
-              stroke-dashoffset: 0
-            }
-          }
-
-          @keyframes image-mark-stroke-u-04_s_do { 
-	          0% {
-              stroke-dashoffset: 7.689743
-            } 
-	          18.75% {
-              stroke-dashoffset: 7.689743;
-              animation-timing-function: cubic-bezier(0.455,0.03,0.515,0.955)
-            } 
-	          37.5% {
-              stroke-dashoffset: 0
-            } 
-	          100% {
-              stroke-dashoffset: 0
-            }
-          } 
-
-          @keyframes image-mark-stroke-u-03_s_do { 
-            0% {stroke-dashoffset: 3.839496} 
-            12.5% {stroke-dashoffset: 3.839496;animation-timing-function: cubic-bezier(0.645,0.045,0.355,1)} 
-            25% {stroke-dashoffset: 0} 
-            100% {stroke-dashoffset: 0}} 
-
-          @keyframes image-mark-stroke-u-02_s_do { 
-            0% {stroke-dashoffset: 0.649135} 
-            6.25% {stroke-dashoffset: 0.649135;animation-timing-function: cubic-bezier(0.645,0.045,0.355,1)} 
-            18.75% {stroke-dashoffset: 0} 
-            100% {stroke-dashoffset: 0}} 
-
-          @keyframes image-mark-stroke-u-01_c_o { 
-            0% {
-              opacity: 0;
-              animation-timing-function: cubic-bezier(0.645,0.045,0.355,1)
-            } 
-            12.5% {
-              opacity: 1
-            } 
-            100% {
-              opacity: 1
-            }
-          }
-			    @keyframes image-mark-stroke-u-01_s_do { 
-            0% {
-              stroke-dashoffset: 0.054686
-            } 
-            12.5% {
-              stroke-dashoffset: 0
-            } 
-            100% {
-              stroke-dashoffset: 0
-            }
-          }
-        `}
-      </style>
-      <svg
-        id="image-mark-stroke"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlnsXlink="http://www.w3.org/1999/xlink"
-        viewBox="0 0 17.94 17.94"
-        shape-rendering="geometricPrecision"
-        text-rendering="geometricPrecision"
-        width={width}
-        height={height}
+    <svg
+      id="image-mark-stroke"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      viewBox="0 0 17.94 17.94"
+      shape-rendering="geometricPrecision"
+      text-rendering="geometricPrecision"
+      width={width}
+      height={height}
+    >
+      <g
+        id="image-mark-stroke-u-line_tr"
+        transform="translate(8.959798,8.979207) rotate(0)"
       >
         <g
-          id="image-mark-stroke-u-line_tr"
-          style={{
-            animation:
-              "image-mark-stroke-u-line_tr__tr 1600ms linear infinite normal forwards",
-          }}
-          transform="translate(8.959798,8.979207) rotate(0)"
+          id="image-mark-stroke-u-line"
+          transform="translate(-8.959797,-8.979206)"
         >
-          <g
-            id="image-mark-stroke-u-line"
-            style={{
-              animation:
-                "image-mark-stroke-u-line_c_o 1600ms linear infinite normal forwards",
-            }}
-            transform="translate(-8.959797,-8.979206)"
-          >
-            <path
-              id="image-mark-stroke-u-05"
-              style={{
-                animation:
-                  "image-mark-stroke-u-05_s_do 1600ms linear infinite normal forwards",
-              }}
-              d="M3.94,13.05c-2.27-2.78-1.85-6.87.93-9.13c1.85-1.51,4.29-1.83,6.38-1.05"
-              fill="none"
-              stroke="#ffffff"
-              stroke-width="1.25"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              id="image-mark-stroke-u-04"
-              style={{
-                animation:
-                  "image-mark-stroke-u-04_s_do 1600ms linear infinite normal forwards",
-              }}
-              d="M13.05,14c-1.28,1.06-2.96,1.64-4.74,1.47-.89-.08-1.72-.34-2.47-.74"
-              opacity="0.8"
-              fill="none"
-              stroke="#ffffff"
-              stroke-width="1.25"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              id="image-mark-stroke-u-03"
-              style={{
-                animation:
-                  "image-mark-stroke-u-03_s_do 1600ms linear infinite normal forwards",
-              }}
-              d="M15.43,8.5c.08,1.31-.24,2.59-.88,3.68"
-              opacity="0.7"
-              fill="none"
-              stroke="#ffffff"
-              stroke-width="1.25"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              id="image-mark-stroke-u-02"
-              style={{
-                animation: "",
-              }}
-              d="M14.63,5.93c.1.19.19.39.27.59"
-              opacity="0.6"
-              fill="none"
-              stroke="#ffffff"
-              stroke-width="1.25"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              id="image-mark-stroke-u-01"
-              style={{
-                animationName:
-                  "image-mark-stroke-u-01_c_o, image-mark-stroke-u-01_s_do",
-                animationDuration: "1600ms",
-                animationFillMode: "forwards",
-                animationTimingFunction: "linear",
-                animationDirection: "normal",
-                animationIterationCount: "infinite",
-              }}
-              d="M13.2,4.09c0,0,.01,0,0-.02s0-.01-.02,0"
-              opacity="0"
-              fill="none"
-              stroke="#ffffff"
-              stroke-width="1.25"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </g>
+          <path
+            id="image-mark-stroke-u-05"
+            d="M3.94,13.05c-2.27-2.78-1.85-6.87.93-9.13c1.85-1.51,4.29-1.83,6.38-1.05"
+            fill="none"
+            stroke="#ffffff"
+            stroke-width="1.25"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-dashoffset="16.966138"
+            stroke-dasharray="16.966138"
+          />
+          <path
+            id="image-mark-stroke-u-04"
+            d="M13.05,14c-1.28,1.06-2.96,1.64-4.74,1.47-.89-.08-1.72-.34-2.47-.74"
+            opacity="0.8"
+            fill="none"
+            stroke="#ffffff"
+            stroke-width="1.25"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-dashoffset="7.689743"
+            stroke-dasharray="7.689743"
+          />
+          <path
+            id="image-mark-stroke-u-03"
+            d="M15.43,8.5c.08,1.31-.24,2.59-.88,3.68"
+            opacity="0.7"
+            fill="none"
+            stroke="#ffffff"
+            stroke-width="1.25"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-dashoffset="3.839496"
+            stroke-dasharray="3.839496"
+          />
+          <path
+            id="image-mark-stroke-u-02"
+            d="M14.63,5.93c.1.19.19.39.27.59"
+            opacity="0.6"
+            fill="none"
+            stroke="#ffffff"
+            stroke-width="1.25"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-dashoffset="0.649135"
+            stroke-dasharray="0.649135"
+          />
+          <path
+            id="image-mark-stroke-u-01"
+            d="M13.2,4.09c0,0,.01,0,0-.02s0-.01-.02,0"
+            opacity="0"
+            fill="none"
+            stroke="#ffffff"
+            stroke-width="1.25"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-dashoffset="0.054686"
+            stroke-dasharray="0.054686"
+          />
         </g>
-      </svg>
-    </>
+      </g>
+    </svg>
   );
 };
 
