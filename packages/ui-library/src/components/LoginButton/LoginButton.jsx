@@ -1,16 +1,16 @@
-import { useState } from "react";
 import Button from "../Button/Button";
 import Icon from "../Icon/Icon";
 
 const colorVariants = {
-  discord: "hover:bg-brand-discord",
-  twitter: "hover:bg-brand-twitter",
-  google: "hover:bg-brand-google",
-  apple: "hover:bg-black",
-  black: "hover:bg-black",
+  discord: { hover: "hover:bg-brand-discord", active: "bg-brand-discord" },
+  twitter: { hover: "hover:bg-brand-twitter", active: "bg-brand-twitter" },
+  google: { hover: "hover:bg-brand-google", active: "bg-brand-google" },
+  apple: { hover: "hover:bg-black", active: "bg-black" },
+  black: { hover: "hover:bg-black", active: "bg-black" },
 };
 
 const getHoverBg = (provider) => {
+  console.log("hovebg", provider);
   switch (provider) {
     case "discord":
       return colorVariants.discord;
@@ -25,32 +25,36 @@ const getHoverBg = (provider) => {
   }
 };
 
-const LoginButton = ({ provider, size, onLogin }) => {
-  const [loading, setLoading] = useState(false);
-
-  const handleClick = () => {
-    setLoading(!loading);
-    onLogin(provider);
-  };
-
-  const hoverBg = getHoverBg(provider);
+const LoginButton = ({
+  provider,
+  size,
+  onLogin,
+  loading = false,
+  disabled,
+}) => {
+  console.log("loading", loading);
+  console.log("disabled", disabled);
+  const { hover: hoverBg, active: activeBg } = getHoverBg(provider);
+  // if button loading, change background color and icon color, no hover
+  // if button dasabled it should be disabled and no hover
 
   return (
     <div className="mb-4">
       {size === "square" ? (
         <Button
           size={size}
-          onClick={handleClick}
-          classNameVariant={`justify-center bg-white
-          ${hoverBg}`}
+          onClick={onLogin}
+          classNameVariant={`justify-center ${loading ? activeBg : ""} ${
+            !disabled && hoverBg
+          }`}
           borderColor="border-gray-200"
-          textColor="text-gray-1200"
+          disabled={disabled}
         >
           <div className="flex justify-center">
             {loading ? (
               <Icon name="loading_animated" width="30" height="30" />
             ) : (
-              <Icon name={provider} />
+              <Icon name={provider} loading={loading} disabled={disabled} />
             )}
           </div>
         </Button>
@@ -58,16 +62,24 @@ const LoginButton = ({ provider, size, onLogin }) => {
         <Button
           size={size}
           fluid={true}
-          onClick={handleClick}
-          classNameVariant={`justify-start bg-white hover:text-white 
-          ${hoverBg}
-        `}
+          onClick={onLogin}
+          classNameVariant={`justify-center ${loading ? activeBg : ""} ${
+            !disabled && hoverBg
+          }`}
           borderColor="border-gray-200"
-          textColor="text-gray-1200"
+          textColor={`${loading ? "text-white" : "text-gray-1200"} ${
+            !disabled && "hover:text-white"
+          }`}
+          disabled={disabled}
         >
           <div className="flex items-center mr-4 ml-2 w-full">
             <div className="mr-4">
-              <Icon name={provider} className="mr-2" />
+              <Icon
+                name={provider}
+                className="mr-2"
+                loading={loading}
+                disabled={disabled}
+              />
             </div>
             <div className="text-base font-normal capitalize">{provider}</div>
             {loading && (

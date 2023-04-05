@@ -1,15 +1,31 @@
+import { useState } from "react";
 import LoginButton from "../LoginButton/LoginButton";
 import LoginFrame from "../LoginFrame/LoginFrame";
 import { MoreAccordion } from "../MoreAccordion/MoreAccordion";
 
 const LoginPortal = ({ providers, additionalProviders, onClick }) => {
+  const [loading, setLoading] = useState({});
+  const [disabled, setDisabled] = useState(false);
+
+  const handleClick = (provider) => {
+    console.log("click", provider);
+    setLoading((prevState) => ({
+      ...prevState,
+      [provider]: true,
+    }));
+    setDisabled(true);
+    // onClick();
+  };
+
   return (
     <LoginFrame>
       {providers.map((provider) => (
         <LoginButton
           provider={provider}
           key={provider}
-          onLogin={onClick}
+          onLogin={() => handleClick(provider)}
+          loading={loading[provider]}
+          disabled={disabled}
         ></LoginButton>
       ))}
       {additionalProviders && (
@@ -22,7 +38,9 @@ const LoginPortal = ({ providers, additionalProviders, onClick }) => {
                     provider={provider}
                     key={provider}
                     size="square"
-                    onLogin={onClick}
+                    onLogin={() => handleClick(provider)}
+                    loading={loading[provider]}
+                    disabled={disabled}
                   ></LoginButton>
                 );
               })}
