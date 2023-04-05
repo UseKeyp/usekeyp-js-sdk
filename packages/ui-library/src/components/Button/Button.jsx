@@ -34,7 +34,6 @@ const Button = ({
   classNameVariant,
   ...rest
 }) => {
-  console.log("classname variant", classNameVariant);
   const Element = href ? "a" : "button";
   if (to) {
     return (

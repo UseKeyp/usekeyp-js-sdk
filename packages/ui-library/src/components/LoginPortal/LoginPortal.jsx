@@ -8,13 +8,12 @@ const LoginPortal = ({ providers, additionalProviders, onClick }) => {
   const [disabled, setDisabled] = useState(false);
 
   const handleClick = (provider) => {
-    console.log("click", provider);
     setLoading((prevState) => ({
       ...prevState,
       [provider]: true,
     }));
     setDisabled(true);
-    // onClick();
+    onClick();
   };
 
   return (

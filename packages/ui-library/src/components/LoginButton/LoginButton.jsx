@@ -10,7 +10,6 @@ const colorVariants = {
 };
 
 const getHoverBg = (provider) => {
-  console.log("hovebg", provider);
   switch (provider) {
     case "discord":
       return colorVariants.discord;
@@ -32,11 +31,7 @@ const LoginButton = ({
   loading = false,
   disabled,
 }) => {
-  console.log("loading", loading);
-  console.log("disabled", disabled);
   const { hover: hoverBg, active: activeBg } = getHoverBg(provider);
-  // if button loading, change background color and icon color, no hover
-  // if button dasabled it should be disabled and no hover
 
   return (
     <div className="mb-4">
