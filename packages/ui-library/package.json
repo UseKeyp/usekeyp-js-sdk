@@ -20,12 +20,53 @@
   "bugs": {
     "url": "https://github.com/UseKeyp/keyp-frontend-components/issues"
   },
+  "eslintConfig": {
+    "extends": [
+      "eslint:recommended",
+      "react-app",
+      "react-app/jest"
+    ],
+    "rules": {
+      "react/jsx-no-undef": [
+        "error",
+        {
+          "allowGlobals": true
+        }
+      ],
+      "react/no-unescaped-entities": 0
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "dependencies": {
     "@redwoodjs/router": "^3.3.0",
     "prop-types": "^15.8.1",
-    "react-styleguidist": "^13.1.1"
+    "react-styleguidist": "^13.1.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "react-table": "^7.8.0",
+    "react-tooltip": "^4.5.0",
+    "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "tailwindcss": "^3.2.7"
+    "autoprefixer": "^10.4.12",
+    "eslint": "^8.27.0",
+    "file-loader": "^6.2.0",
+    "postcss": "^8.4.18",
+    "process": "^0.11.10",
+    "react-styleguidist": "^13.0.0",
+    "tailwindcss": "^3.2.7",
+    "url-loader": "^4.1.1"
   }
 }
