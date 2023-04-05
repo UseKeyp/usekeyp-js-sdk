@@ -5,14 +5,8 @@
   "author": "alekseevayana <alekseevayana@bk.ru>",
   "homepage": "https://github.com/UseKeyp/keyp-frontend-components#readme",
   "license": "ISC",
-  "main": "lib/ui-library.js",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
-  },
-  "files": [
-    "lib"
-  ],
+  "type": "module",
+  "main": "src/components/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/UseKeyp/keyp-frontend-components.git"
@@ -27,6 +21,8 @@
     "url": "https://github.com/UseKeyp/keyp-frontend-components/issues"
   },
   "dependencies": {
+    "@redwoodjs/router": "^3.3.0",
+    "prop-types": "^15.8.1",
     "react-styleguidist": "^13.1.1"
   },
   "devDependencies": {
