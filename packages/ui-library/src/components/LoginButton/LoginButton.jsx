@@ -2,26 +2,40 @@ import Button from "../Button/Button";
 import Icon from "../Icon/Icon";
 
 const colorVariants = {
-  discord: { hover: "hover:bg-brand-discord", active: "bg-brand-discord" },
-  twitter: { hover: "hover:bg-brand-twitter", active: "bg-brand-twitter" },
-  google: { hover: "hover:bg-brand-google", active: "bg-brand-google" },
-  apple: { hover: "hover:bg-black", active: "bg-black" },
-  black: { hover: "hover:bg-black", active: "bg-black" },
+  discord: {
+    hover: "hover:bg-brand-discord",
+    active: "bg-brand-discord",
+    borderColor: "border-brand-discord",
+    hoverBorder: "hover:border-brand-discord",
+  },
+  twitter: {
+    hover: "hover:bg-brand-twitter",
+    active: "bg-brand-twitter",
+    borderColor: "border-brand-twitter",
+    hoverBorder: "hover:border-brand-twitter",
+  },
+  google: {
+    hover: "hover:bg-brand-google",
+    active: "bg-brand-google",
+    borderColor: "border-brand-google",
+    hoverBorder: "hover:border-brand-google",
+  },
+  apple: {
+    hover: "hover:bg-black",
+    active: "bg-black",
+    borderColor: "border-black",
+    hoverBorder: "hover:border-black",
+  },
+  black: {
+    hover: "hover:bg-black",
+    active: "bg-black",
+    borderColor: "border-black",
+    hoverBorder: "hover:border-black",
+  },
 };
 
-const getHoverBg = (provider) => {
-  switch (provider) {
-    case "discord":
-      return colorVariants.discord;
-    case "twitter":
-      return colorVariants.twitter;
-    case "google":
-      return colorVariants.google;
-    case "apple":
-      return colorVariants.apple;
-    default:
-      return colorVariants.black;
-  }
+const getBrandColor = (provider) => {
+  return colorVariants[provider] || colorVariants.black;
 };
 
 const LoginButton = ({
@@ -31,8 +45,12 @@ const LoginButton = ({
   loading = false,
   disabled,
 }) => {
-  const { hover: hoverBg, active: activeBg } = getHoverBg(provider);
-  // if button is disabled and !loading, text grey/800
+  const {
+    hover: hoverBg,
+    active: activeBg,
+    borderColor: borderColor,
+    hoverBorder,
+  } = getBrandColor(provider);
   return (
     <div className="mb-4">
       {size === "square" ? (
@@ -42,7 +60,9 @@ const LoginButton = ({
           classNameVariant={`justify-center ${loading ? activeBg : ""} ${
             !disabled && hoverBg
           }`}
-          borderColor="border-gray-200"
+          borderColor={`${loading ? borderColor : "border-gray-200"} ${
+            !loading && !disabled && hoverBorder
+          }`}
           disabled={disabled}
         >
           <div className="flex justify-center">
@@ -61,7 +81,9 @@ const LoginButton = ({
           classNameVariant={`justify-center ${loading ? activeBg : ""} ${
             !disabled && hoverBg
           }`}
-          borderColor="border-gray-200"
+          borderColor={`${loading ? borderColor : "border-gray-200"} ${
+            !loading && !disabled && hoverBorder
+          }`}
           textColor={`
           ${loading && "text-white"} 
           ${!loading && disabled && "text-gray-800"}
