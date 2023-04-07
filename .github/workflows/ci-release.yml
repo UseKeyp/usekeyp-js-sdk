@@ -54,10 +54,10 @@ jobs:
           git config user.name "GITHUB-ACTION-CI-RELEASE"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
           if [ ${{ github.ref_name }} == "main" ] ; then
-             npx lerna version --conventional-graduate --conventional-commits --yes
+             npx lerna version --conventional-graduate --conventional-commits --yes || npx lerna version --conventional-commits --yes
              IS_PRERELEASE=false
           else
-             npx lerna version prerelease --yes --preid staging
+             npx lerna version prerelease --yes --preid staging 
           fi
           npx lerna version prerelease --yes --preid staging
           VERSION=v$(jq -r .version lerna.json)
@@ -66,11 +66,11 @@ jobs:
 
       - name: Update version Fallback
         # If no prerelease exists, then --conventional-graduate would fail
-        if: ${{ steps.update_version.outcome == 'failure' && ${{ github.ref_name }} == "main" }}
+        if: ${{ format('{0} == "failure" && {1} == "main"', steps.update_version.outcome, github.ref_name) }}
         run: |
           echo Falling back to non-graduate release due to https://github.com/lerna/lerna/issues/2532
           git stash
-          npx yarn lerna version --conventional-commits --yes
+          npx lerna version --conventional-commits --yes
 
   create-release-draft:
     name: Create Release Draft
@@ -96,11 +96,10 @@ jobs:
             ## Added
             ## Fixes
             ## Breaking
-
       - name: Discord notify release draft
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_RELEASE }}
         uses: Ilshidur/action-discord@0c4b27844ba47cb1c7bee539c8eead5284ce9fa9
         with:
           args: |
-            🗒️ Draft Release created for `@usekeyp/frontend-components@${{ needs.update-version.outputs.VERSION }}` ${{ steps.create_release.outputs.html_url }}
+            🗒️ Draft Release created for `${{ github.repository }}` __${{ needs.update-version.outputs.VERSION }}__ ${{ steps.create_release.outputs.html_url }}
