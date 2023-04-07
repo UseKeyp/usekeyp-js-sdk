@@ -4,9 +4,12 @@ const Apple = ({ loading, disabled }) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="21" height="24" fill="none">
       <path
-        className={`${
-          !loading && !disabled && "group-hover:fill-white"
-        } fill-black`}
+        className={`
+        ${loading && "fill-white"}
+        ${!loading && !disabled && "fill-black"}
+        ${disabled && !loading && "fill-gray-300"} 
+        ${!loading && !disabled && "group-hover:fill-white"}
+        `}
         d="M19.76 18.704c-.362.838-.79 1.61-1.288 2.32-.677.967-1.232 1.637-1.66 2.008-.662.61-1.372.924-2.132.941-.546 0-1.204-.155-1.97-.47-.769-.315-1.475-.47-2.121-.47-.678 0-1.404.155-2.181.47-.779.315-1.406.48-1.885.495-.729.031-1.456-.29-2.181-.966-.463-.404-1.042-1.097-1.736-2.08-.744-1.048-1.356-2.265-1.835-3.651C.257 15.803 0 14.353 0 12.949 0 11.34.347 9.953 1.042 8.79A6.118 6.118 0 0 1 3.224 6.58a5.864 5.864 0 0 1 2.95-.834c.58 0 1.34.179 2.283.532.941.353 1.545.533 1.81.533.198 0 .87-.21 2.007-.628 1.076-.388 1.984-.549 2.728-.485 2.016.163 3.531.959 4.538 2.393-1.803 1.094-2.695 2.626-2.677 4.592.016 1.532.571 2.806 1.661 3.818.494.47 1.046.832 1.66 1.09-.133.387-.274.757-.423 1.113ZM15.138.48c0 1.2-.438 2.32-1.31 3.358-1.054 1.233-2.327 1.946-3.709 1.833a3.743 3.743 0 0 1-.027-.455c0-1.152.5-2.385 1.39-3.393.444-.51 1.008-.935 1.693-1.274.684-.333 1.33-.518 1.938-.55.018.16.025.321.025.48Z"
       />
     </svg>
@@ -144,16 +147,19 @@ const Discord = ({ loading, disabled }) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="19" fill="none">
       <path
-        className={`${loading ? "fill-white" : "fill-[#5865F2]"} ${
-          !loading && !disabled && "group-hover:fill-white"
-        }`}
+        className={`
+        ${loading && "fill-white"}
+        ${!loading && !disabled && "fill-[#5865F2]"}
+        ${disabled && !loading && "fill-gray-300"} 
+        ${!loading && !disabled && "group-hover:fill-white"}
+        `}
         d="M20.317 1.516A19.791 19.791 0 0 0 15.432.001a.074.074 0 0 0-.079.037c-.21.376-.444.865-.608 1.25a18.271 18.271 0 0 0-5.487 0 12.644 12.644 0 0 0-.617-1.25.077.077 0 0 0-.079-.037 19.736 19.736 0 0 0-4.885 1.515.07.07 0 0 0-.032.028C.533 6.192-.32 10.727.099 15.204a.082.082 0 0 0 .031.057 19.902 19.902 0 0 0 5.993 3.029.077.077 0 0 0 .084-.028 14.22 14.22 0 0 0 1.226-1.994c.021-.04.001-.09-.041-.106a13.109 13.109 0 0 1-1.872-.892.077.077 0 0 1-.008-.127c.126-.095.252-.193.372-.292a.074.074 0 0 1 .078-.01c3.927 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .079.01c.12.098.245.197.372.291.044.033.04.1-.006.128-.598.35-1.22.645-1.873.892a.077.077 0 0 0-.041.106c.36.698.772 1.363 1.225 1.993a.076.076 0 0 0 .084.029 19.836 19.836 0 0 0 6.002-3.03.077.077 0 0 0 .032-.055c.5-5.177-.838-9.674-3.549-13.66a.06.06 0 0 0-.031-.029ZM8.02 12.478c-1.182 0-2.157-1.086-2.157-2.42 0-1.332.956-2.418 2.157-2.418 1.21 0 2.176 1.095 2.157 2.419 0 1.333-.956 2.419-2.157 2.419Zm7.975 0c-1.183 0-2.157-1.086-2.157-2.42 0-1.332.955-2.418 2.157-2.418 1.21 0 2.176 1.095 2.157 2.419 0 1.333-.946 2.419-2.157 2.419Z"
       />
     </svg>
   );
 };
 
-const GitHub = ({ color }) => {
+const GitHub = ({ loading, disabled }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -162,7 +168,12 @@ const GitHub = ({ color }) => {
       viewBox="0 0 98 96"
     >
       <path
-        className={`${color}`}
+        className={`
+        ${loading && "fill-white"}
+        ${!loading && !disabled && "fill-black"}
+        ${disabled && !loading && "fill-gray-300"} 
+        ${!loading && !disabled && "group-hover:fill-white"}
+        `}
         fillRule="evenodd"
         d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z"
         clipRule="evenodd"
@@ -177,33 +188,48 @@ const Google = ({ loading, disabled }) => {
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
-      className={`overflow-visible ${
-        !loading && !disabled && "group-hover:fill-white"
-      }`}
+      className={`overflow-visible
+        ${loading && "fill-white"}
+        ${disabled && !loading && "fill-gray-300"} 
+        ${!loading && !disabled && "group-hover:fill-white"}
+
+      `}
     >
       <g clipPath="url(#a)">
         <path
-          className={`${loading ? "fill-white" : "fill-[#FBBB00]"} ${
-            !loading && !disabled && "group-hover:fill-white"
-          }`}
+          className={`
+          ${loading && "fill-white"}
+          ${!loading && !disabled && "fill-[#FBBB00]"}
+          ${disabled && !loading && "fill-gray-300"} 
+          ${!loading && !disabled && "group-hover:fill-white"}
+          `}
           d="m5.319 14.504-.835 3.118-3.054.065A11.946 11.946 0 0 1 0 12c0-1.99.484-3.866 1.342-5.519l2.719.499 1.19 2.702A7.134 7.134 0 0 0 4.868 12c0 .881.16 1.725.452 2.504Z"
         />
         <path
-          className={`${loading ? "fill-white" : "fill-[#518EF8]"} ${
-            !loading && !disabled && "group-hover:fill-white"
-          }`}
+          className={`
+          ${loading && "fill-white"}
+          ${!loading && !disabled && "fill-[#518EF8]"}
+          ${disabled && !loading && "fill-gray-300"} 
+          ${!loading && !disabled && "group-hover:fill-white"}
+          `}
           d="M23.79 9.758a12.028 12.028 0 0 1-.053 4.747 11.998 11.998 0 0 1-4.225 6.853l-3.424-.176-.485-3.025a7.152 7.152 0 0 0 3.077-3.652h-6.416V9.758H23.79Z"
         />
         <path
-          className={`${loading ? "fill-white" : "fill-[#28B446]"} ${
-            !loading && !disabled && "group-hover:fill-white"
-          }`}
+          className={`
+          ${loading && "fill-white"}
+          ${!loading && !disabled && "fill-[#28B446]"}
+          ${disabled && !loading && "fill-gray-300"} 
+          ${!loading && !disabled && "group-hover:fill-white"}
+          `}
           d="m19.511 21.357.001.001A11.95 11.95 0 0 1 11.999 24c-4.57 0-8.543-2.554-10.57-6.313l3.89-3.183a7.135 7.135 0 0 0 10.284 3.654l3.908 3.2Z"
         />
         <path
-          className={`${loading ? "fill-white" : "fill-[#F14336]"} ${
-            !loading && !disabled && "group-hover:fill-white"
-          }`}
+          className={`
+          ${loading && "fill-white"}
+          ${!loading && !disabled && "fill-[#F14336]"}
+          ${disabled && !loading && "fill-gray-300"} 
+          ${!loading && !disabled && "group-hover:fill-white"}
+          `}
           d="m19.66 2.763-3.888 3.182a7.137 7.137 0 0 0-10.52 3.736l-3.91-3.2A11.998 11.998 0 0 1 12 0a11.95 11.95 0 0 1 7.66 2.763Z"
         />
       </g>
@@ -433,9 +459,12 @@ const Twitter = ({ loading, disabled }) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" fill="none">
       <path
-        className={`${loading ? "fill-white" : "fill-[#2AA9E0]"} ${
-          !loading && !disabled && "group-hover:fill-white"
-        }`}
+        className={`
+        ${loading && "fill-white"}
+        ${!loading && !disabled && "fill-[#2AA9E0]"}
+        ${disabled && !loading && "fill-gray-300"} 
+        ${!loading && !disabled && "group-hover:fill-white"}
+        `}
         d="M24 2.309a9.843 9.843 0 0 1-2.828.775A4.939 4.939 0 0 0 23.337.36a9.857 9.857 0 0 1-3.127 1.195 4.924 4.924 0 0 0-8.39 4.491A13.979 13.979 0 0 1 1.67.9a4.9 4.9 0 0 0-.666 2.476c0 1.708.87 3.215 2.19 4.098a4.904 4.904 0 0 1-2.23-.616v.062a4.927 4.927 0 0 0 3.95 4.828 4.927 4.927 0 0 1-2.224.085 4.929 4.929 0 0 0 4.6 3.419 9.879 9.879 0 0 1-6.115 2.108c-.398 0-.79-.024-1.175-.07a13.936 13.936 0 0 0 7.548 2.213c9.057 0 14.01-7.503 14.01-14.01 0-.213-.005-.425-.015-.637A10.003 10.003 0 0 0 24 2.31Z"
       />
     </svg>

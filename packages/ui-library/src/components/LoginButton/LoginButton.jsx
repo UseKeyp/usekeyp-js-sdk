@@ -32,7 +32,7 @@ const LoginButton = ({
   disabled,
 }) => {
   const { hover: hoverBg, active: activeBg } = getHoverBg(provider);
-
+  // if button is disabled and !loading, text grey/800
   return (
     <div className="mb-4">
       {size === "square" ? (
@@ -62,9 +62,11 @@ const LoginButton = ({
             !disabled && hoverBg
           }`}
           borderColor="border-gray-200"
-          textColor={`${loading ? "text-white" : "text-gray-1200"} ${
-            !disabled && "hover:text-white"
-          }`}
+          textColor={`
+          ${loading && "text-white"} 
+          ${!loading && disabled && "text-gray-800"}
+          ${!loading && !disabled && "text-gray-1200"}
+          ${!disabled && "hover:text-white"}`}
           disabled={disabled}
         >
           <div className="flex items-center mr-4 ml-2 w-full">
