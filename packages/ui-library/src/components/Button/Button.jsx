@@ -38,7 +38,7 @@ const Button = ({
   if (to) {
     return (
       <Link
-        className={`flex justify-center items-center group text-center text-lg leading-button font-bold tracking-wide rounded-[6px]  
+        className={`removeFlickering flex justify-center items-center group text-center text-lg leading-button font-bold tracking-wide rounded-[6px]  
             ${textColor ? textColor : "text-white"} 
             ${size === "regular" && !fluid ? "h-[48px] w-[200px]" : ""}
             ${size === "small" && !fluid ? "h-[32px] w-[200px]" : ""}
@@ -62,7 +62,7 @@ const Button = ({
 
   return (
     <Element
-      className={`flex items-center group text-center text-lg leading-button font-bold tracking-wide rounded-[6px]
+      className={`removeFlickering flex items-center group text-center text-lg leading-button font-bold tracking-wide rounded-[6px]
             ${textColor ? textColor : "text-white"} 
             ${size === "regular" && !fluid ? "h-[48px] w-[200px]" : ""}
             ${size === "small" && !fluid ? "h-[32px] w-[200px]" : ""}
