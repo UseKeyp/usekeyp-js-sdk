@@ -13,7 +13,7 @@ import Icon from "../Icon/Icon";
       textColor="text-gray-1200"
     >
       <div className="flex">
-        <div className="mr-2 ml-2">
+        <div className="mr-4 ml-2">
           <Icon name="discord"></Icon>
         </div>
         <div className="text-base font-normal capitalize">Discord</div>
