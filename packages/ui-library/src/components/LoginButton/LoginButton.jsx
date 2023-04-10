@@ -100,7 +100,9 @@ const LoginButton = ({
                 disabled={disabled}
               />
             </div>
-            <div className="text-base font-normal capitalize">{provider}</div>
+            <div className="text-base font-normal capitalize">
+              {provider.toLowerCase()}
+            </div>
             {loading && (
               <div className="ml-auto">
                 <Icon name="loading_animated" width="30" height="30" />
