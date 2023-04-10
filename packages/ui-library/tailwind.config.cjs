@@ -22,6 +22,16 @@ module.exports = {
           twitter: "#1DA1F2",
         },
       },
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
+        serif: [
+          'SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
+          "serif",
+        ],
+        body: ["Roboto", "sans-serif"],
+        awesome: ["FontAwesome"],
+        "awesome-5-free": ["Font Awesome\\ 5 Free"],
+      },
       fontWeight: {
         thin: "100",
         extralight: "200",

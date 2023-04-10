@@ -1,60 +1,108 @@
 import Button from "../Button/Button";
 import Icon from "../Icon/Icon";
 
-const LoginButton = ({ provider, size, onClick, loading }) => {
-  const colorVariants = {
-    discord: "hover:bg-brand-discord",
-    twitter: "hover:bg-brand-twitter",
-    google: "hover:bg-brand-google",
-    apple: "hover:bg-black",
-    black: "hover:bg-black",
-  };
+const colorVariants = {
+  discord: {
+    hover: "hover:bg-brand-discord",
+    active: "bg-brand-discord",
+    borderColor: "border-brand-discord",
+    hoverBorder: "hover:border-brand-discord",
+  },
+  twitter: {
+    hover: "hover:bg-brand-twitter",
+    active: "bg-brand-twitter",
+    borderColor: "border-brand-twitter",
+    hoverBorder: "hover:border-brand-twitter",
+  },
+  google: {
+    hover: "hover:bg-brand-google",
+    active: "bg-brand-google",
+    borderColor: "border-brand-google",
+    hoverBorder: "hover:border-brand-google",
+  },
+  apple: {
+    hover: "hover:bg-black",
+    active: "bg-black",
+    borderColor: "border-black",
+    hoverBorder: "hover:border-black",
+  },
+  black: {
+    hover: "hover:bg-black",
+    active: "bg-black",
+    borderColor: "border-black",
+    hoverBorder: "hover:border-black",
+  },
+};
 
-  const getHoverBg = () => {
-    switch (provider) {
-      case "discord":
-        return colorVariants.discord;
-      case "twitter":
-        return colorVariants.twitter;
-      case "google":
-        return colorVariants.google;
-      case "apple":
-        return colorVariants.apple;
-      default:
-        return colorVariants.black;
-    }
-  };
+const getBrandColor = (provider) => {
+  return colorVariants[provider] || colorVariants.black;
+};
+
+const LoginButton = ({
+  provider,
+  size,
+  onLogin,
+  loading = false,
+  disabled,
+}) => {
+  const {
+    hover: hoverBg,
+    active: activeBg,
+    borderColor: borderColor,
+    hoverBorder,
+  } = getBrandColor(provider);
   return (
     <div className="mb-4">
       {size === "square" ? (
         <Button
           size={size}
-          onClick={onClick}
-          classNameVariant={`justify-center bg-white
-          ${getHoverBg()}`}
-          borderColor="border-gray-200"
-          textColor="text-gray-1200"
+          onClick={onLogin}
+          classNameVariant={`justify-center ${loading ? activeBg : ""} ${
+            !disabled && hoverBg
+          }`}
+          borderColor={`${loading ? borderColor : "border-gray-200"} ${
+            !loading && !disabled && hoverBorder
+          }`}
+          disabled={disabled}
         >
           <div className="flex justify-center">
-            <Icon name={provider} />
+            {loading ? (
+              <Icon name="loading_animated" width="30" height="30" />
+            ) : (
+              <Icon name={provider} loading={loading} disabled={disabled} />
+            )}
           </div>
         </Button>
       ) : (
         <Button
           size={size}
           fluid={true}
-          onClick={onClick}
-          classNameVariant={`justify-start bg-white hover:text-white 
-          ${getHoverBg()}
-        `}
-          borderColor="border-gray-200"
-          textColor="text-gray-1200"
+          onClick={onLogin}
+          classNameVariant={`justify-center ${loading ? activeBg : ""} ${
+            !disabled && hoverBg
+          }`}
+          borderColor={`${loading ? borderColor : "border-gray-200"} ${
+            !loading && !disabled && hoverBorder
+          }`}
+          textColor={`
+          ${loading && "text-white"} 
+          ${!loading && disabled && "text-gray-800"}
+          ${!loading && !disabled && "text-gray-1200"}
+          ${!disabled && "hover:text-white"}`}
+          disabled={disabled}
         >
           <div className="flex items-center mr-4 ml-2 w-full">
-            <div className="mr-2">
-              <Icon name={provider} className="mr-2" />
+            <div className="mr-4">
+              <Icon
+                name={provider}
+                className="mr-2"
+                loading={loading}
+                disabled={disabled}
+              />
             </div>
-            <div className="text-base font-normal capitalize">{provider}</div>
+            <div className="text-base font-normal capitalize">
+              {provider.toLowerCase()}
+            </div>
             {loading && (
               <div className="ml-auto">
                 <Icon name="loading_animated" width="30" height="30" />

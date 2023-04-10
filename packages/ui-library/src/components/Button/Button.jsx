@@ -38,12 +38,11 @@ const Button = ({
   if (to) {
     return (
       <Link
-        className={`flex justify-center items-center group text-center text-lg leading-button font-bold tracking-wide rounded-[6px]  
+        className={`removeFlickering flex justify-center items-center group text-center text-lg leading-button font-bold tracking-wide rounded-[6px]  
             ${textColor ? textColor : "text-white"} 
             ${size === "regular" && !fluid ? "h-[48px] w-[200px]" : ""}
             ${size === "small" && !fluid ? "h-[32px] w-[200px]" : ""}
             ${size === "square" && !fluid ? "h-[48px] w-[48px]" : ""}
-            ${variant === "transparent" ? "bg-transparent" : ""}
             ${fluid && "h-[48px] w-full"}
             ${borderColor ? borderColor : ""}
             ${classNameVariant ? classNameVariant : ""}
@@ -63,14 +62,13 @@ const Button = ({
 
   return (
     <Element
-      className={`flex items-center group text-center text-lg leading-button font-bold tracking-wide rounded-[6px]
+      className={`removeFlickering flex items-center group text-center text-lg leading-button font-bold tracking-wide rounded-[6px]
             ${textColor ? textColor : "text-white"} 
             ${size === "regular" && !fluid ? "h-[48px] w-[200px]" : ""}
             ${size === "small" && !fluid ? "h-[32px] w-[200px]" : ""}
             ${size === "square" && !fluid ? "h-[48px] w-[48px]" : ""}
             ${fluid && "h-[48px] w-full"}
             ${borderColor ? "border " + borderColor : ""}
-            ${variant === "transparent" ? "bg-transparent" : ""}
             ${classNameVariant ? classNameVariant : ""} 
             `}
       onClick={() => onClick()}
@@ -88,7 +86,6 @@ const Button = ({
 };
 
 Button.defaultProps = {
-  variant: "transparent",
   size: "regular",
   textColor: "text-white",
   fluid: false,
