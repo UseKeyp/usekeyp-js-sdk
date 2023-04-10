@@ -17,9 +17,12 @@ Our components are in the `ui-library` directory.
 
 1. Install necessary dependencies
 
-```bash
- yarn add
-```
+- yarn add @usekeyp/ui-library
+- Override your webpack.config.js to add nessecary loaders
+  `yarn eject`
+- add taiwindcss and tailwind.config.cjs
+- in tailwind.config.cjs you have to merge tailwind.config from node_modules/@usekeyp
+- run tailwind build to make css folder
 
 ## Resources 🧑‍💻
 
