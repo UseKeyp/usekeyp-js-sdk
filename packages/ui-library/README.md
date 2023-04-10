@@ -13,38 +13,84 @@
 
 ## Usage 📖
 
-1. Add package to your project
-   `yarn add @usekeyp/ui-library`
+1.  Add package to your project
+    `yarn add @usekeyp/ui-library`
 
-2. Install necessary dependencies
+2.  Install necessary dependencies
 
-- Add babel-loader to the webpack
-  `yarn eject` to configure webpack
+    2.1. Configure the webpack
 
-- Add Tailwind CSS
-- Ensure Tailwind CSS is properly configured in your application. Here's an example of what that should look like:
+    - `yarn eject` to make changes to a webpack
 
-```
-const packageTailwindConfig = require('@usekeyp/ui-library/tailwind.config.cjs');
-const { merge } = require('lodash');
+    - Include new path for uiLibrary in webpack.config.js
 
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-    "./node_modules/@usekeyp/ui-library/src/**/*.{js,jsx,ts,tsx,md}",
-  ],
-  theme: merge({}, packageTailwindConfig.theme, {
-    extend: {},
-  }),
-  plugins: packageTailwindConfig.plugins.concat([]),
-};
-```
+    ```
+        {
+            test: /\.(js|mjs|jsx|ts|tsx)$/,
+            include: paths.uiLibrary,
+            loader: require.resolve("babel-loader"),
+            options: {
+            customize: require.resolve(
+                "babel-preset-react-app/webpack-overrides"
+            ),
+            presets: [
+                [
+                require.resolve("babel-preset-react-app"),
+                {
+                    runtime: hasJsxRuntime ? "automatic" : "classic",
+                },
+                ]
+            plugins: [
+                isEnvDevelopment &&
+                shouldUseReactRefresh &&
+                require.resolve("react-refresh/babel"),
+            ].filter(Boolean),
+            // This is a feature of `babel-loader` for webpack (not Babel itself).
+            // It enables caching results in ./node_modules/.cache/babel-loader/
+            // directory for faster rebuilds.
+            cacheDirectory: true,
+            // See #6846 for context on why cacheCompression is disabled
+            cacheCompression: false,
+            compact: isEnvProduction,
+            },
+        },
+    ```
 
-3. Build the output.css file
-   Example: `npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch -c tailwind.config.js"`
+    - in path.js add uiLibrary path
 
-4. Use it in your project
+    ```
+        module.exports = {
+            ...,
+            uiLibrary: resolveApp("./node_modules/@usekeyp/ui-library/"),
+        };
+    ```
+
+    2.2. Add Tailwind CSS
+
+    - Ensure Tailwind CSS is properly configured in your application. Here's an example of what that should look like:
+
+    ```
+        const packageTailwindConfig = require('@usekeyp/ui-library/tailwind.config.cjs');
+        const { merge } = require('lodash')
+        /** @type {import('tailwindcss').Config} */
+        module.exports = {
+        content: [
+            "./src/**/*.{js,jsx,ts,tsx}",
+            "./node_modules/@usekeyp/ui-library/src/**/*.{js,jsx,ts,tsx,md}",
+        ],
+        theme: merge({}, packageTailwindConfig.theme, {
+            extend: {},
+        }),
+        plugins: packageTailwindConfig.plugins.concat([]),
+        };
+    ```
+
+3.  Build the output.css file.  
+    Example:  
+    `npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch -c tailwind.config.js`
+
+4.  Add output.css to App.js
+5.  Use components in your project
 
 ```
 import { LoginPortal } from "@usekeyp/ui-library";
