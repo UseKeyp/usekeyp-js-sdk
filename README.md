@@ -5,6 +5,11 @@
 Our components are in the `components-soft-ui` directory and our Tailwind presets are in the `tailwind-presets`
 directory.
 
+## Links
+
+Published from dev branch: https://keyp-ui-library-dev.surge.sh/
+Published from main branch: https://keyp-ui-library.surge.sh/
+
 ## Usage 📖
 
 1. Clone the repo and run `yarn install` to install the necessary dependencies. Make sure you're using a recent version of node (>= 16.0.0)
@@ -59,4 +64,4 @@ You can unlink a package by running `yarn unlink <package-name>`.
 
 ## License 📝
 
-Copyright © 2023 Nifty Chess, Inc.<br /> 
+Copyright © 2023 Nifty Chess, Inc.<br />

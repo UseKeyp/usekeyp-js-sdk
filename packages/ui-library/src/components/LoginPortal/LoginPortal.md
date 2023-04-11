@@ -7,12 +7,12 @@ const onClick = (provider) => {
     <LoginPortal
       providers={["DISCORD", "TWITTER", "GITHUB"]}
       additionalProviders={["APPLE", "GOOGLE"]}
-      onClick={(provider) => onClick(provider)}
+      onClick={onClick}
     />
   </div>
   <LoginPortal
     providers={["DISCORD", "TWITTER", "GITHUB", "APPLE", "GOOGLE"]}
-    onClick={(provider) => onClick(provider)}
+    onClick={onClick}
   />
 </div>;
 ```
