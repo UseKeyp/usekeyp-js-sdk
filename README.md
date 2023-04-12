@@ -1,5 +1,5 @@
 <h1 align="center"><img width="600" style="border-radius: 30px;" src="https://raw.githubusercontent.com/UseKeyp/.github/main/Keyp-Logo-Color.svg"/></h1>
-<h1 align="center">Welcome to Keyp Frontend-Components 👋</h1>
+<h1 align="center">Welcome to Keyp UI Library 👋</h1>
 <p align="center">
   <a href="#" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-blue.svg" />
@@ -15,7 +15,7 @@ Our components are in the `ui-library` directory.
 
 ## Links
 
-Published from dev branch: https://keyp-ui-library-dev.surge.sh/
+Published from dev branch: https://keyp-ui-library-dev.surge.sh/  
 Published from main branch: https://keyp-ui-library.surge.sh/
 
 ## Usage 📖
@@ -37,14 +37,12 @@ While testing, if you need a link to send to the design team you can easily depl
 2. Run `styleguidist build` to generate the styleguide directory with the bundled assets for deploy
 3. Run `surge` and point to the styleguide folder
 4. Should look like `/YOUR_LOCAL_PATH/ui-library/styleguide`
-5. Choose https://keyp-frontend-components.surge.sh/ as the domain to deploy the site if you want to deploy a new production build (you can create any other name for the domain if you want to deploy a test build to share with someone)
+5. Choose https://keyp-ui-library.surge.sh/ as the domain to deploy the site if you want to deploy a new production build (you can create any other name for the domain if you want to deploy a test build to share with someone)
 6. If you're unable to deploy to the production domain, send your email to Jacob so he can add you as a collaborator
 
 ## Resources 🧑‍💻
 
 - [Surge](https://surge.sh/)
-
-This repo is configured to use [Publish PR Packages](https://github.com/marketplace/actions/publish-pr-packages) to auto-publish packages for each pull request. Make sure you rename the template package name in `ci-release.yml` to your own package name.
 
 ## License 📝
 
