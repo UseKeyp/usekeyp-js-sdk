@@ -13,14 +13,14 @@
 
 ## Usage 📖
 
-1.  Add package to your project
+1.  Add package to your project:  
     `yarn add @usekeyp/ui-library`
 
-2.  Install and configure necessary dependencies
+2.  Install and configure necessary dependencies.
 
-    2.1. Configure Webpack
+    2.1. Configure Webpack:
 
-    - Run `yarn ejec`t to customize the Webpack configuration.
+    - Run `yarn eject` to customize the Webpack configuration.
 
     - Update `webpack.config.js` by including the new path for the UI Library:
 
@@ -65,7 +65,7 @@
         };
     ```
 
-    2.2. Add Tailwind CSS
+    2.2. Add Tailwind CSS.
 
     - Ensure Tailwind CSS is properly configured in your application to merge tailwind.config.js files. Here's an example of what that should look like:
 
@@ -89,8 +89,8 @@
     Example:  
     `npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch -c tailwind.config.js`
 
-4.  Add output.css to App.js
-5.  Utilize components in your project
+4.  Add output.css to App.js.
+5.  Utilize components in your project:
 
 ```
 import { LoginPortal } from "@usekeyp/ui-library";
@@ -109,7 +109,6 @@ const LoginPage = () => {
 ## Resources 🧑‍💻
 
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs/installation)
-- [Add babel-loader to a webpack](https://webpack.js.org/loaders/babel-loader/)
 
 ## License 📝
 
