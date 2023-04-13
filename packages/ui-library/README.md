@@ -24,7 +24,7 @@
 
     - Update `webpack.config.js` by including the new path for the UI Library:
 
-    ```
+    ```js
         {
             test: /\.(js|mjs|jsx|ts|tsx)$/,
             include: paths.uiLibrary,
@@ -58,7 +58,7 @@
 
     - Add the UI Library path in `paths.js`:
 
-    ```
+    ```js
         module.exports = {
             ...,
             uiLibrary: resolveApp("./node_modules/@usekeyp/ui-library/"),
@@ -69,20 +69,20 @@
 
     - Ensure Tailwind CSS is properly configured in your application to merge tailwind.config.js files. Here's an example of what that should look like:
 
-    ```
-        const packageTailwindConfig = require('@usekeyp/ui-library/tailwind.config.cjs');
-        const { merge } = require('lodash')
-        /** @type {import('tailwindcss').Config} */
-        module.exports = {
-        content: [
-            "./src/**/*.{js,jsx,ts,tsx}",
-            "./node_modules/@usekeyp/ui-library/src/**/*.{js,jsx,ts,tsx,md}",
-        ],
-        theme: merge({}, packageTailwindConfig.theme, {
-            extend: {},
-        }),
-        plugins: packageTailwindConfig.plugins.concat([]),
-        };
+    ```js
+    const packageTailwindConfig = require("@usekeyp/ui-library/tailwind.config.cjs");
+    const { merge } = require("lodash");
+    /** @type {import('tailwindcss').Config} */
+    module.exports = {
+      content: [
+        "./src/**/*.{js,jsx,ts,tsx}",
+        "./node_modules/@usekeyp/ui-library/src/**/*.{js,jsx,ts,tsx,md}",
+      ],
+      theme: merge({}, packageTailwindConfig.theme, {
+        extend: {},
+      }),
+      plugins: packageTailwindConfig.plugins.concat([]),
+    };
     ```
 
 3.  Build the output.css file.  
@@ -92,7 +92,7 @@
 4.  Add output.css to App.js.
 5.  Utilize components in your project:
 
-```
+```js
 import { LoginPortal } from "@usekeyp/ui-library";
 
 const LoginPage = () => {
