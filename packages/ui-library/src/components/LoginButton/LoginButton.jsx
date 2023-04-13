@@ -2,25 +2,25 @@ import Button from "../Button/Button";
 import Icon from "../Icon/Icon";
 
 const colorVariants = {
-  discord: {
+  DISCORD: {
     hover: "hover:bg-brand-discord",
     active: "bg-brand-discord",
     borderColor: "border-brand-discord",
     hoverBorder: "hover:border-brand-discord",
   },
-  twitter: {
+  TWITTER: {
     hover: "hover:bg-brand-twitter",
     active: "bg-brand-twitter",
     borderColor: "border-brand-twitter",
     hoverBorder: "hover:border-brand-twitter",
   },
-  google: {
+  GOOGLE: {
     hover: "hover:bg-brand-google",
     active: "bg-brand-google",
     borderColor: "border-brand-google",
     hoverBorder: "hover:border-brand-google",
   },
-  apple: {
+  APPLE: {
     hover: "hover:bg-black",
     active: "bg-black",
     borderColor: "border-black",
