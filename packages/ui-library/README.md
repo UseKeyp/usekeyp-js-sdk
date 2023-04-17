@@ -69,30 +69,49 @@
 
     2.2. Add Tailwind CSS.
 
-    - Ensure Tailwind CSS is properly configured in your application to merge tailwind.config.js files. Here's an example of what that should look like:
+    - Install the latest version of Tailwind and add tailwind.config.js file.
+    - Additionally to your own content data you should add the `@usekeyp/ui-library` source paths to apply the classes from the elements in the tailwind.config.js file.
 
     ```js
-    const packageTailwindConfig = require("@usekeyp/ui-library/tailwind.config.cjs");
-    const { merge } = require("lodash");
     /** @type {import('tailwindcss').Config} */
-    module.exports = {
+    export default {
       content: [
         "./src/**/*.{js,jsx,ts,tsx}",
         "./node_modules/@usekeyp/ui-library/src/**/*.{js,jsx,ts,tsx,md}",
       ],
-      theme: merge({}, packageTailwindConfig.theme, {
-        extend: {},
-      }),
-      plugins: packageTailwindConfig.plugins.concat([]),
     };
     ```
 
-3.  Build the output.css file.  
+    - Require `@usekeyp/ui-library` as a plugin inside your `tailwind.config.js` file.
+
+    ```js
+    /** @type {import('tailwindcss').Config} */
+    export default {
+      plugins: [require("@usekeyp/ui-library/plugin")],
+    };
+    ```
+
+    Here's an example of the whole `tailwind.config.js`:
+
+    ```js
+    /** @type {import('tailwindcss').Config} */
+    export default {
+      content: [
+        "./src/**/*.{js,jsx,ts,tsx}",
+        "./node_modules/@usekeyp/ui-library/src/**/*.{js,jsx,ts,tsx,md}",
+      ],
+      theme: {
+        extend: {},
+      },
+      plugins: [require("@usekeyp/ui-library/plugin")],
+    };
+    ```
+
+3.  Start the Tailwind CLI build process.  
     Example:  
     `npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch -c tailwind.config.js`
 
-4.  Add output.css to App.js.
-5.  Utilize components in your project:
+4.  Utilize components in your project:
 
 ```js
 import { LoginPortal } from "@usekeyp/ui-library";
