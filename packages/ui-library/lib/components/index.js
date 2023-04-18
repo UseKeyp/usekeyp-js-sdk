@@ -39,10 +39,10 @@ Object.defineProperty(exports, "MoreAccordion", {
     return _MoreAccordion["default"];
   }
 });
-var _Button = _interopRequireDefault(require("./Button/Button.jsx"));
-var _LoginPortal = _interopRequireDefault(require("./LoginPortal/LoginPortal.jsx"));
-var _LoginFrame = _interopRequireDefault(require("./LoginFrame/LoginFrame.jsx"));
-var _Icon = _interopRequireDefault(require("./Icon/Icon.jsx"));
-var _LoginButton = _interopRequireDefault(require("./LoginButton/LoginButton.jsx"));
-var _MoreAccordion = _interopRequireDefault(require("./MoreAccordion/MoreAccordion.jsx"));
+var _Button = _interopRequireDefault(require("./Button/Button"));
+var _LoginPortal = _interopRequireDefault(require("./LoginPortal/LoginPortal"));
+var _LoginFrame = _interopRequireDefault(require("./LoginFrame/LoginFrame"));
+var _Icon = _interopRequireDefault(require("./Icon/Icon"));
+var _LoginButton = _interopRequireDefault(require("./LoginButton/LoginButton"));
+var _MoreAccordion = _interopRequireDefault(require("./MoreAccordion/MoreAccordion"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
