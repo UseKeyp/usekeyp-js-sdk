@@ -3,11 +3,12 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = void 0;
+exports.default = void 0;
 var _Icon = _interopRequireDefault(require("../Icon/Icon"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var LoginFrame = function LoginFrame(_ref) {
-  var children = _ref.children;
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+const LoginFrame = ({
+  children
+}) => {
   return /*#__PURE__*/React.createElement("div", {
     className: "border rounded-[6px] border-gray-200 max-w-[357px] p-6"
   }, /*#__PURE__*/React.createElement("div", {
@@ -18,7 +19,7 @@ var LoginFrame = function LoginFrame(_ref) {
     className: "font-normal text-[9px] text-gray-800 mr-0.5"
   }, "Powered by", " "), /*#__PURE__*/React.createElement("div", {
     className: "flex mt-px"
-  }, /*#__PURE__*/React.createElement(_Icon["default"], {
+  }, /*#__PURE__*/React.createElement(_Icon.default, {
     key: "keypnameandlogo",
     name: "keypnameandlogo",
     width: "35px",
@@ -26,4 +27,4 @@ var LoginFrame = function LoginFrame(_ref) {
   }))));
 };
 var _default = LoginFrame;
-exports["default"] = _default;
+exports.default = _default;

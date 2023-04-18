@@ -3,11 +3,11 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = void 0;
+exports.default = void 0;
 var _Button = _interopRequireDefault(require("../Button/Button"));
 var _Icon = _interopRequireDefault(require("../Icon/Icon"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var colorVariants = {
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+const colorVariants = {
   DISCORD: {
     hover: "hover:bg-brand-discord",
     active: "bg-brand-discord",
@@ -39,52 +39,57 @@ var colorVariants = {
     hoverBorder: "hover:border-black"
   }
 };
-var getBrandColor = function getBrandColor(provider) {
+const getBrandColor = provider => {
   return colorVariants[provider] || colorVariants.black;
 };
-var LoginButton = function LoginButton(_ref) {
-  var provider = _ref.provider,
-    size = _ref.size,
-    onLogin = _ref.onLogin,
-    _ref$loading = _ref.loading,
-    loading = _ref$loading === void 0 ? false : _ref$loading,
-    disabled = _ref.disabled;
-  var _getBrandColor = getBrandColor(provider),
-    hoverBg = _getBrandColor.hover,
-    activeBg = _getBrandColor.active,
-    borderColor = _getBrandColor.borderColor,
-    hoverBorder = _getBrandColor.hoverBorder;
+const LoginButton = ({
+  provider,
+  size,
+  onLogin,
+  loading = false,
+  disabled
+}) => {
+  const {
+    hover: hoverBg,
+    active: activeBg,
+    borderColor: borderColor,
+    hoverBorder
+  } = getBrandColor(provider);
   return /*#__PURE__*/React.createElement("div", {
     className: "mb-4"
-  }, size === "square" ? /*#__PURE__*/React.createElement(_Button["default"], {
+  }, size === "square" ? /*#__PURE__*/React.createElement(_Button.default, {
     size: size,
     onClick: onLogin,
-    classNameVariant: "justify-center ".concat(loading ? activeBg : "", " ").concat(!disabled && hoverBg),
-    borderColor: "".concat(loading ? borderColor : "border-gray-200", " ").concat(!loading && !disabled && hoverBorder),
+    classNameVariant: `justify-center ${loading ? activeBg : ""} ${!disabled && hoverBg}`,
+    borderColor: `${loading ? borderColor : "border-gray-200"} ${!loading && !disabled && hoverBorder}`,
     disabled: disabled
   }, /*#__PURE__*/React.createElement("div", {
     className: "flex justify-center"
-  }, loading ? /*#__PURE__*/React.createElement(_Icon["default"], {
+  }, loading ? /*#__PURE__*/React.createElement(_Icon.default, {
     name: "loading_animated",
     width: "30",
     height: "30"
-  }) : /*#__PURE__*/React.createElement(_Icon["default"], {
+  }) : /*#__PURE__*/React.createElement(_Icon.default, {
     name: provider,
     loading: loading,
     disabled: disabled
-  }))) : /*#__PURE__*/React.createElement(_Button["default"], {
+  }))) : /*#__PURE__*/React.createElement(_Button.default, {
     size: size,
     fluid: true,
     onClick: onLogin,
-    classNameVariant: "justify-center ".concat(loading ? activeBg : "", " ").concat(!disabled && hoverBg),
-    borderColor: "".concat(loading ? borderColor : "border-gray-200", " ").concat(!loading && !disabled && hoverBorder),
-    textColor: "\n          ".concat(loading && "text-white", " \n          ").concat(!loading && disabled && "text-gray-800", "\n          ").concat(!loading && !disabled && "text-gray-1200", "\n          ").concat(!disabled && "hover:text-white"),
+    classNameVariant: `justify-center ${loading ? activeBg : ""} ${!disabled && hoverBg}`,
+    borderColor: `${loading ? borderColor : "border-gray-200"} ${!loading && !disabled && hoverBorder}`,
+    textColor: `
+          ${loading && "text-white"} 
+          ${!loading && disabled && "text-gray-800"}
+          ${!loading && !disabled && "text-gray-1200"}
+          ${!disabled && "hover:text-white"}`,
     disabled: disabled
   }, /*#__PURE__*/React.createElement("div", {
     className: "flex items-center mr-4 ml-2 w-full"
   }, /*#__PURE__*/React.createElement("div", {
     className: "mr-4"
-  }, /*#__PURE__*/React.createElement(_Icon["default"], {
+  }, /*#__PURE__*/React.createElement(_Icon.default, {
     name: provider,
     className: "mr-2",
     loading: loading,
@@ -93,11 +98,11 @@ var LoginButton = function LoginButton(_ref) {
     className: "text-base font-normal capitalize"
   }, provider.toLowerCase()), loading && /*#__PURE__*/React.createElement("div", {
     className: "ml-auto"
-  }, /*#__PURE__*/React.createElement(_Icon["default"], {
+  }, /*#__PURE__*/React.createElement(_Icon.default, {
     name: "loading_animated",
     width: "30",
     height: "30"
   })))));
 };
 var _default = LoginButton;
-exports["default"] = _default;
+exports.default = _default;
