@@ -13,6 +13,7 @@
   "scripts": {
     "start": "styleguidist server --config styleguide.config.cjs",
     "tailwindcss": "npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch -c tailwind.config.js",
+    "b": "babel --config-file ./babel.config.js",
     "build": "styleguidist build --config styleguide.config.cjs && babel --config-file ./babel.config.js src -d lib && rsync -r --exclude=*.js --exclude=*.jsx src/ lib/",
     "test": "node ./__tests__/ui-library.test.js"
   },
