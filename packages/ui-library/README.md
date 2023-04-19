@@ -26,7 +26,16 @@
 
     `yarn tailwindcss init --esm`
 
-    2.3 Update tailwind.config.js file:
+    2.3 Add the Tailwind directives to your CSS.
+
+    ```js
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+    ```
+
+    2.4 Update tailwind.config.js file:
 
     - Additionally to your own content data you should add the `@usekeyp/ui-library` source paths to apply the classes from the elements in the tailwind.config.js file.
 
