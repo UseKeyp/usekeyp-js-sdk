@@ -4,6 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+var _react = _interopRequireDefault(require("react"));
 var _router = require("@redwoodjs/router");
 var _propTypes = _interopRequireDefault(require("prop-types"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -43,7 +44,7 @@ const Button = ({
 }) => {
   const Element = href ? "a" : "button";
   if (to) {
-    return /*#__PURE__*/React.createElement(_router.Link, _extends({
+    return /*#__PURE__*/_react.default.createElement(_router.Link, _extends({
       className: `removeFlickering flex justify-center items-center group text-center text-lg leading-button font-bold tracking-wide rounded-[6px]  
             ${textColor ? textColor : "text-white"} 
             ${size === "regular" && !fluid ? "h-[48px] w-[200px]" : ""}
@@ -61,7 +62,7 @@ const Button = ({
       to: to
     }, rest), label || children);
   }
-  return /*#__PURE__*/React.createElement(Element, _extends({
+  return /*#__PURE__*/_react.default.createElement(Element, _extends({
     className: `removeFlickering flex items-center group text-center text-lg leading-button font-bold tracking-wide rounded-[6px]
             ${textColor ? textColor : "text-white"} 
             ${size === "regular" && !fluid ? "h-[48px] w-[200px]" : ""}

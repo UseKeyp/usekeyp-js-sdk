@@ -4,6 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+var _react = _interopRequireDefault(require("react"));
 var _Button = _interopRequireDefault(require("../Button/Button"));
 var _Icon = _interopRequireDefault(require("../Icon/Icon"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -55,25 +56,25 @@ const LoginButton = ({
     borderColor: borderColor,
     hoverBorder
   } = getBrandColor(provider);
-  return /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/_react.default.createElement("div", {
     className: "mb-4"
-  }, size === "square" ? /*#__PURE__*/React.createElement(_Button.default, {
+  }, size === "square" ? /*#__PURE__*/_react.default.createElement(_Button.default, {
     size: size,
     onClick: onLogin,
     classNameVariant: `justify-center ${loading ? activeBg : ""} ${!disabled && hoverBg}`,
     borderColor: `${loading ? borderColor : "border-gray-200"} ${!loading && !disabled && hoverBorder}`,
     disabled: disabled
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement("div", {
     className: "flex justify-center"
-  }, loading ? /*#__PURE__*/React.createElement(_Icon.default, {
+  }, loading ? /*#__PURE__*/_react.default.createElement(_Icon.default, {
     name: "loading_animated",
     width: "30",
     height: "30"
-  }) : /*#__PURE__*/React.createElement(_Icon.default, {
+  }) : /*#__PURE__*/_react.default.createElement(_Icon.default, {
     name: provider,
     loading: loading,
     disabled: disabled
-  }))) : /*#__PURE__*/React.createElement(_Button.default, {
+  }))) : /*#__PURE__*/_react.default.createElement(_Button.default, {
     size: size,
     fluid: true,
     onClick: onLogin,
@@ -85,20 +86,20 @@ const LoginButton = ({
           ${!loading && !disabled && "text-gray-1200"}
           ${!disabled && "hover:text-white"}`,
     disabled: disabled
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement("div", {
     className: "flex items-center mr-4 ml-2 w-full"
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement("div", {
     className: "mr-4"
-  }, /*#__PURE__*/React.createElement(_Icon.default, {
+  }, /*#__PURE__*/_react.default.createElement(_Icon.default, {
     name: provider,
     className: "mr-2",
     loading: loading,
     disabled: disabled
-  })), /*#__PURE__*/React.createElement("div", {
+  })), /*#__PURE__*/_react.default.createElement("div", {
     className: "text-base font-normal capitalize"
-  }, provider.toLowerCase()), loading && /*#__PURE__*/React.createElement("div", {
+  }, provider.toLowerCase()), loading && /*#__PURE__*/_react.default.createElement("div", {
     className: "ml-auto"
-  }, /*#__PURE__*/React.createElement(_Icon.default, {
+  }, /*#__PURE__*/_react.default.createElement(_Icon.default, {
     name: "loading_animated",
     width: "30",
     height: "30"

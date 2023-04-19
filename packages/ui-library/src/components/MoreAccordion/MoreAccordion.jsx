@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Icon from "../Icon/Icon";
 
 export const MoreAccordion = ({ title, children }) => {

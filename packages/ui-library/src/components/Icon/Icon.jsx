@@ -1,3 +1,4 @@
+import React from "react";
 import iconMap from "../../assets/icons/icon-map.js";
 
 const EmptyIcon = () => <div />;
