@@ -80,7 +80,12 @@ const LoginPage = () => {
    // custom auth logic depending on the app
   }
 
-  return (<><LoginPortal onClick={onClick} providers={["APPLE", "TWITTER", "DISCORD"]}/><>)
+  return (<>
+        <LoginPortal
+          providers={["TWITTER", "GITHUB", "APPLE"]}
+          additionalProviders={["DISCORD", "GOOGLE"]}
+          onClick={onClick}
+        /><>)
 }
 
 ```
