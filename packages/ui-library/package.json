@@ -1,24 +1,21 @@
 {
   "name": "@usekeyp/ui-library",
   "version": "0.1.1",
-  "description": "> TODO: description",
+  "description": "Component library for building apps using Keyp",
   "author": "alekseevayana <alekseevayana@bk.ru>",
-  "homepage": "https://github.com/UseKeyp/keyp-frontend-components#readme",
+  "homepage": "https://github.com/UseKeyp/ui-library#readme",
   "license": "ISC",
   "type": "module",
   "main": "src/components/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/UseKeyp/keyp-frontend-components.git"
+    "url": "git+https://github.com/UseKeyp/ui-library.git"
   },
   "scripts": {
     "start": "styleguidist server --config styleguide.config.cjs",
     "tailwindcss": "npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch -c tailwind.config.js",
     "build": "styleguidist build --config styleguide.config.cjs",
     "test": "node ./__tests__/ui-library.test.js"
-  },
-  "bugs": {
-    "url": "https://github.com/UseKeyp/keyp-frontend-components/issues"
   },
   "dependencies": {
     "@redwoodjs/router": "^3.3.0",
