@@ -16,60 +16,18 @@
 1.  Add package to your project:  
     `yarn add @usekeyp/ui-library`
 
-2.  Install and configure necessary dependencies.
+2.  Install and configure Tailwind CSS.
 
-    2.1. Configure Webpack:
+    2.1 Install the latest version of Tailwind.
 
-    - Run `yarn eject` to customize the Webpack configuration.
+    `yarn add -D tailwindcss@latest`
 
-    - Update `webpack.config.js` by including the new path for the UI Library:
+    2.2 Add tailwind.config.js file
 
-    ```js
-            {
-              test: /\.(js|mjs|jsx|ts|tsx)$/,
-              include: paths.uiLibrary,
-              loader: require.resolve("babel-loader"),
-              options: {
-                customize: require.resolve(
-                  "babel-preset-react-app/webpack-overrides"
-                ),
-                presets: [
-                  [
-                    require.resolve("babel-preset-react-app"),
-                    {
-                      runtime: hasJsxRuntime ? "automatic" : "classic",
-                    },
-                  ],
-                ],
+    `yarn tailwindcss init --esm`
 
-                plugins: [
-                  isEnvDevelopment &&
-                    shouldUseReactRefresh &&
-                    require.resolve("react-refresh/babel"),
-                ].filter(Boolean),
-                // This is a feature of `babel-loader` for webpack (not Babel itself).
-                // It enables caching results in ./node_modules/.cache/babel-loader/
-                // directory for faster rebuilds.
-                cacheDirectory: true,
-                // See #6846 for context on why cacheCompression is disabled
-                cacheCompression: false,
-                compact: isEnvProduction,
-              },
-            },
-    ```
+    2.3 Update tailwind.config.js file:
 
-    - Add the UI Library path in `paths.js`:
-
-    ```js
-        module.exports = {
-            ...,
-            uiLibrary: resolveApp("./node_modules/@usekeyp/ui-library/"),
-        };
-    ```
-
-    2.2. Add Tailwind CSS.
-
-    - Install the latest version of Tailwind and add tailwind.config.js file.
     - Additionally to your own content data you should add the `@usekeyp/ui-library` source paths to apply the classes from the elements in the tailwind.config.js file.
 
     ```js
@@ -91,7 +49,7 @@
     };
     ```
 
-    Here's an example of the whole `tailwind.config.js`:
+    - Here's an example of the whole `tailwind.config.js`:
 
     ```js
     /** @type {import('tailwindcss').Config} */
@@ -107,11 +65,11 @@
     };
     ```
 
-3.  Start the Tailwind CLI build process.  
+    2.4 Start the Tailwind CLI build process. You can add this command to your build process.  
     Example:  
-    `npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch -c tailwind.config.js`
+    `yarn tailwindcss -i ./src/index.css -o ./dist/output.css --watch -c tailwind.config.js`
 
-4.  Utilize components in your project:
+3.  Utilize components in your project:
 
 ```js
 import { LoginPortal } from "@usekeyp/ui-library";
@@ -122,7 +80,7 @@ const LoginPage = () => {
    // custom auth logic depending on the app
   }
 
-  return (<><LoginPortal onClick={onClick} /><>)
+  return (<><LoginPortal onClick={onClick} providers={["APPLE", "TWITTER", "DISCORD"]}/><>)
 }
 
 ```
