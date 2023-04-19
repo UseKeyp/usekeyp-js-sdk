@@ -1,4 +1,3 @@
-//import "./icons.css";
 import React from "react";
 const Apple = ({ loading, disabled }) => {
   return (
@@ -520,6 +519,140 @@ const LoadingAnimated = ({ width, height }) => {
       width={width}
       height={height}
     >
+      <style>{`#image-mark-stroke-u-line_tr {
+  animation: image-mark-stroke-u-line_tr__tr 1600ms linear infinite normal
+    forwards;
+}
+@keyframes image-mark-stroke-u-line_tr__tr {
+  0% {
+    transform: translate(8.959798px, 8.979207px) rotate(0deg);
+  }
+  37.5% {
+    transform: translate(8.959798px, 8.979207px) rotate(0deg);
+    animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+  }
+  100% {
+    transform: translate(8.959798px, 8.979207px) rotate(360deg);
+  }
+}
+#image-mark-stroke-u-line {
+  animation: image-mark-stroke-u-line_c_o 1600ms linear infinite normal forwards;
+}
+@keyframes image-mark-stroke-u-line_c_o {
+  0% {
+    opacity: 0;
+  }
+  56.25% {
+    opacity: 1;
+    animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+#image-mark-stroke-u-05 {
+  animation: image-mark-stroke-u-05_s_do 1600ms linear infinite normal forwards;
+}
+@keyframes image-mark-stroke-u-05_s_do {
+  0% {
+    stroke-dashoffset: 16.966138;
+  }
+  30% {
+    stroke-dashoffset: 16.966138;
+    animation-timing-function: cubic-bezier(0.27, 0.02, 0.335, 0.995);
+  }
+  68.75% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+#image-mark-stroke-u-04 {
+  animation: image-mark-stroke-u-04_s_do 1600ms linear infinite normal forwards;
+}
+@keyframes image-mark-stroke-u-04_s_do {
+  0% {
+    stroke-dashoffset: 7.689743;
+  }
+  18.75% {
+    stroke-dashoffset: 7.689743;
+    animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  }
+  37.5% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+#image-mark-stroke-u-03 {
+  animation: image-mark-stroke-u-03_s_do 1600ms linear infinite normal forwards;
+}
+@keyframes image-mark-stroke-u-03_s_do {
+  0% {
+    stroke-dashoffset: 3.839496;
+  }
+  12.5% {
+    stroke-dashoffset: 3.839496;
+    animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  25% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+#image-mark-stroke-u-02 {
+  animation: image-mark-stroke-u-02_s_do 1600ms linear infinite normal forwards;
+}
+@keyframes image-mark-stroke-u-02_s_do {
+  0% {
+    stroke-dashoffset: 0.649135;
+  }
+  6.25% {
+    stroke-dashoffset: 0.649135;
+    animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  18.75% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+#image-mark-stroke-u-01 {
+  animation-name: image-mark-stroke-u-01_c_o, image-mark-stroke-u-01_s_do;
+  animation-duration: 1600ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  animation-direction: normal;
+  animation-iteration-count: infinite;
+}
+@keyframes image-mark-stroke-u-01_c_o {
+  0% {
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  12.5% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes image-mark-stroke-u-01_s_do {
+  0% {
+    stroke-dashoffset: 0.054686;
+  }
+  12.5% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}`}</style>
       <g
         id="image-mark-stroke-u-line_tr"
         transform="translate(8.959798,8.979207) rotate(0)"
