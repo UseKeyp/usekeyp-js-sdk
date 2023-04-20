@@ -19,3 +19,4 @@ jobs:
         with:
           token: ${{ secrets.PAT }}
           build-command: "exit 0"
+          package-name: "@usekeyp/ui-library"
