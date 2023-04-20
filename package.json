@@ -1,5 +1,5 @@
 {
-  "name": "@usekeyp/ui-library",
+  "name": "keyp-open-source-fe-components",
   "private": true,
   "workspaces": [
     "packages/*"
