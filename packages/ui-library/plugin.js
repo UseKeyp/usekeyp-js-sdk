@@ -1,6 +1,6 @@
 const plugin = require("tailwindcss/plugin");
 
-export default plugin(
+module.exports = plugin(
   function ({ addBase }) {
     addBase({
       ".removeFlickering": {
