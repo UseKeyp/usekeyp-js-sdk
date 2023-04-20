@@ -18,5 +18,5 @@ jobs:
         uses: UseKeyp/publish-pr-packages@v1.0.2
         with:
           token: ${{ secrets.PAT }}
-          build-command: "exit 0"
+          build-command: "yarn build"
           package-name: "@usekeyp/ui-library"
