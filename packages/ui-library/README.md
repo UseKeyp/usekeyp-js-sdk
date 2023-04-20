@@ -18,13 +18,13 @@
 
 2.  Install and configure Tailwind CSS.
 
-    2.1 Install the latest version of Tailwind.
+    2.1 Install Tailwind CSS.
 
-    `yarn add -D tailwindcss@latest`
+    `yarn add -D tailwindcss`
 
     2.2 Add tailwind.config.js file
 
-    `yarn tailwindcss init --esm`
+    `yarn tailwindcss init`
 
     2.3 Add the Tailwind directives to your CSS.
 
@@ -41,7 +41,7 @@
 
     ```js
     /** @type {import('tailwindcss').Config} */
-    export default {
+    module.exports = {
       content: [
         "./src/**/*.{js,jsx,ts,tsx}",
         "./node_modules/@usekeyp/ui-library/src/**/*.{js,jsx,ts,tsx,md}",
@@ -53,12 +53,28 @@
 
     ```js
     /** @type {import('tailwindcss').Config} */
-    export default {
+    module.exports = {
       plugins: [require("@usekeyp/ui-library/plugin")],
     };
     ```
 
     - Here's an example of the whole `tailwind.config.js`:
+
+    ```js
+    /** @type {import('tailwindcss').Config} */
+    module.exports = {
+      content: [
+        "./src/**/*.{js,jsx,ts,tsx}",
+        "./node_modules/@usekeyp/ui-library/src/**/*.{js,jsx,ts,tsx,md}",
+      ],
+      theme: {
+        extend: {},
+      },
+      plugins: [require("@usekeyp/ui-library/plugin")],
+    };
+    ```
+
+    - Here's an example of the whole `tailwind.config.js` with the latest version of tailwindcss:
 
     ```js
     /** @type {import('tailwindcss').Config} */
