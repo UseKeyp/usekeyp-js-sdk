@@ -103,11 +103,43 @@
       };
       ```
 
-      2.5 Start the Tailwind CLI build process. You can add this command to your build process.  
-      Example for React:  
-      `yarn tailwindcss -i ./src/index.css -o ./dist/output.css --watch -c tailwind.config.js`
-      Example for Next.js
-      `yarn tailwindcss -i ./styles/globals.css -o ./dist/output.css --watch`
+      2.5 Start the Tailwind CLI build process.
+
+      - Example for React:
+
+        `yarn tailwindcss -i ./src/index.css -o ./dist/output.css --watch -c tailwind.config.js`
+
+        You can add this command to your build process `package.json` file:
+
+        ```js
+        {
+          ...,
+          "scripts": {
+            "start": "react-scripts start",
+            "tailwindcss": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+            ...
+          }
+        }
+
+        ```
+
+      - Example for Next.js
+
+        `yarn tailwindcss -i ./styles/globals.css -o ./dist/output.css --watch`
+
+        You can add this command to your build process to `package.json` file:
+
+        ```js
+        {
+          ...,
+          "scripts": {
+            "dev": "next dev",
+            "tailwindcss": "tailwindcss -i ./styles/globals.css -o ./dist/output.css --watch",
+            ...
+          },
+        }
+
+        ```
 
 3.  Utilize components in your project:
 
