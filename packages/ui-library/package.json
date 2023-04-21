@@ -8,8 +8,7 @@
   "main": "lib/components/index.js",
   "files": [
     "plugin.js",
-    "lib",
-    "src"
+    "lib"
   ],
   "repository": {
     "type": "git",
