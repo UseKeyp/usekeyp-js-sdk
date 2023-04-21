@@ -13,8 +13,8 @@
 
 ## Usage 📖
 
-1.  Add package to your project:  
-    
+1.  Add package to your project:
+
     ```bash
     yarn add @usekeyp/ui-library
     ```
@@ -44,22 +44,22 @@
 
     - Add the `@usekeyp/ui-library` to apply the appropriate classes.
     - Require `@usekeyp/ui-library` as a plugin.
-  
-      **React** 
+
+      **React**
 
       ```js
       /** @type {import('tailwindcss').Config} */
       module.exports = {
         content: [
           "./src/**/*.{js,jsx,ts,tsx}",
-          "./node_modules/@usekeyp/ui-library/src/**/*.{js,jsx,ts,tsx,md}",
+          "./node_modules/@usekeyp/ui-library/lib/**/*.{js,jsx,ts,tsx,md}",
         ],
         plugins: [require("@usekeyp/ui-library/plugin")],
         // ...
       };
       ```
 
-      **Next.js** 
+      **Next.js**
 
       ```js
       /** @type {import('tailwindcss').Config} */
@@ -67,7 +67,7 @@
         content: [
           "./pages/**/*.{js, jsx, ts,tsx}",
           "./public/**/*.html",
-          "./node_modules/@usekeyp/ui-library/src/**/*.{js,jsx,ts,tsx,md}",
+          "./node_modules/@usekeyp/ui-library/lib/**/*.{js,jsx,ts,tsx,md}",
         ],
         plugins: [require("@usekeyp/ui-library/plugin")],
         // ...
@@ -76,43 +76,43 @@
 
       2.4 Start the Tailwind CLI build process.
 
-        **React** 
+      **React**
 
-        `yarn tailwindcss -i ./src/index.css -o ./dist/output.css --watch -c tailwind.config.js`
+      `yarn tailwindcss -i ./src/index.css -o ./dist/output.css --watch -c tailwind.config.js`
 
-        You can add this command to your build process `package.json` file:
+      You can add this command to your build process `package.json` file:
 
-        ```js
-        {
-          ...,
-          "scripts": {
-            "start": "react-scripts start",
-            "tailwindcss": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
-            ...
-          }
+      ```js
+      {
+        ...,
+        "scripts": {
+          "start": "react-scripts start",
+          "tailwindcss": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+          ...
         }
+      }
 
-        ```
+      ```
 
-        **Next.js**
+      **Next.js**
 
-        `yarn tailwindcss -i ./styles/globals.css -o ./dist/output.css --watch`
+      `yarn tailwindcss -i ./styles/globals.css -o ./dist/output.css --watch`
 
-        You can add this command to your build process to `package.json` file:
+      You can add this command to your build process to `package.json` file:
 
-        ```js
-        {
-          ...,
-          "scripts": {
-            "dev": "next dev",
-            "tailwindcss": "tailwindcss -i ./styles/globals.css -o ./dist/output.css --watch",
-            ...
-          },
-        }
+      ```js
+      {
+        ...,
+        "scripts": {
+          "dev": "next dev",
+          "tailwindcss": "tailwindcss -i ./styles/globals.css -o ./dist/output.css --watch",
+          ...
+        },
+      }
 
-        ```
+      ```
 
-1.  Utilize components in your project:
+3.  Utilize components in your project:
 
 ```js
 import { LoginPortal } from "@usekeyp/ui-library";
