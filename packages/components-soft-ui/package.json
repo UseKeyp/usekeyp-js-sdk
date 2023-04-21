@@ -28,7 +28,8 @@
     "tailwindcss": "npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch",
     "build": "styleguidist build --config styleguide.config.cjs",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "publish": ""
   },
   "eslintConfig": {
     "extends": [
