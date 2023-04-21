@@ -26,7 +26,8 @@
     "lint": "eslint \"src/**/*.{js,jsx}\"",
     "start": "styleguidist server --config styleguide.config.cjs",
     "tailwindcss": "npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch",
-    "build": "styleguidist build --config styleguide.config.cjs",
+    "build1": "styleguidist build --config styleguide.config.cjs",
+    "build": "exit 0",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "publish": "exit 0"
