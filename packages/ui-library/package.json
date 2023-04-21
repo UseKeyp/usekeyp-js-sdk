@@ -18,6 +18,7 @@
     "start": "styleguidist server --config styleguide.config.cjs",
     "tailwindcss": "tailwindcss -i ./src/index.css -o ./dist/output.css --watch -c tailwind.config.js",
     "build": "yarn tailwindcss && styleguidist build --config styleguide.config.cjs && babel --config-file ./babel.config.js src -d lib && rsync -r --exclude=*.js --exclude=*.jsx --exclude=*.md src/ lib/",
+    "publish": "babel --config-file ./babel.config.js src -d lib",
     "test": "node ./__tests__/ui-library.test.js"
   },
   "dependencies": {
