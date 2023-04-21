@@ -26,11 +26,10 @@
     "lint": "eslint \"src/**/*.{js,jsx}\"",
     "start": "styleguidist server --config styleguide.config.cjs",
     "tailwindcss": "npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch",
-    "build1": "styleguidist build --config styleguide.config.cjs",
-    "build": "exit 0",
+    "build": "styleguidist build --config styleguide.config.cjs",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "publish": "exit 0"
+    "pre-publish": "exit 0"
   },
   "eslintConfig": {
     "extends": [
