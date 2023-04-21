@@ -14,31 +14,38 @@
 ## Usage 📖
 
 1.  Add package to your project:  
-    `yarn add @usekeyp/ui-library`
+    
+    ```bash
+    yarn add @usekeyp/ui-library
+    ```
 
 2.  Install and configure Tailwind CSS.
 
-    2.1 Install Tailwind CSS.
+    2.1 Install and initialize.
 
-    `yarn add -D tailwindcss`
+    ```bash
+    yarn add -D tailwindcss
 
-    2.2 Add tailwind.config.js file
-
-    `yarn tailwindcss init`
-
-    2.3 Add the Tailwind directives to your CSS.
-
-    ```js
-    @tailwind base;
-    @tailwind components;
-    @tailwind utilities;
-
+    yarn tailwindcss init
     ```
 
-    2.4 Update tailwind.config.js file:
+    2.2 Add the Tailwind directives to your `index.css`.
 
-    - Additionally to your own content data you should add the `@usekeyp/ui-library` source paths to apply the classes from the elements in the tailwind.config.js file.  
-      React example:
+    ```diff
+    + @tailwind base;
+    + @tailwind components;
+    + @tailwind utilities;
+
+    body {
+      margin: 0;
+    ```
+
+    2.3 Update `tailwind.config.js` file:
+
+    - Add the `@usekeyp/ui-library` to apply the appropriate classes.
+    - Require `@usekeyp/ui-library` as a plugin.
+  
+      **React** 
 
       ```js
       /** @type {import('tailwindcss').Config} */
@@ -47,65 +54,29 @@
           "./src/**/*.{js,jsx,ts,tsx}",
           "./node_modules/@usekeyp/ui-library/src/**/*.{js,jsx,ts,tsx,md}",
         ],
+        plugins: [require("@usekeyp/ui-library/plugin")],
+        // ...
       };
       ```
 
-      Next.js example:
+      **Next.js** 
 
       ```js
+      /** @type {import('tailwindcss').Config} */
       module.exports = {
         content: [
           "./pages/**/*.{js, jsx, ts,tsx}",
           "./public/**/*.html",
           "./node_modules/@usekeyp/ui-library/src/**/*.{js,jsx,ts,tsx,md}",
         ],
-      };
-      ```
-
-    - Require `@usekeyp/ui-library` as a plugin inside your `tailwind.config.js` file.
-
-      ```js
-      /** @type {import('tailwindcss').Config} */
-      module.exports = {
         plugins: [require("@usekeyp/ui-library/plugin")],
+        // ...
       };
       ```
 
-    - Here's an example of the whole `tailwind.config.js`:
+      2.4 Start the Tailwind CLI build process.
 
-      ```js
-      /** @type {import('tailwindcss').Config} */
-      module.exports = {
-        content: [
-          "./src/**/*.{js,jsx,ts,tsx}",
-          "./node_modules/@usekeyp/ui-library/src/**/*.{js,jsx,ts,tsx,md}",
-        ],
-        theme: {
-          extend: {},
-        },
-        plugins: [require("@usekeyp/ui-library/plugin")],
-      };
-      ```
-
-    - Here's an example of the whole `tailwind.config.js` with the latest version of tailwindcss:
-
-      ```js
-      /** @type {import('tailwindcss').Config} */
-      export default {
-        content: [
-          "./src/**/*.{js,jsx,ts,tsx}",
-          "./node_modules/@usekeyp/ui-library/src/**/*.{js,jsx,ts,tsx,md}",
-        ],
-        theme: {
-          extend: {},
-        },
-        plugins: [require("@usekeyp/ui-library/plugin")],
-      };
-      ```
-
-      2.5 Start the Tailwind CLI build process.
-
-      - Example for React:
+        **React** 
 
         `yarn tailwindcss -i ./src/index.css -o ./dist/output.css --watch -c tailwind.config.js`
 
@@ -123,7 +94,7 @@
 
         ```
 
-      - Example for Next.js
+        **Next.js**
 
         `yarn tailwindcss -i ./styles/globals.css -o ./dist/output.css --watch`
 
@@ -141,7 +112,7 @@
 
         ```
 
-3.  Utilize components in your project:
+1.  Utilize components in your project:
 
 ```js
 import { LoginPortal } from "@usekeyp/ui-library";
