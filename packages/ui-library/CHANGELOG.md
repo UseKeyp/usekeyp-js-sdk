@@ -5,12 +5,4 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## 0.1.2 (2023-04-24)
 
-**Note:** Version bump only for package keyp-open-source-fe-components
-
-
-
-
-
-## 0.1.1 (2023-01-27)
-
-**Note:** Version bump only for package @usekeyp/frontend-components
+**Note:** Version bump only for package @usekeyp/ui-library
