@@ -1,0 +1,10 @@
+{
+  "name": "keyp-open-source-fe-components",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "lerna": "^6.4.1"
+  }
+}
