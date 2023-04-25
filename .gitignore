@@ -25,3 +25,5 @@ yarn-error.log*
 
 lerna-debug.log
 *.tgz
+install-state.gz
+yarn-error.log
