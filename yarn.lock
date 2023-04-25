@@ -2781,9 +2781,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@usekeyp/ui-library@workspace:packages/ui-library":
+"@usekeyp/ui-kit@workspace:packages/ui-kit":
   version: 0.0.0-use.local
-  resolution: "@usekeyp/ui-library@workspace:packages/ui-library"
+  resolution: "@usekeyp/ui-kit@workspace:packages/ui-kit"
   dependencies:
     "@babel/cli": ^7.21.0
     "@babel/core": ^7.21.4
