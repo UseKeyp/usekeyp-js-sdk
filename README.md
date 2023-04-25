@@ -10,4 +10,10 @@
 </p>
 
 
-## See `/packages/ui-kit` for README
+## UI Kit
+
+#### See `/packages/ui-kit` for README
+
+## Contributing
+
+#### See `CONTRIBUTING.md` 

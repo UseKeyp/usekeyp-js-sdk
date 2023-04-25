@@ -1,9 +1,9 @@
 {
-  "name": "@usekeyp/ui-library",
+  "name": "@usekeyp/ui-kit",
   "version": "0.1.1",
   "description": "Component library for building apps using Keyp",
   "author": "alekseevayana <alekseevayana@bk.ru>",
-  "homepage": "https://github.com/UseKeyp/ui-library#readme",
+  "homepage": "https://github.com/UseKeyp/ui-kit#readme",
   "license": "ISC",
   "main": "lib/components/index.js",
   "files": [
@@ -12,14 +12,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/UseKeyp/ui-library.git"
+    "url": "git+https://github.com/UseKeyp/ui-kit.git"
   },
   "scripts": {
     "start": "styleguidist server --config styleguide.config.cjs",
     "tailwindcss": "tailwindcss -i ./src/index.css -o ./dist/output.css --watch -c tailwind.config.js",
     "build": "yarn tailwindcss && styleguidist build --config styleguide.config.cjs && babel --config-file ./babel.config.js src -d lib",
     "pre-publish": "babel --config-file ./babel.config.js src -d lib ",
-    "test": "node ./__tests__/ui-library.test.js"
+    "test": "node ./__tests__/ui-kit.test.js"
   },
   "dependencies": {
     "@redwoodjs/router": "^3.3.0",
