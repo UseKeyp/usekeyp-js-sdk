@@ -63,4 +63,28 @@ module.exports = {
   require: [
     path.join(__dirname, "./dist/output.css"), // for styleguidist to work with tailwind we have to reference compiled css here
   ],
+  theme: {
+    color: {
+      // link: "blue",
+      // linkHover: "blue",
+    },
+    fontFamily: {
+      base: "Inter",
+    },
+  },
+  styles: {
+    Logo: {
+      // We're changing the LogoRenderer component
+      logo: {
+        // We're changing the rsg--logo-XX class name inside the component
+      },
+    },
+    Heading: {
+      heading2: {
+        color: "#1499DA",
+        fontSize: "34px",
+        fontWeight: "bold",
+      },
+    },
+  },
 };
