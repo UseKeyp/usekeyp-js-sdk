@@ -86,5 +86,12 @@ module.exports = {
         fontWeight: "bold",
       },
     },
+    Para: {
+      para: {
+        color: "#3A3C41",
+        fontSize: "16px",
+        lineHeight: "130%",
+      },
+    },
   },
 };
