@@ -59,6 +59,10 @@ const webpackConfig = {
 
 module.exports = {
   webpackConfig,
+  assetsDir: "src/assets/",
+  template: {
+    favicon: "favicon.svg",
+  },
   ignore: ["**/components/Button/Button.jsx"],
   components: "src/components/**/[A-Z]*.jsx",
   require: [
