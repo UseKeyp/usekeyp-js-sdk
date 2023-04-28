@@ -59,6 +59,7 @@ const webpackConfig = {
 
 module.exports = {
   webpackConfig,
+  ignore: ["**/components/Button/Button.jsx"],
   components: "src/components/**/[A-Z]*.jsx",
   require: [
     path.join(__dirname, "./dist/output.css"), // for styleguidist to work with tailwind we have to reference compiled css here
