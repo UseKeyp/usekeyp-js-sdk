@@ -23,6 +23,9 @@ module.exports = plugin(
             2000: "#4A4D53",
             2400: "#3A3C41",
           },
+          blue: {
+            1200: "#1499DA",
+          },
           brand: {
             discord: "#5865F2",
             google: "#4285F4",
