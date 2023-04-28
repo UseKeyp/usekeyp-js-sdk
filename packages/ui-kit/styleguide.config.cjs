@@ -65,7 +65,7 @@ module.exports = {
   ],
   theme: {
     color: {
-      // link: "blue",
+      link: "#1499DA",
       // linkHover: "blue",
     },
     fontFamily: {
@@ -91,6 +91,18 @@ module.exports = {
         color: "#3A3C41",
         fontSize: "16px",
         lineHeight: "130%",
+      },
+    },
+    Link: {
+      link: {
+        color: "#1499DA",
+      },
+    },
+    ComponentsList: {
+      item: {
+        fontSize: "16px",
+        margin: "4px 0",
+        lineHeight: "21px",
       },
     },
   },
