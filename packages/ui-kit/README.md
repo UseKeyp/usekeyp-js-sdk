@@ -1,5 +1,5 @@
 <h1 align="center"><img width="600" style="border-radius: 30px;" src="https://raw.githubusercontent.com/UseKeyp/.github/main/Keyp-Logo-Color.svg"/></h1>
-<h1 align="center">Welcome to Keyp UI Library 👋</h1>
+<h1 align="center">Welcome to Keyp UI Kit 👋</h1>
 <p align="center">
   <a href="#" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-blue.svg" />
@@ -9,14 +9,20 @@
   </a>
 </p>
 
-> UI library package for various applications
+> Frontend components for apps built with Keyp
+
+## Preview Components
+
+### See the available components at https://keyp-ui-library.surge.sh/
+
+`dev` branch is deployed here at https://keyp-ui-library-dev.surge.sh/  
 
 ## Usage 📖
 
 1.  Add package to your project:
 
     ```bash
-    yarn add @usekeyp/ui-library
+    yarn add @usekeyp/ui-kit
     ```
 
 2.  Install and configure Tailwind CSS.
@@ -42,8 +48,8 @@
 
     2.3 Update `tailwind.config.js` file:
 
-    - Add the `@usekeyp/ui-library` to apply the appropriate classes.
-    - Require `@usekeyp/ui-library` as a plugin.
+    - Add the `@usekeyp/ui-kit` to apply the appropriate classes.
+    - Require `@usekeyp/ui-kit` as a plugin.
 
       **React**
 
@@ -52,9 +58,9 @@
       module.exports = {
         content: [
           "./src/**/*.{js,jsx,ts,tsx}",
-          "./node_modules/@usekeyp/ui-library/lib/**/*.{js,jsx,ts,tsx,md}",
+          "./node_modules/@usekeyp/ui-kit/lib/**/*.{js,jsx,ts,tsx,md}",
         ],
-        plugins: [require("@usekeyp/ui-library/plugin")],
+        plugins: [require("@usekeyp/ui-kit/plugin")],
         // ...
       };
       ```
@@ -67,9 +73,9 @@
         content: [
           "./pages/**/*.{js, jsx, ts,tsx}",
           "./public/**/*.html",
-          "./node_modules/@usekeyp/ui-library/lib/**/*.{js,jsx,ts,tsx,md}",
+          "./node_modules/@usekeyp/ui-kit/lib/**/*.{js,jsx,ts,tsx,md}",
         ],
-        plugins: [require("@usekeyp/ui-library/plugin")],
+        plugins: [require("@usekeyp/ui-kit/plugin")],
         // ...
       };
       ```
@@ -115,7 +121,7 @@
 3.  Utilize components in your project:
 
 ```js
-import { LoginPortal } from "@usekeyp/ui-library";
+import { LoginPortal } from "@usekeyp/ui-kit";
 
 const LoginPage = () => {
 

@@ -1,9 +1,9 @@
 {
-  "name": "@usekeyp/ui-library",
+  "name": "@usekeyp/ui-kit",
   "version": "0.1.1",
   "description": "Component library for building apps using Keyp",
   "author": "alekseevayana <alekseevayana@bk.ru>",
-  "homepage": "https://github.com/UseKeyp/ui-library#readme",
+  "homepage": "https://github.com/UseKeyp/ui-kit#readme",
   "license": "ISC",
   "main": "lib/components/index.js",
   "files": [
@@ -12,19 +12,22 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/UseKeyp/ui-library.git"
+    "url": "git+https://github.com/UseKeyp/ui-kit.git"
   },
   "scripts": {
     "start": "styleguidist server --config styleguide.config.cjs",
     "tailwindcss": "tailwindcss -i ./src/index.css -o ./dist/output.css --watch -c tailwind.config.js",
     "build": "yarn tailwindcss && styleguidist build --config styleguide.config.cjs && babel --config-file ./babel.config.js src -d lib",
     "pre-publish": "babel --config-file ./babel.config.js src -d lib ",
-    "test": "node ./__tests__/ui-library.test.js"
+    "test": "node ./__tests__/ui-kit.test.js"
   },
   "dependencies": {
     "@redwoodjs/router": "^3.3.0",
     "prop-types": "^15.8.1",
-    "react-styleguidist": "^13.1.1"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "surge": "^0.23.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.21.0",
@@ -33,6 +36,8 @@
     "@babel/preset-react": "^7.18.6",
     "babel-loader": "^9.1.2",
     "postcss": "^8.4.18",
-    "tailwindcss": "^3.3.1"
+    "react-styleguidist": "^13.0.0",
+    "tailwindcss": "^3.3.1",
+    "webpack": "^5.80.0"
   }
 }
