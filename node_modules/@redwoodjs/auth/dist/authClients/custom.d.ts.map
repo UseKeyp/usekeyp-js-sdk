@@ -1,0 +1,1 @@
+{"version":3,"file":"custom.d.ts","sourceRoot":"","sources":["../../src/authClients/custom.ts"],"names":[],"mappings":"AAAA,oBAAY,MAAM,GAAG,GAAG,CAAA;AAExB,OAAO,EAAE,UAAU,EAAE,MAAM,IAAI,CAAA;AAE/B,MAAM,WAAW,gBAAiB,SAAQ,UAAU;IAClD,MAAM,EAAE,MAAM,CAAA;IACd,IAAI,EAAE,QAAQ,CAAA;CACf;AAED,eAAO,MAAM,MAAM,eAAgB,gBAAgB,qBAAe,CAAA"}

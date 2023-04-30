@@ -1,0 +1,1 @@
+{"version":3,"file":"netlify.d.ts","sourceRoot":"","sources":["../../src/authClients/netlify.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,KAAK,iBAAiB,MAAM,yBAAyB,CAAA;AAEjE,OAAO,KAAK,EAAE,UAAU,EAAE,MAAM,IAAI,CAAA;AAEpC,oBAAY,eAAe,GAAG,OAAO,iBAAiB,CAAA;AAEtD,eAAO,MAAM,OAAO,WAAY,eAAe,KAAG,UAsDjD,CAAA"}
