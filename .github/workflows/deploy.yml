@@ -15,19 +15,19 @@ jobs:
         with:
           node-version: "18"
       - name: Install packages
-        working-directory: ./packages/ui-library
+        working-directory: ./packages/ui-kit
         run: npm install
       - name: Generate CSS Output
-        working-directory: ./packages/ui-library
+        working-directory: ./packages/ui-kit
         run: npx tailwindcss -i ./src/index.css -o ./dist/output.css
       - name: Build the app w/styleguidist
-        working-directory: ./packages/ui-library
+        working-directory: ./packages/ui-kit
         run: ../../node_modules/.bin/styleguidist build --config styleguide.config.cjs
       - name: Install Surge
-        working-directory: ./packages/ui-library
+        working-directory: ./packages/ui-kit
         run: npm install -g surge
       - name: Deploy to surge
-        working-directory: ./packages/ui-library
+        working-directory: ./packages/ui-kit
         run: surge ./styleguide keyp-ui-library.surge.sh/ --token ${{secrets.TOKEN}}
       - name: Discord notify finished
         env:
