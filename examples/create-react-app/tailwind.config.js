@@ -2,11 +2,11 @@
 export default {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
-    "./node_modules/@usekeyp/ui-library/src/**/*.{js,jsx,ts,tsx,md}",
+    "./node_modules/@usekeyp/ui-kit/src/**/*.{js,jsx,ts,tsx,md}",
   ],
   theme: {
     extend: {},
   },
-  plugins: [require("@usekeyp/ui-library/plugin")]
+  plugins: [require("@usekeyp/ui-kit/plugin")]
 }
 

@@ -13,9 +13,9 @@
 
 ## Preview Components
 
-### See the available components at https://keyp-ui-library.surge.sh/
+### See the available components at https://ui.usekeyp.com
 
-`dev` branch is deployed here at https://keyp-ui-library-dev.surge.sh/  
+`staging` branch is deployed at https://ui.staging-env.usekeyp.com
 
 ## Usage 📖
 
