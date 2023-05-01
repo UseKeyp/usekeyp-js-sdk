@@ -58,6 +58,36 @@ const webpackConfig = {
 };
 
 module.exports = {
+  sections: [
+    {
+      name: "Resources",
+      content: "src/public/resources.md",
+      sections: [
+        {
+          name: "Website",
+          external: true,
+          href: "https://usekeyp.com",
+        },
+        {
+          name: "Docs",
+          external: true,
+          href: "https://docs.usekeyp.com",
+        },
+        {
+          name: "Discord",
+          external: true,
+          href: "https://discord.usekeyp.com",
+        },
+      ],
+    },
+    {
+      name: "UI Components",
+      // content: "",
+      components: "src/components/**/[A-Z]*.jsx",
+      exampleMode: "expand", // 'hide' | 'collapse' | 'expand'
+      // usageMode: "expand", // 'hide' | 'collapse' | 'expand'
+    },
+  ],
   webpackConfig,
   assetsDir: "src/public/",
   template: {
