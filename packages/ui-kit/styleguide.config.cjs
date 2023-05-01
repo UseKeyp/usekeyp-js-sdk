@@ -58,6 +58,7 @@ const webpackConfig = {
 };
 
 module.exports = {
+  title: "UI Kit",
   sections: [
     {
       name: "Resources",
@@ -82,10 +83,7 @@ module.exports = {
     },
     {
       name: "UI Components",
-      // content: "",
       components: "src/components/**/[A-Z]*.jsx",
-      exampleMode: "expand", // 'hide' | 'collapse' | 'expand'
-      // usageMode: "expand", // 'hide' | 'collapse' | 'expand'
     },
   ],
   webpackConfig,
