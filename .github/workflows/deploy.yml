@@ -2,7 +2,7 @@ name: Deploy Component Library
 
 on:
   push:
-    branches: [main]
+    branches: [main, staging]
   workflow_dispatch:
 
 jobs:
@@ -26,12 +26,21 @@ jobs:
       - name: Install Surge
         working-directory: ./packages/ui-kit
         run: npm install -g surge
+      - name: Get Deployment URL
+        id: get_deployment_url
+        run: |
+          DEPLOYMENT_URL=https://ui.staging-env.usekeyp.com
+          if ${{ github.ref_name }} == 'main' ; then
+            DEPLOYMENT_URL=https://ui.usekeyp.com
+          fi
+          echo DEPLOYMENT_URL: $DEPLOYMENT_URL
+          echo "::set-output name=DEPLOYMENT_URL::$DEPLOYMENT_URL"
       - name: Deploy to surge
         working-directory: ./packages/ui-kit
-        run: surge ./styleguide keyp-ui-library.surge.sh/ --token ${{secrets.TOKEN}}
-      - name: Discord notify finished
+        run: surge ./styleguide ${{steps.get_deployment_url.outputs.DEPLOYMENT_URL}} --token ${{secrets.TOKEN}}
+      - name: Discord notify
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_RELEASE }}
         uses: Ilshidur/action-discord@0c4b27844ba47cb1c7bee539c8eead5284ce9fa9
         with:
-          args: 🚢 Shipped! `${{ github.repository }}` New surge deployment https://keyp-ui-library.surge.sh
+          args: 🚢 Shipped! `${{ github.repository }}` New surge deployment ${{steps.get_deployment_url.outputs.DEPLOYMENT_URL}}
