@@ -1,9 +1,26 @@
-Our components are in the `ui-kit` directory.
+# Contributing
 
-## Links
+Bounties Rules:
 
-Published from dev branch: https://keyp-ui-library-dev.surge.sh/  
-Published from main branch: https://keyp-ui-library.surge.sh/
+**Projects more than 4 hours, make an issue first for feedback**
+
+Projects less than 4 hours, [tag us in our Discord](https://discord.usekeyp.com) with your idea.
+
+Thank you for your efforts!
+
+- pi0neerpat
+
+# Contributing to `@usekeyp/js-sdk`
+
+Under active development
+
+# Contributing to `@usekeyp/ui-kit`
+
+## Deployments
+
+Published `dev` branch https://keyp-ui-kit-dev.surge.sh/  
+
+Published `main` branch https://keyp-ui-kit.surge.sh/
 
 ## Usage 📖
 
