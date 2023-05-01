@@ -1,5 +1,5 @@
 {
-  "name": "keyp-open-source-fe-components",
+  "name": "usekeyp-js-sdk-monorepo",
   "private": true,
   "workspaces": [
     "packages/*"
