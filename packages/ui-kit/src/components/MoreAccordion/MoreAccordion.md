@@ -5,18 +5,18 @@ import LoginButton from "../LoginButton/LoginButton";
   <div className="flex gap-x-2 pl-3">
     <div className="mr-1">
       <LoginButton
-        label="discord"
-        provider="discord"
+        label="DISCORD"
+        provider="DISCORD"
         size="square"
       ></LoginButton>
     </div>
     <div className="mr-1">
-      <LoginButton label="apple" provider="apple" size="square"></LoginButton>
+      <LoginButton label="APPLE" provider="APPLE" size="square"></LoginButton>
     </div>
     <div className="mr-1">
       <LoginButton
-        label="twitter"
-        provider="twitter"
+        label="TWITTER"
+        provider="TWITTER"
         size="square"
       ></LoginButton>
     </div>

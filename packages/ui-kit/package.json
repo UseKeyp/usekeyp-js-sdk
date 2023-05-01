@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "description": "Component library for building apps using Keyp",
   "author": "alekseevayana <alekseevayana@bk.ru>",
-  "homepage": "https://github.com/UseKeyp/ui-kit#readme",
+  "homepage": "https://github.com/UseKeyp/usekeyp-js-sdk/blob/main/packages/ui-kit/README.md",
   "license": "ISC",
   "main": "lib/components/index.js",
   "files": [
@@ -12,7 +12,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/UseKeyp/ui-kit.git"
+    "url": "git+https://github.com/UseKeyp/usekeyp-js-sdk.git"
   },
   "scripts": {
     "start": "styleguidist server --config styleguide.config.cjs",
