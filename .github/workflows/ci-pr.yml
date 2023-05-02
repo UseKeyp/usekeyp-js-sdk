@@ -19,4 +19,4 @@ jobs:
         with:
           token: ${{ secrets.PAT }}
           build-command: "yarn pre-publish"
-          package-name: "@usekeyp/ui-library"
+          package-name: "@usekeyp/ui-kit"

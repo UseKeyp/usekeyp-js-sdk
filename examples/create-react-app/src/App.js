@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { LoginPortal } from "@usekeyp/ui-library";
+import { LoginPortal } from "@usekeyp/ui-kit";
 
 function App() {
   const onClick = (providerType) => {

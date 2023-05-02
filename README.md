@@ -1,5 +1,5 @@
 <h1 align="center"><img width="600" style="border-radius: 30px;" src="https://raw.githubusercontent.com/UseKeyp/.github/main/Keyp-Logo-Color.svg"/></h1>
-<h1 align="center">Welcome to Keyp UI Library 👋</h1>
+<h1 align="center">Welcome to Keyp JS SDK👋</h1>
 <p align="center">
   <a href="#" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-blue.svg" />
@@ -9,40 +9,57 @@
   </a>
 </p>
 
-> UI library package for various applications
+> Keyp JavaScript tools
 
-Our components are in the `ui-library` directory.
+This is a monorepo which includes mutliple things:
 
-## Links
+- `@usekeyp/ui-kit` frontend components
+- `@usekeyp/js-sdk` wallet and making transactions 
+- Examples see `/examples`
+- Brand Assets see `/brand-assets`
 
-Published from dev branch: https://keyp-ui-library-dev.surge.sh/  
-Published from main branch: https://keyp-ui-library.surge.sh/
+See also [Keyp Developer Docs](https://docs.usekeyp.com/)
 
-## Usage 📖
+## ✨ UI-Kit
 
-1. Clone the repo and run `yarn install` to install the necessary dependencies. Make sure you're using a recent version of node (>= 16.0.0)
-2. In the same directory, run `yarn tailwindcss`. This script ensures our Tailwind styles are built and available to the styleguidist server.
-3. Navigate to the root directory of `ui-library` and run `yarn start`. This script starts the styleguidist
-   server.
-4. Your server should now be running successfully!
+To use the UI components directly in your app, install the package:
 
-### Deploying with Surge
+```bash
+yarn add @usekeyp/ui-kit
+```
 
-Surge is a static web publishing service that lets us easily deploy our frontend components to a live URL.
-Currently, our frontend components are deployed to https://keyp-frontend-components.surge.sh/
-While testing, if you need a link to send to the design team you can easily deploy to a different link. However, we will keep this link as the code representative of our components currently in production.
-<br /><br />This is how you can deploy to surge:
+Components are used like this:
 
-1. CD into the ui-library folder
-2. Run `styleguidist build` to generate the styleguide directory with the bundled assets for deploy
-3. Run `surge` and point to the styleguide folder
-4. Should look like `/YOUR_LOCAL_PATH/ui-library/styleguide`
-5. Choose https://keyp-ui-library.surge.sh/ as the domain to deploy the site if you want to deploy a new production build (you can create any other name for the domain if you want to deploy a test build to share with someone)
-6. If you're unable to deploy to the production domain, send your email to Jacob so he can add you as a collaborator
+```js
+import { LoginPortal } from "@usekeyp/ui-kit";
 
-## Resources 🧑‍💻
+const LoginPage = () => {
 
-- [Surge](https://surge.sh/)
+  const onClick = (providerType) => {
+  // custom auth logic depending on the app
+  }
+
+  return (<>
+        <LoginPortal
+          providers={["TWITTER", "GITHUB", "APPLE"]}
+          additionalProviders={["DISCORD", "GOOGLE"]}
+          onClick={onClick}
+        /><>)
+}
+```
+
+For full instructions see the README in `/packages/ui-kit` or the [Docs](https://docs.usekeyp.com/).
+
+## ⚡ JS SDK
+
+Coming soon!
+
+## Contributing
+
+Make a contribution and we'll send you USDC or USD! Check out the contributing guide `CONTRIBUTING.md`.
+
+## Examples
+
 
 ## License 📝
 
