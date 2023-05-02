@@ -58,9 +58,9 @@ const LoginButton = ({
         <Button
           size={size}
           onClick={onLogin}
-          classNameVariant={`justify-center ${loading ? activeBg : ""} ${
-            !disabled && hoverBg
-          }`}
+          classNameVariant={`justify-center ${
+            loading ? activeBg : "bg-white"
+          } ${!disabled && hoverBg}`}
           borderColor={`${loading ? borderColor : "border-gray-200"} ${
             !loading && !disabled && hoverBorder
           }`}
@@ -79,9 +79,9 @@ const LoginButton = ({
           size={size}
           fluid={true}
           onClick={onLogin}
-          classNameVariant={`justify-center ${loading ? activeBg : ""} ${
-            !disabled && hoverBg
-          }`}
+          classNameVariant={`justify-center ${
+            loading ? activeBg : "bg-white"
+          } ${!disabled && hoverBg}`}
           borderColor={`${loading ? borderColor : "border-gray-200"} ${
             !loading && !disabled && hoverBorder
           }`}
