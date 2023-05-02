@@ -15,6 +15,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "tailwindcss": "tailwindcss -i ./src/index.css -o ./dist/output.css --watch -c tailwind.config.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -37,6 +38,6 @@
     ]
   },
   "devDependencies": {
-    "tailwindcss": "latest"
+    "tailwindcss": "^3.3.2"
   }
 }
