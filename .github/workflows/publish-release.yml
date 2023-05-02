@@ -109,7 +109,7 @@ jobs:
             npm --userconfig .npmrc publish "$f"/ --tag "latest"
           ) done
         env:
-          PAT: ${{ secrets.NPM_PAT }}
+          NPM_PAT: ${{ secrets.NPM_PAT }}
       - name: Discord notify finished
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_RELEASE }}
