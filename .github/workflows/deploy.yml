@@ -37,7 +37,7 @@ jobs:
           echo "::set-output name=DEPLOYMENT_URL::$DEPLOYMENT_URL"
       - name: Deploy to surge
         working-directory: ./packages/ui-kit
-        run: surge ./styleguide ${{steps.get_deployment_url.outputs.DEPLOYMENT_URL}} --token ${{secrets.TOKEN}}
+        run: surge ./styleguide ${{steps.get_deployment_url.outputs.DEPLOYMENT_URL}} --token ${{secrets.SURGE_TOKEN}}
       - name: Discord notify
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_RELEASE }}
