@@ -29,9 +29,9 @@ jobs:
       - name: Get Deployment URL
         id: get_deployment_url
         run: |
-          DEPLOYMENT_URL=https://ui.staging-env.usekeyp.com
+          DEPLOYMENT_URL=https://keyp-ui-library-dev.surge.sh
           if ${{ github.ref_name }} == 'main' ; then
-            DEPLOYMENT_URL=https://ui.usekeyp.com
+            DEPLOYMENT_URL=https://keyp-ui-library.surge.sh
           fi
           echo DEPLOYMENT_URL: $DEPLOYMENT_URL
           echo "::set-output name=DEPLOYMENT_URL::$DEPLOYMENT_URL"
