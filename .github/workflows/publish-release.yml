@@ -88,6 +88,7 @@ jobs:
           mkdir -p $dirName
           for d in packages/*/ ; do (
             cd "$d"
+            yarn pre-publish
             tgz=$(npm pack)
             cp $tgz "../../$dirName/"
           ) done
