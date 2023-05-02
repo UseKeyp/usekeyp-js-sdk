@@ -11,6 +11,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <h1 className="mb-5">Create React App</h1>
+        <code className="mb-10">@usekeyp/ui-kit</code>
+        <br />
         <LoginPortal
           providers={["TWITTER", "GITHUB", "APPLE"]}
           additionalProviders={["DISCORD", "GOOGLE"]}
