@@ -6,9 +6,30 @@ on:
   workflow_dispatch:
 
 jobs:
+  skip-release:
+    name: Skip Release
+    runs-on: ubuntu-20.04
+    outputs:
+      SKIP_RELEASE: ${{ steps.skip_release.outputs.SKIP_RELEASE }}
+    steps:
+      - name: Skip release
+        id: skip_release
+        run: |
+          SKIP_RELEASE=0
+          if grep -q '^v[0-9]' <<< "${{ github.event.head_commit.message }}" ; then
+             SKIP_RELEASE=1
+          elif github.event_name == 'pull_request' ; then
+            SKIP_RELEASE=1
+          elif ! grep -q 'staging\|main' <<< "${{ github.ref_name }}" ; then
+            SKIP_RELEASE=1
+          fi
+          echo SKIP_RELEASE: $SKIP_RELEASE
+          echo "::set-output name=SKIP_RELEASE::$SKIP_RELEASE"
   deploy:
     name: Styleguidist Deploy
     runs-on: ubuntu-latest
+    needs: skip-release
+    if: needs.skip-release.outputs.SKIP_RELEASE == 0
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3

@@ -76,10 +76,9 @@ jobs:
         with:
           args: 🏭 Building packages for `${{ github.repository }}` __${{ steps.get_version.outputs.VERSION }}__
 
-        # NOTE: Building is unnecessary for now
-      # - name: Build package
-      #   shell: bash
-      #   run: yarn && yarn lerna exec --no-bail --no-private -- exit 0
+      - name: Build package
+        shell: bash
+        run: yarn && yarn lerna exec --no-bail --no-private -- yarn pre-publish
 
       - name: Create packages
         shell: bash

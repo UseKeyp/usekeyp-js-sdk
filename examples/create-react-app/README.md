@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+# CRA Example with @usekeyp/ui-kit Integration
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> This is an example of a Create React App (CRA) project with the @usekeyp/ui-kit integrated.
 
-## Available Scripts
+## Usage 📖
 
-In the project directory, you can run:
+1. Install necessary dependencies:
+   `yarn install`
+2. Run the project:
+   `yarn start`
 
-### `npm start`
+## Steps to integrate @usekeyp/ui-kit
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1.  Add the package to your project:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    ```bash
+    yarn add @usekeyp/ui-kit
+    ```
 
-### `npm test`
+2.  Install and configure Tailwind CSS.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    2.1 Install and initialize.
 
-### `npm run build`
+    ```bash
+    yarn add -D tailwindcss
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    yarn tailwindcss init
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    2.2 Add the Tailwind directives to your `index.css`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    ```diff
+    + @tailwind base;
+    + @tailwind components;
+    + @tailwind utilities;
 
-### `npm run eject`
+    body {
+      margin: 0;
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    2.3 Update `tailwind.config.js` file:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    - Add the `@usekeyp/ui-kit` to apply the appropriate classes.
+    - Require `@usekeyp/ui-kit` as a plugin.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+      ```js
+      /** @type {import('tailwindcss').Config} */
+      module.exports = {
+        content: [
+          "./src/**/*.{js,jsx,ts,tsx}",
+          "./node_modules/@usekeyp/ui-kit/lib/**/**/*.{js,jsx,ts,tsx,md}",
+        ],
+        plugins: [require("@usekeyp/ui-kit/plugin")],
+        // ...
+      };
+      ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+      2.4 Start the Tailwind CLI build process.
 
-## Learn More
+      `yarn tailwindcss -i ./src/index.css -o ./dist/output.css --watch -c tailwind.config.js`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+      You can add this command to your build process to `package.json` file:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+      ```js
+      {
+        ...,
+        "scripts": {
+          "start": "react-scripts start",
+          "tailwindcss": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+          ...
+        }
+      }
 
-### Code Splitting
+      ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+3.  Utilize the `LoginPortal` component in `App.js`:
 
-### Analyzing the Bundle Size
+```js
+import { LoginPortal } from "@usekeyp/ui-kit";
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+const LoginPage = () => {
 
-### Making a Progressive Web App
+  const onClick = (providerType) => {
+  // custom auth logic depending on the app
+  }
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+  return (<>
+        <LoginPortal
+          providers={["TWITTER", "GITHUB", "APPLE"]}
+          additionalProviders={["DISCORD", "GOOGLE"]}
+          onClick={onClick}
+        /><>)
+}
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```

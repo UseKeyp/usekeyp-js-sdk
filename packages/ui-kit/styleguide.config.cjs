@@ -105,7 +105,7 @@ module.exports = {
       link: "#1499DA",
     },
     fontFamily: {
-      base: "Inter",
+      base: `"Inter", sans-serif`,
     },
   },
   styles: {
