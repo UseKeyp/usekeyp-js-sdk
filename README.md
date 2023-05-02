@@ -48,9 +48,9 @@ const LoginPage = () => {
 }
 ```
 
-For full instructions see `/packages/ui-kit/README.md` or the [Keyp Developer Docs](https://docs.usekeyp.com/).
+For full instructions see the README in `/packages/ui-kit` or the [Docs](https://docs.usekeyp.com/).
 
-## JS SDK
+## ⚡ JS SDK
 
 Coming soon!
 
