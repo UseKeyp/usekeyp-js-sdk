@@ -7,7 +7,6 @@
   "license": "ISC",
   "main": "lib/components/index.js",
   "files": [
-    "plugin.js",
     "lib"
   ],
   "repository": {
