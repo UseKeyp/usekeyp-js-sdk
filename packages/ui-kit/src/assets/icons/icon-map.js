@@ -1,7 +1,13 @@
 import React from "react";
-const Apple = ({ loading, disabled }) => {
+const Apple = ({ loading, disabled, width, height }) => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="24" fill="none">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={width}
+      height={height}
+      fill="none"
+      viewBox="0 0 21 24"
+    >
       <path
         className={`
         ${loading && "fill-white"}
