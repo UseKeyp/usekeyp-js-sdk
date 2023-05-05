@@ -467,9 +467,15 @@ const Tooltip = ({ color, solid }) => {
   );
 };
 
-const Twitter = ({ loading, disabled }) => {
+const Twitter = ({ loading, disabled, width, height }) => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" fill="none">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={width}
+      height={height}
+      fill="none"
+      viewBox="0 0 24 20"
+    >
       <path
         className={`
         ${loading && "fill-white"}
