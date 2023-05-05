@@ -70,7 +70,13 @@ const LoginButton = ({
             {loading ? (
               <Icon name="loading_animated" width="30" height="30" />
             ) : (
-              <Icon name={provider} loading={loading} disabled={disabled} />
+              <Icon
+                name={provider}
+                loading={loading}
+                disabled={disabled}
+                width="24"
+                height="24"
+              />
             )}
           </div>
         </Button>
@@ -99,6 +105,8 @@ const LoginButton = ({
                 className="mr-2"
                 loading={loading}
                 disabled={disabled}
+                width="24"
+                height="24"
               />
             </div>
             <div className="text-base font-normal capitalize">
