@@ -142,9 +142,15 @@ const Copy = ({ color, width = "2rem", height = "2rem" }) => {
   );
 };
 
-const Discord = ({ loading, disabled }) => {
+const Discord = ({ loading, disabled, width, height }) => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="19" fill="none">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={width}
+      height={height}
+      fill="none"
+      viewBox="0 0 24 19"
+    >
       <path
         className={`
         ${loading && "fill-white"}
