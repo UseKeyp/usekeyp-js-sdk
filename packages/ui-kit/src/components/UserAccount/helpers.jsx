@@ -2,7 +2,17 @@ import { Icon } from "../index.js";
 
 export const trimAddress = (address) => {
   if (typeof address !== "string") return "";
-  return address.substring(0, 5) + "..." + address.substring(38, 42);
+
+  const firstPart = address.substring(0, 2);
+  const secondPart = address.substring(2, 6);
+  const lastPart = address.substring(38);
+
+  return (
+    <>
+      <span style={{ fontFamily: "Arial, sans-serif" }}>{firstPart}</span>
+      {secondPart}...{lastPart}
+    </>
+  );
 };
 
 export function getStyledUsernameFromCurrentUser(currentUser, sizeVariant) {
