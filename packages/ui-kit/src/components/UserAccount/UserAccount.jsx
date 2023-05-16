@@ -1,8 +1,11 @@
 import {
   getProviderIconFromCurrentUser,
   getStyledUsernameFromCurrentUser,
+  trimAddress,
 } from "./helpers.jsx";
 import { useState } from "react";
+import { Tooltip } from "../Tooltip/Tooltip";
+import Icon from "../Icon/Icon";
 
 const UserAccount = ({ currentUser, logOut }) => {
   const [copySuccess, setCopySuccess] = useState("Click to copy address");
@@ -25,7 +28,34 @@ const UserAccount = ({ currentUser, logOut }) => {
         {getProviderIconFromCurrentUser(currentUser)}
         {getStyledUsernameFromCurrentUser(currentUser) || <></>}
       </div>
-
+      <div className="flex flex-row items-center gap-x-1">
+        <div className="text-[12px] font-normal text-gray-2000">
+          {trimAddress(currentUser?.address)}
+        </div>
+        <button
+          className="flex"
+          onClick={() => {
+            handleCopy();
+          }}
+        >
+          <Tooltip
+            id={"wallet-address-" + currentUser?.address}
+            delayHideTime={250}
+            effect="solid"
+            borderColor="#C6CED2"
+            bgColor="#eef0f2"
+            position="top"
+            tooltipChild={<div className="text-gray-2400">{copySuccess}</div>}
+          >
+            <Icon
+              color="fill-blue-1200 group-hover:fill-blue-1600 h-[12px] w-[10px]"
+              name="copy"
+              width="12px"
+              height="12px"
+            />{" "}
+          </Tooltip>
+        </button>
+      </div>
       <button
         className="text-[12px] font-normal text-gray-1200 hover:text-red-1200"
         onClick={logOut}

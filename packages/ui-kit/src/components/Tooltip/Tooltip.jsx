@@ -12,7 +12,7 @@ import "react-tooltip/dist/react-tooltip.css";
  * @param {number} delayHideTime: The time in milliseconds that the tooltip will remain visible after the mouse leaves the tooltip
  **/
 
-const Tooltip = ({
+export const Tooltip = ({
   children,
   position,
   text,

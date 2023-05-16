@@ -131,6 +131,7 @@ const Copy = ({ color, width = "2rem", height = "2rem" }) => {
       className={`${color}`}
       width={width}
       height={height}
+      viewBox="0 0 20 24"
     >
       <path
         className={`${color}`}

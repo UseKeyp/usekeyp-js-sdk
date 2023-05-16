@@ -23,9 +23,7 @@ export function getStyledUsernameFromCurrentUser(currentUser, sizeVariant) {
   };
 
   const platform = currentUser.id.split("-")[0].toLowerCase();
-  console.log("platform", platform)
   const textColorClass = platformColorMapping[platform] || "text-gray-2000";
-  console.log("textColorClass", textColorClass)
 
   return (
     <div className={`flex ${textColorClass} ${sizeVariant || "text-[12px]"}`}>
