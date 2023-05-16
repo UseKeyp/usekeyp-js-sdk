@@ -11,22 +11,21 @@ export function getStyledUsernameFromCurrentUser(currentUser, sizeVariant) {
   }
 
   const platformColorMapping = {
-    discord: "#5865F2",
-    google: "gray-2000",
-    chess: "gray-2000",
-    twitter: "#1DA1F2",
-    twitch: "#9146FF",
-    epic_games: "#2F2D2E",
-    reddit: "#FF4500",
-    facebook: "#3B5998",
-    microsoft: "#2F2D2E",
+    discord: "text-brand-discord",
+    google: "text-gray-2000",
+    chess: "text-gray-2000",
+    twitter: "text-brand-twitter",
+    twitch: "text-brand-twitch",
+    epic_games: "text-brand-epic_games",
+    reddit: "text-brand-reddit",
+    facebook: "text-brand-facebook",
+    microsoft: "text-brand-microsoft",
   };
 
   const platform = currentUser.id.split("-")[0].toLowerCase();
-  const color = platformColorMapping[platform] || "gray-2000";
-  const textColorClass = color.startsWith("#")
-    ? `text-[${color}]`
-    : `text-${color}`;
+  console.log("platform", platform)
+  const textColorClass = platformColorMapping[platform] || "text-gray-2000";
+  console.log("textColorClass", textColorClass)
 
   return (
     <div className={`flex ${textColorClass} ${sizeVariant || "text-[12px]"}`}>

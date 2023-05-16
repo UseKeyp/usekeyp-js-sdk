@@ -30,6 +30,11 @@ module.exports = plugin(
             discord: "#5865F2",
             google: "#4285F4",
             twitter: "#1DA1F2",
+            twitch: "#9146FF",
+            epic_games: "#2F2D2E",
+            reddit: "#FF4500",
+            facebook: "#3B5998",
+            microsoft: "#2F2D2E"
           },
         },
         fontFamily: {
