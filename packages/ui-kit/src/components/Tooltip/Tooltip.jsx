@@ -3,7 +3,6 @@ import "react-tooltip/dist/react-tooltip.css";
 
 /**
  * Text will be rendered as text within the tooltip; if not provided, it will be blank or render 'TooltipChild'
- * @param {string} text: Content to de displayed in tooltip (html prop is priorized over content)
  * @param {Object} tooltipChild accepts components that are rendered within the tooltip; it will take precedence over text
  * @param {string} position Options: Top (Default), Right, Bottom, Left
  * @param {string} tooltipType Options: Dark (Default), Success, Warning, Error, Info, Light
@@ -15,22 +14,17 @@ import "react-tooltip/dist/react-tooltip.css";
 export const Tooltip = ({
   children,
   position,
-  text,
   effect,
   tooltipType,
   tooltipChild,
   id,
   delayHideTime,
 }) => {
-  if (!text) {
-    text = "";
-  }
   return (
     <div data-tooltip-id={id}>
       {children}
       <ReactTooltip
         id={id}
-        content={text}
         place={position}
         float={effect === "float" ? true : false}
         type={tooltipType}

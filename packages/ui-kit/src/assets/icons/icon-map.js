@@ -126,25 +126,9 @@ const ChessCom = ({ color }) => {
 
 const Copy = ({ color, width = "2rem", height = "2rem" }) => {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      className={`${color}`}
-      width={width}
-      height={height}
-      viewBox="0 0 20 24"
-    >
-      <path
-        className={`${color}`}
-        fillRule="evenodd"
-        d="M7 8h13v16H7V8Zm2 2v12h9V10H9Z"
-        clipRule="evenodd"
-      />
-      <path
-        className={`${color}`}
-        fillRule="evenodd"
-        d="M0 0h13v6h-2V2H2v12h3v2H0V0Z"
-        clipRule="evenodd"
-      />
+    <svg width={width} className={color} height={height} viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fillRule="evenodd" clipRule="evenodd" d="M3.5 5C3.5 4.44772 3.94772 4 4.5 4H9C9.55228 4 10 4.44772 10 5V11C10 11.5523 9.55229 12 9 12H4.5C3.94772 12 3.5 11.5523 3.5 11V5ZM9 5H4.5V11H9V5Z" />
+      <path fillRule="evenodd" clipRule="evenodd" d="M0 1C0 0.447716 0.447715 0 1 0H5.5C6.05229 0 6.5 0.447715 6.5 1V3H5.5V1L1 1V7H2.5V8H1C0.447715 8 0 7.55229 0 7V1Z"/>
     </svg>
   );
 };

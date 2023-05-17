@@ -25,6 +25,7 @@ module.exports = plugin(
           },
           blue: {
             1200: "#1499DA",
+            1600: "#0079AD",
           },
           red: {
             1200: "#E45200"

@@ -48,7 +48,7 @@ const UserAccount = ({ currentUser, logOut }) => {
             tooltipChild={<div className="text-gray-2400">{copySuccess}</div>}
           >
             <Icon
-              color="fill-blue-1200 group-hover:fill-blue-1600 h-[12px] w-[10px]"
+              color="fill-blue-1200 hover:fill-blue-1600 h-[12px] w-[10px]"
               name="copy"
               width="12px"
               height="12px"
