@@ -9,7 +9,9 @@ export const trimAddress = (address) => {
 
   return (
     <>
-      <span style={{ fontFamily: "Arial, sans-serif" }}>{firstPart}</span>
+      <span style={{ fontVariantLigatures: 'no-common-ligatures' }}>
+        {firstPart}
+      </span>
       {secondPart}...{lastPart}
     </>
   );
