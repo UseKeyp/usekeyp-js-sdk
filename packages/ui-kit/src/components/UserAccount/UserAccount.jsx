@@ -24,12 +24,12 @@ const UserAccount = ({ currentUser, logOut }) => {
         currentUser?.username ? "sm:gap-x-4" : "sm:gap-x-2"
       }`}
     >
-      <div className="flex flex-row items-center gap-x-2">
+      <div className="flex flex-row items-center gap-x-[5px]">
         {getProviderIconFromCurrentUser(currentUser)}
         {getStyledUsernameFromCurrentUser(currentUser) || <></>}
       </div>
-      <div className="flex flex-row items-center gap-x-1">
-        <div className="text-[12px] font-normal text-gray-2000">
+      <div className="flex flex-row items-center gap-x-[5px]">
+        <div className="text-sm font-normal text-gray-2000">
           {trimAddress(currentUser?.address)}
         </div>
         <button
