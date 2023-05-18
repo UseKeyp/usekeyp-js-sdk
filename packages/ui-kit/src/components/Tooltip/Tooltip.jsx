@@ -30,7 +30,7 @@ export const Tooltip = ({
         type={tooltipType}
         clickable={true}
         delayHide={delayHideTime}
-        className="!bg-gray-100 !border !border-gray-400 !w-[161px] !text-sm !text=[#3A3C41] !z-50 !py-1.5 !px-2.5"
+        className="!bg-gray-100 !border !border-gray-400 !text-sm !text=[#3A3C41] !z-50 !py-1.5 !px-2.5 !max-w-[161px]"
         classNameArrow="border-b border-r border-[#C5C8CC]"
       >
         {tooltipChild}
