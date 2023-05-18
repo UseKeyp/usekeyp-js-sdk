@@ -27,6 +27,18 @@ const colorVariants = {
     borderColor: "border-black",
     hoverBorder: "hover:border-black",
   },
+  TWITCH: {
+    hover: "hover:bg-brand-twitch",
+    active: "bg-brand-twitch",
+    borderColor: "border-brand-twitch",
+    hoverBorder: "hover:border-brand-twitch",
+  },
+  CHESS: {
+    hover: "hover:bg-brand-chess",
+    active: "bg-brand-chess",
+    borderColor: "border-brand-chess",
+    hoverBorder: "hover:border-brand-chess",
+  },
   black: {
     hover: "hover:bg-black",
     active: "bg-black",

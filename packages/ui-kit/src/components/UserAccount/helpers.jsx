@@ -52,9 +52,9 @@ export function getProviderIconFromCurrentUser(currentUser) {
   const iconMapping = {
     discord: { name: "DISCORD", marginTop: "mt-0.5" },
     google: { name: "GOOGLE" },
-    chess: { name: "chess_pawn" },
+    chess: { name: "CHESS" },
     twitter: { name: "TWITTER" },
-    twitch: { name: "twitch_logo_purple" },
+    twitch: { name: "TWITCH" },
     node_oidc: { name: "keypcircle" },
     epic_games: { name: "epic_games" },
     reddit: { name: "reddit", marginTop: "mt-0.5" },

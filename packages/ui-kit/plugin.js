@@ -35,6 +35,7 @@ module.exports = plugin(
             google: "#4285F4",
             twitter: "#1DA1F2",
             twitch: "#9146FF",
+            chess: "#6C9D41",
             epic_games: "#2F2D2E",
             reddit: "#FF4500",
             facebook: "#3B5998",
