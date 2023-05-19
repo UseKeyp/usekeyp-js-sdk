@@ -17,12 +17,11 @@
   "scripts": {
     "start": "styleguidist server --config styleguide.config.cjs",
     "tailwindcss": "tailwindcss -i ./src/index.css -o ./dist/output.css --watch -c tailwind.config.js",
-    "build": "yarn tailwindcss && styleguidist build --config styleguide.config.cjs && babel --config-file ./babel.config.js src -d lib",
+    "build": "tailwindcss -i ./src/index.css -o ./dist/output.css && styleguidist build --config styleguide.config.cjs && babel --config-file ./babel.config.js src -d lib",
     "pre-publish": "babel --config-file ./babel.config.js src -d lib ",
     "test": "node ./__tests__/ui-kit.test.js"
   },
   "dependencies": {
-    "@redwoodjs/router": "^3.3.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
