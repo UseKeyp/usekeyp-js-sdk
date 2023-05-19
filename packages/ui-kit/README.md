@@ -58,7 +58,7 @@
       module.exports = {
         content: [
           "./src/**/*.{js,jsx,ts,tsx}",
-          "./node_modules/@usekeyp/ui-kit/lib/**/*.{js,jsx,ts,tsx,md}",
+          "./node_modules/@usekeyp/ui-kit/lib/**/**/*.{js,jsx,ts,tsx,md}",
         ],
         plugins: [require("@usekeyp/ui-kit/plugin")],
         // ...
@@ -73,7 +73,7 @@
         content: [
           "./pages/**/*.{js, jsx, ts,tsx}",
           "./public/**/*.html",
-          "./node_modules/@usekeyp/ui-kit/lib/**/*.{js,jsx,ts,tsx,md}",
+          "./node_modules/@usekeyp/ui-kit/lib/**/**/*.{js,jsx,ts,tsx,md}",
         ],
         plugins: [require("@usekeyp/ui-kit/plugin")],
         // ...
