@@ -28,7 +28,7 @@ module.exports = plugin(
             1600: "#0079AD",
           },
           red: {
-            1200: "#E45200"
+            1200: "#E45200",
           },
           brand: {
             discord: "#5865F2",
@@ -39,7 +39,7 @@ module.exports = plugin(
             epic_games: "#2F2D2E",
             reddit: "#FF4500",
             facebook: "#3B5998",
-            microsoft: "#2F2D2E"
+            microsoft: "#2F2D2E",
           },
         },
         fontFamily: {

@@ -67,6 +67,14 @@ const currentUserMicrosoft = {
   accessToken: "SUcVls92PKQlHuYIbar2xiOWjOq9XWI4_578kMzbsr1",
 };
 
+const currentUserSpotify = {
+  username: "spotifytest",
+  email: "testuser@gmail.com",
+  id: "spotify-123",
+  address: "0x95222290DD7278Aa3Ddd389Cc1E1d165CC4BAfe5",
+  accessToken: "SUcVls92PKQlHuYIbar2xiOWjOq9XWI4_578kMzbsr1",
+};
+
 return (
   <div className="flex flex-col gap-y-4">
     <UserAccount currentUser={currentUserTwitter} logOut={logOut} />
@@ -78,6 +86,7 @@ return (
     <UserAccount currentUser={currentUserReddit} logOut={logOut} />
     <UserAccount currentUser={currentUserFacebook} logOut={logOut} />
     <UserAccount currentUser={currentUserMicrosoft} logOut={logOut} />
+    <UserAccount currentUser={currentUserSpotify} logOut={logOut} />
   </div>
 );
 ```

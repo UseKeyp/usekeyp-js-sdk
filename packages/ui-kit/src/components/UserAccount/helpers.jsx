@@ -60,6 +60,7 @@ export function getProviderIconFromCurrentUser(currentUser) {
     reddit: { name: "reddit", marginTop: "mt-0.5" },
     facebook: { name: "facebook", marginTop: "mt-0.5" },
     microsoft: { name: "microsoft", marginTop: "mt-0.5" },
+    spotify: { name: "SPOTIFY", marginTop: "mt-0.5" },
   };
 
   const platform = currentUser.id.split("-")[0].toLowerCase();

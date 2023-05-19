@@ -39,6 +39,12 @@ const colorVariants = {
     borderColor: "border-brand-chess",
     hoverBorder: "hover:border-brand-chess",
   },
+  SPOTIFY: {
+    hover: "hover:bg-gray-200",
+    active: "bg-gray-200",
+    borderColor: "border-gray-200",
+    hoverBorder: "hover:border-gray-200",
+  },
   black: {
     hover: "hover:bg-black",
     active: "bg-black",
