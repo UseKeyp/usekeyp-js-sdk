@@ -8,6 +8,7 @@ const colorVariants = {
     active: "bg-brand-discord",
     borderColor: "border-brand-discord",
     hoverBorder: "hover:border-brand-discord",
+    hoverTextColor: "text-white",
   },
   TWITTER: {
     hover: "hover:bg-brand-twitter",
@@ -55,6 +56,12 @@ const colorVariants = {
 
 const getBrandColor = (provider) => {
   return colorVariants[provider] || colorVariants.black;
+};
+
+const getHoverTextColor = (provider) => {
+  if (provider !== "SPOTIFY") {
+    return "hover:text-white";
+  }
 };
 
 const LoginButton = ({
@@ -113,7 +120,7 @@ const LoginButton = ({
           ${loading && "text-white"} 
           ${!loading && disabled && "text-gray-800"}
           ${!loading && !disabled && "text-gray-1200"}
-          ${!disabled && "hover:text-white"}`}
+          ${!disabled && getHoverTextColor(provider)}`}
           disabled={disabled}
         >
           <div className="flex items-center mr-4 ml-2 w-full">
