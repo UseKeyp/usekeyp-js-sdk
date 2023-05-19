@@ -4,5 +4,6 @@
   <LoginButton label="TWITCH" provider="TWITCH"></LoginButton>
   <LoginButton label="CHESS" provider="CHESS"></LoginButton>
   <LoginButton label="SPOTIFY" provider="SPOTIFY"></LoginButton>
+  <LoginButton label="REDDIT" provider="REDDIT"></LoginButton>
 </div>
 ```

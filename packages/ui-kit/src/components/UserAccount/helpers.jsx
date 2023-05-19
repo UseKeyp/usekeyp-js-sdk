@@ -57,7 +57,7 @@ export function getProviderIconFromCurrentUser(currentUser) {
     twitch: { name: "TWITCH" },
     node_oidc: { name: "keypcircle" },
     epic_games: { name: "epic_games" },
-    reddit: { name: "reddit", marginTop: "mt-0.5" },
+    reddit: { name: "REDDIT" },
     facebook: { name: "facebook", marginTop: "mt-0.5" },
     microsoft: { name: "microsoft", marginTop: "mt-0.5" },
     spotify: { name: "SPOTIFY", marginTop: "mt-0.5" },

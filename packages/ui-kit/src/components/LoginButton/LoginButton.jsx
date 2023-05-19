@@ -46,6 +46,12 @@ const colorVariants = {
     borderColor: "border-gray-200",
     hoverBorder: "hover:border-gray-200",
   },
+  REDDIT: {
+    hover: "hover:bg-gray-200",
+    active: "bg-gray-200",
+    borderColor: "border-gray-200",
+    hoverBorder: "hover:border-gray-200",
+  },
   black: {
     hover: "hover:bg-black",
     active: "bg-black",
@@ -59,7 +65,7 @@ const getBrandColor = (provider) => {
 };
 
 const getHoverTextColor = (provider) => {
-  if (provider !== "SPOTIFY") {
+  if (provider !== "SPOTIFY" && provider !== "REDDIT") {
     return "hover:text-white";
   }
 };
