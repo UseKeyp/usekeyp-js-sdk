@@ -52,6 +52,12 @@ const colorVariants = {
     borderColor: "border-gray-200",
     hoverBorder: "hover:border-gray-200",
   },
+  EPIC_GAMES: {
+    hover: "hover:bg-brand-epic_games",
+    active: "bg-brand-epic_games",
+    borderColor: "border-brand-epic_games",
+    hoverBorder: "hover:border-brand-epic_games",
+  },
   black: {
     hover: "hover:bg-black",
     active: "bg-black",
@@ -67,6 +73,16 @@ const getBrandColor = (provider) => {
 const getHoverTextColor = (provider) => {
   if (provider !== "SPOTIFY" && provider !== "REDDIT") {
     return "hover:text-white";
+  }
+};
+
+const getLabelFromProvider = (provider) => {
+  if (provider === "CHESS") {
+    return "Chess.com";
+  } else if (provider === "EPIC_GAMES") {
+    return "Epic Games";
+  } else {
+    return `${provider[0]}${provider.substring(1).toLowerCase()}`;
   }
 };
 
@@ -140,8 +156,8 @@ const LoginButton = ({
                 height="24"
               />
             </div>
-            <div className="text-base font-normal capitalize">
-              {provider.toLowerCase()}
+            <div className="text-base font-normal">
+              {getLabelFromProvider(provider)}
             </div>
             {loading && (
               <div className="ml-auto">

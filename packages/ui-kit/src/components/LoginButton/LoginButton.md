@@ -1,9 +1,10 @@
 ```jsx
 <div>
-  <LoginButton label="DISCORD" provider="DISCORD"></LoginButton>
-  <LoginButton label="TWITCH" provider="TWITCH"></LoginButton>
-  <LoginButton label="CHESS" provider="CHESS"></LoginButton>
-  <LoginButton label="SPOTIFY" provider="SPOTIFY"></LoginButton>
-  <LoginButton label="REDDIT" provider="REDDIT"></LoginButton>
+  <LoginButton provider="DISCORD"></LoginButton>
+  <LoginButton provider="TWITCH"></LoginButton>
+  <LoginButton provider="CHESS"></LoginButton>
+  <LoginButton provider="SPOTIFY"></LoginButton>
+  <LoginButton provider="REDDIT"></LoginButton>
+  <LoginButton provider="EPIC_GAMES"></LoginButton>
 </div>
 ```

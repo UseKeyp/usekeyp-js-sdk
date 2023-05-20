@@ -5,7 +5,7 @@ const onClick = (provider) => {
 <div>
   <div className="mb-10">
     <LoginPortal
-      providers={["DISCORD", "TWITTER", "GITHUB"]}
+      providers={["DISCORD", "TWITTER", "GITHUB", "EPIC_GAMES"]}
       additionalProviders={["APPLE", "GOOGLE"]}
       onClick={onClick}
     />
