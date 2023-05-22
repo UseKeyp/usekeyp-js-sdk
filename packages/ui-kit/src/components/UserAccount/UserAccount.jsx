@@ -1,8 +1,8 @@
 import {
   getProviderIconFromCurrentUser,
   getStyledUsernameFromCurrentUser,
-  trimAddress,
 } from "./helpers.jsx";
+import { trimAddress } from "../../helpers.js";
 import { useState } from "react";
 import { Tooltip } from "../Tooltip/Tooltip";
 import Icon from "../Icon/Icon";

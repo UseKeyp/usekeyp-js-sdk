@@ -20,21 +20,15 @@ const onClick = (provider) => {
       onClick={onClick}
     />
   </div>
+  <div className="mb-10">
+    <LoginPortal
+      providers={["DISCORD", "TWITTER", "GITHUB", "APPLE", "GOOGLE"]}
+      onClick={onClick}
+    />
+  </div>
+
   <LoginPortal
-    providers={[
-      "DISCORD",
-      "TWITTER",
-      "GITHUB",
-      "APPLE",
-      "GOOGLE",
-      "REDDIT",
-      "SPOTIFY",
-      "FACEBOOK",
-      "MICROSOFT",
-      "EPIC_GAMES",
-      "CHESS",
-      "TWITCH",
-    ]}
+    providers={["REDDIT", "SPOTIFY", "MICROSOFT", "CHESS", "TWITCH"]}
     onClick={onClick}
   />
 </div>;
