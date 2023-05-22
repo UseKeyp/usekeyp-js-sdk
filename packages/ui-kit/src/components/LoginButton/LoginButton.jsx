@@ -58,6 +58,12 @@ const colorVariants = {
     borderColor: "border-brand-epic_games",
     hoverBorder: "hover:border-brand-epic_games",
   },
+  MICROSOFT: {
+    hover: "hover:bg-gray-2400",
+    active: "bg-gray-2400",
+    borderColor: "border-gray-2400",
+    hoverBorder: "hover:border-gray-2400",
+  },
   black: {
     hover: "hover:bg-black",
     active: "bg-black",

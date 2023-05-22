@@ -193,6 +193,43 @@ const GitHub = ({ loading, disabled }) => {
   );
 };
 
+const Microsoft = ({ width = "24", height = "24", loading, disabled }) => {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clipPath="url(#clip0_519_1103)">
+        <path d="M0 0H24V24H0V0Z" fill="#F3F3F3" />
+        <path
+          d="M1.04348 1.04346H11.4783V11.4782H1.04348V1.04346Z"
+          fill="#F35325"
+        />
+        <path
+          d="M12.5217 1.04346H22.9565V11.4782H12.5217V1.04346Z"
+          fill="#81BC06"
+        />
+        <path
+          d="M1.04348 12.5217H11.4783V22.9565H1.04348V12.5217Z"
+          fill="#05A6F0"
+        />
+        <path
+          d="M12.5217 12.5217H22.9565V22.9565H12.5217V12.5217Z"
+          fill="#FFBA08"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_519_1103">
+          <rect width="24" height="24" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+};
+
 const EpicGames = ({ height = "24", width = "24", loading, disabled }) => {
   return (
     <svg
@@ -1022,6 +1059,7 @@ const iconMap = {
   smilingFace: SmilingFace,
   sampleNFT: NFT,
   landscape: Landscape,
+  MICROSOFT: Microsoft,
   EPIC_GAMES: EpicGames,
   REDDIT: Reddit,
   SPOTIFY: Spotify,

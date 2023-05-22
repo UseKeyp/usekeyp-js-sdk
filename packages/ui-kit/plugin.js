@@ -39,7 +39,6 @@ module.exports = plugin(
             epic_games: "#2F2D2E",
             reddit: "#FF4500",
             facebook: "#3B5998",
-            microsoft: "#2F2D2E",
           },
         },
         fontFamily: {

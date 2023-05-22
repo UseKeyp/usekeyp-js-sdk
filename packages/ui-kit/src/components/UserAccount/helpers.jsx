@@ -31,7 +31,7 @@ export function getStyledUsernameFromCurrentUser(currentUser, sizeVariant) {
     epic_games: "text-brand-epic_games",
     reddit: "text-brand-reddit",
     facebook: "text-brand-facebook",
-    microsoft: "text-brand-microsoft",
+    microsoft: "text-gray-2400",
   };
 
   const platform = currentUser.id.split("-")[0].toLowerCase();
@@ -59,7 +59,7 @@ export function getProviderIconFromCurrentUser(currentUser) {
     epic_games: { name: "epic_games" },
     reddit: { name: "REDDIT" },
     facebook: { name: "facebook", marginTop: "mt-0.5" },
-    microsoft: { name: "microsoft", marginTop: "mt-0.5" },
+    microsoft: { name: "MICROSOFT" },
     spotify: { name: "SPOTIFY", marginTop: "mt-0.5" },
   };
 
