@@ -8,73 +8,84 @@ const colorVariants = {
     active: "bg-brand-discord",
     borderColor: "border-brand-discord",
     hoverBorder: "hover:border-brand-discord",
-    hoverTextColor: "text-white",
+    activeTextColor: "text-white",
   },
   TWITTER: {
     hover: "hover:bg-brand-twitter",
     active: "bg-brand-twitter",
     borderColor: "border-brand-twitter",
     hoverBorder: "hover:border-brand-twitter",
+    activeTextColor: "text-white",
   },
   GOOGLE: {
     hover: "hover:bg-brand-google",
     active: "bg-brand-google",
     borderColor: "border-brand-google",
     hoverBorder: "hover:border-brand-google",
+    activeTextColor: "text-white",
   },
   APPLE: {
     hover: "hover:bg-black",
     active: "bg-black",
     borderColor: "border-black",
     hoverBorder: "hover:border-black",
+    activeTextColor: "text-white",
   },
   TWITCH: {
     hover: "hover:bg-brand-twitch",
     active: "bg-brand-twitch",
     borderColor: "border-brand-twitch",
     hoverBorder: "hover:border-brand-twitch",
+    activeTextColor: "text-white",
   },
   CHESS: {
     hover: "hover:bg-brand-chess",
     active: "bg-brand-chess",
     borderColor: "border-brand-chess",
     hoverBorder: "hover:border-brand-chess",
+    activeTextColor: "text-white",
   },
   SPOTIFY: {
     hover: "hover:bg-gray-200",
     active: "bg-gray-200",
     borderColor: "border-gray-200",
     hoverBorder: "hover:border-gray-200",
+    activeTextColor: "text-gray-1200",
   },
   REDDIT: {
     hover: "hover:bg-gray-200",
     active: "bg-gray-200",
     borderColor: "border-gray-200",
     hoverBorder: "hover:border-gray-200",
+    activeTextColor: "text-gray-1200",
   },
   FACEBOOK: {
     hover: "hover:bg-gray-200",
     active: "bg-gray-200",
     borderColor: "border-gray-200",
     hoverBorder: "hover:border-gray-200",
+    activeTextColor: "text-gray-1200",
   },
   EPIC_GAMES: {
     hover: "hover:bg-brand-epic_games",
     active: "bg-brand-epic_games",
     borderColor: "border-brand-epic_games",
     hoverBorder: "hover:border-brand-epic_games",
+    activeTextColor: "text-white",
   },
   MICROSOFT: {
     hover: "hover:bg-gray-2400",
     active: "bg-gray-2400",
     borderColor: "border-gray-2400",
     hoverBorder: "hover:border-gray-2400",
+    activeTextColor: "text-white",
   },
   black: {
     hover: "hover:bg-black",
     active: "bg-black",
     borderColor: "border-black",
     hoverBorder: "hover:border-black",
+    activeTextColor: "text-white",
   },
 };
 
@@ -82,13 +93,15 @@ const getBrandColor = (provider) => {
   return colorVariants[provider] || colorVariants.black;
 };
 
-const getHoverTextColor = (provider) => {
+const getTextColor = (provider) => {
   if (
     provider !== "SPOTIFY" &&
     provider !== "REDDIT" &&
     provider !== "FACEBOOK"
   ) {
-    return "hover:text-white";
+    return "text-gray-1200 hover:text-white";
+  } else {
+    return "text-gray-1200";
   }
 };
 
@@ -114,6 +127,7 @@ const LoginButton = ({
     active: activeBg,
     borderColor: borderColor,
     hoverBorder,
+    activeTextColor,
   } = getBrandColor(provider);
   return (
     <div className="mb-4">
@@ -155,10 +169,10 @@ const LoginButton = ({
             !loading && !disabled && hoverBorder
           }`}
           textColor={`
-          ${loading && "text-white"} 
-          ${!loading && disabled && "text-gray-800"}
-          ${!loading && !disabled && "text-gray-1200"}
-          ${!disabled && getHoverTextColor(provider)}`}
+          ${loading && activeTextColor}
+          ${disabled && !loading && "text-gray-800"}
+          ${!disabled && !loading && getTextColor(provider)}
+          `}
           disabled={disabled}
         >
           <div className="flex items-center mr-4 ml-2 w-full">

@@ -55,7 +55,7 @@ export function getProviderIconFromCurrentUser(currentUser) {
     chess: { name: "CHESS" },
     twitter: { name: "TWITTER" },
     twitch: { name: "TWITCH" },
-    node: { name: "keypcircle" },
+    node: { name: "KEYPCIRCLE" },
     epic_games: { name: "EPIC_GAMES" },
     reddit: { name: "REDDIT" },
     facebook: { name: "FACEBOOK", marginTop: "mt-0.5" },
