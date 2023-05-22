@@ -52,6 +52,12 @@ const colorVariants = {
     borderColor: "border-gray-200",
     hoverBorder: "hover:border-gray-200",
   },
+  FACEBOOK: {
+    hover: "hover:bg-gray-200",
+    active: "bg-gray-200",
+    borderColor: "border-gray-200",
+    hoverBorder: "hover:border-gray-200",
+  },
   EPIC_GAMES: {
     hover: "hover:bg-brand-epic_games",
     active: "bg-brand-epic_games",
@@ -77,7 +83,11 @@ const getBrandColor = (provider) => {
 };
 
 const getHoverTextColor = (provider) => {
-  if (provider !== "SPOTIFY" && provider !== "REDDIT") {
+  if (
+    provider !== "SPOTIFY" &&
+    provider !== "REDDIT" &&
+    provider !== "FACEBOOK"
+  ) {
     return "hover:text-white";
   }
 };
