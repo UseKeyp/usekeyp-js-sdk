@@ -59,6 +59,7 @@ const webpackConfig = {
 
 module.exports = {
   title: "UI Kit",
+  serverPort: 8080,
   sections: [
     {
       name: "Resources",
