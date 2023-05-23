@@ -7,25 +7,25 @@ const currentUserTwitter = {
   username: "@twitterhandle",
   email: "testuser@gmail.com",
   id: "twitter-123",
-  address: "0x95222290DD7278Aa3Ddd389Cc1E1d165CC4BAfe5",
+  address: "0x95222290DD7278Aa3Ddd389Cc1E1d165CC4BAfe1",
 };
 const currentUserDiscord = {
   username: "discordtest",
   email: "testuser@gmail.com",
   id: "discord-123",
-  address: "0x95222290DD7278Aa3Ddd389Cc1E1d165CC4BAfe5",
+  address: "0x95222290DD7278Aa3Ddd389Cc1E1d165CC4BAfe2",
 };
 const currentUserGoogle = {
   username: "googletest",
   email: "testuser@gmail.com",
   id: "google-123",
-  address: "0x95222290DD7278Aa3Ddd389Cc1E1d165CC4BAfe5",
+  address: "0x95222290DD7278Aa3Ddd389Cc1E1d165CC4BAfe3",
 };
 const currentUserTwitch = {
   username: "twitchtest",
   email: "testuser@gmail.com",
   id: "twitch-123",
-  address: "0x95222290DD7278Aa3Ddd389Cc1E1d165CC4BAfe5",
+  address: "0x95222290DD7278Aa3Ddd389Cc1E1d165CC4BAfe4",
 };
 const currentUserChess = {
   username: "chesstest",
@@ -37,32 +37,32 @@ const currentUserNode = {
   username: "nodetest",
   email: "testuser@gmail.com",
   id: "node-123",
-  address: "0x95222290DD7278Aa3Ddd389Cc1E1d165CC4BAfe5",
+  address: "0x95222290DD7278Aa3Ddd389Cc1E1d165CC4BAfe6",
 };
 const currentUserReddit = {
   username: "nodetest",
   email: "testuser@gmail.com",
   id: "reddit-123",
-  address: "0x95222290DD7278Aa3Ddd389Cc1E1d165CC4BAfe5",
+  address: "0x95222290DD7278Aa3Ddd389Cc1E1d165CC4BAfe7",
 };
 const currentUserFacebook = {
   username: "nodetest",
   email: "testuser@gmail.com",
   id: "facebook-123",
-  address: "0x95222290DD7278Aa3Ddd389Cc1E1d165CC4BAfe5",
+  address: "0x95222290DD7278Aa3Ddd389Cc1E1d165CC4BAfe8",
 };
 const currentUserMicrosoft = {
   username: "nodetest",
   email: "testuser@gmail.com",
   id: "microsoft-123",
-  address: "0x95222290DD7278Aa3Ddd389Cc1E1d165CC4BAfe5",
+  address: "0x95222290DD7278Aa3Ddd389Cc1E1d165CC4BAfe9",
 };
 
 const currentUserSpotify = {
   username: "spotifytest",
   email: "testuser@gmail.com",
   id: "spotify-123",
-  address: "0x95222290DD7278Aa3Ddd389Cc1E1d165CC4BAfe5",
+  address: "0x95222290DD7278Aa3Ddd389Cc1E1d165CC4BAfy5",
 };
 
 return (
