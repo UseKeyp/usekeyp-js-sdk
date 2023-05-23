@@ -94,24 +94,24 @@ const getBrandColor = (provider) => {
 };
 
 const getTextColor = (provider) => {
-  if (
-    provider !== "SPOTIFY" &&
-    provider !== "REDDIT" &&
-    provider !== "FACEBOOK"
-  ) {
-    return "text-gray-1200 hover:text-white";
-  } else {
-    return "text-gray-1200";
+  switch (provider) {
+    case "SPOTIFY":
+    case "REDDIT":
+    case "FACEBOOK":
+      return "text-gray-1200";
+    default:
+      return "text-gray-1200 hover:text-white";
   }
 };
 
 const getLabelFromProvider = (provider) => {
-  if (provider === "CHESS") {
-    return "Chess.com";
-  } else if (provider === "EPIC_GAMES") {
-    return "Epic Games";
-  } else {
-    return `${provider[0]}${provider.substring(1).toLowerCase()}`;
+  switch (provider) {
+    case "CHESS":
+      return "Chess.com";
+    case "EPIC_GAMES":
+      return "Epic Games";
+    default:
+      return `${provider[0]}${provider.substring(1).toLowerCase()}`;
   }
 };
 
