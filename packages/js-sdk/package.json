@@ -5,7 +5,7 @@
   "author": "alekseevayana <alekseevayana@bk.ru>",
   "homepage": "https://github.com/UseKeyp/usekeyp-js-sdk/blob/main/packages/js-sdk/README.md",
   "license": "ISC",
-  "main": "lib/components/index.js",
+  "main": "src/index.js",
   "files": [
     "lib"
   ],
@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@redwoodjs/router": "^3.3.0",
+    "next-auth": "^4.22.1",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
