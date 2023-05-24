@@ -4,6 +4,16 @@ const nextConfig = {
     if (!isServer) {
       config.resolve.fallback.fs = false;
     }
+    config.module.rules.push(
+    {
+      test: /\.(js|jsx)$/,
+          use: {
+      loader: 'babel-loader',
+          options: {
+        presets: ['@babel/preset-react'],
+      },
+    },
+    })
 
     return config;
   },
