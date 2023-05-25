@@ -8,10 +8,12 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import { useSession, signIn } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { FaDiscord, FaGoogle } from "react-icons/fa";
+// @ts-ignore
+import { signInKeyp } from "@usekeyp/js-sdk"
 
 const Login = () => {
   const [activeBtn, setActiveBtn] = useState<string>();
@@ -20,13 +22,6 @@ const Login = () => {
 
   console.log(session);
 
-  const handleGoogleLogin = () => {
-    signIn("keyp", undefined, "login_provider=GOOGLE");
-  };
-
-  const handleDiscordLogin = () => {
-    signIn("keyp", undefined, "login_provider=DISCORD");
-  };
 
   useEffect(() => {
     if (session && session.status === "authenticated") {
@@ -73,7 +68,7 @@ const Login = () => {
           >
             <Button
               variant="login"
-              onClick={() => handleGoogleLogin()}
+              onClick={() => signInKeyp("GOOGLE")}
               _hover={{
                 bg: "googleBlue",
                 color: "white",
@@ -103,7 +98,7 @@ const Login = () => {
           >
             <Button
               variant="login"
-              onClick={() => handleDiscordLogin()}
+              onClick={() => signInKeyp("DISCORD")}
               _hover={{
                 bg: "discordBlue",
                 color: "white",
