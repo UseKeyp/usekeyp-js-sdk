@@ -3,7 +3,9 @@ import axios from "axios";
 import { useSession } from "next-auth/react";
 import React, { useEffect, useState } from "react";
 import { UserBalance } from "types/keypEndpoints";
-import { KEYP_BASE_URL_V1, supportedAssets } from "utils/general";
+import { supportedAssets } from "utils/general";
+// @ts-ignore
+import { keypClient } from "@usekeyp/js-sdk";
 
 const Wallet = () => {
   const [assets, setAssets] = useState<UserBalance[] | undefined>();
@@ -41,13 +43,13 @@ const Wallet = () => {
       },
     };
 
-    const firstRequest = `${KEYP_BASE_URL_V1}/users/${userId}/balance`;
-    const secondRequest = `${KEYP_BASE_URL_V1}/users/${userId}/balance/${supportedAssets.DAI}`;
+    const firstRequest = `/users/${userId}/balance`;
+    const secondRequest = `/users/${userId}/balance/${supportedAssets.DAI}`;
 
     axios
       .all([
-        axios.get(firstRequest, options),
-        axios.get(secondRequest, options),
+        keypClient.get(firstRequest, options),
+        keypClient.get(secondRequest, options),
       ])
       .then(
         axios.spread((firstResponse, secondResponse) => {

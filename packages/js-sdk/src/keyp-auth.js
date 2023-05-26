@@ -43,7 +43,6 @@ export const KeypAuth = (options) => {
                     token.username = profile.username;
                     token.address = profile.address;
                     token.sub = profile.sub;
-                    token.exp = profile.exp;
                 }
                 return token;
             },
@@ -54,7 +53,6 @@ export const KeypAuth = (options) => {
                     session.user.username = token.username;
                     session.user.address = token.address;
                     session.user.id = token.sub;
-                    session.user.exp = token.exp;
                 }
                 return session;
             },
