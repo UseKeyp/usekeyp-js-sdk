@@ -1,4 +1,37 @@
-const KeypProvider = (options) => {
+type Options = {
+    clientId: string;
+    secret?: string;
+};
+
+type Profile = {
+    sub: string;
+    username: string;
+    address: string;
+    email: string;
+    imageSrc: string;
+};
+
+type Token = {
+    accessToken?: string;
+    username?: string;
+    address?: string;
+    sub?: string;
+};
+
+type Account = {
+    access_token: string;
+};
+
+type Session = {
+    user: {
+        accessToken?: string;
+        username?: string;
+        address?: string;
+        id?: string;
+    };
+};
+
+const KeypProvider = (options: Options) => {
     const { clientId } = options;
 
     const KEYP_API_DOMAIN =
@@ -14,7 +47,7 @@ const KeypProvider = (options) => {
         checks: ["pkce"],
         authorization: { params: { scope: "openid email" } },
         client: { token_endpoint_auth_method: "none" },
-        profile(profile) {
+        profile(profile: Profile) {
             return {
                 id: profile.sub,
                 username: profile.username,
@@ -26,14 +59,17 @@ const KeypProvider = (options) => {
     };
 };
 
-export const KeypAuth = (options) => {
+/**
+ * Creates an easy plug-in for NextAuth.js to use Keyp as an authentication provider
+ */
+export const KeypAuth = (options: Options) => {
     const keypProvider = KeypProvider(options);
 
     return {
         secret: options.secret,
         providers: [keypProvider],
         callbacks: {
-            async jwt({ token, account, profile }) {
+            async jwt({ token, account, profile }: { token: Token; account: Account; profile: Profile }) {
                 if (account) {
                     // Comes from the returned JWT from Keyp
                     token.accessToken = account.access_token;
@@ -46,7 +82,7 @@ export const KeypAuth = (options) => {
                 }
                 return token;
             },
-            async session({ session, token }) {
+            async session({ session, token }: { session: Session; token: Token }) {
                 // Send properties to the client, like an access_token from a provider.
                 if (token) {
                     session.user.accessToken = token.accessToken;
