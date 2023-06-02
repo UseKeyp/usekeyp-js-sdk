@@ -2,8 +2,8 @@ import { signOut } from "next-auth/react";
 import { keypClient } from "./keypClient";
 import { AxiosResponse } from 'axios';
 
-interface TokenTransferByUserIdParams {
-    accessToken: string;
+interface TokenTransferParams {
+    accessToken: string | undefined;
     amount?: string;
     tokenId?: string;
     toAddress?: string;
@@ -14,11 +14,28 @@ interface TokenTransferByUserIdParams {
     toUserProviderType?: string;
 }
 
-interface TokenTransferByUserIdResult {
-    result: string;
-    loading: boolean;
+interface TokenTransferResult {
+    status: string;
+    hash: string;
     error: string;
 }
+
+/**
+ * Routes a token transfer to the correct endpoint based on whether a username or user id is provided
+ * @param params
+ */
+const tokenTransfer = async (params: TokenTransferParams): Promise<TokenTransferResult> => {
+    if (!params.accessToken) {
+        throw 'No access token provided';
+    }
+    if (params.toUserUsername) {
+        return tokenTransferByUsername(params);
+    } else if (params.toUserId) {
+        return tokenTransferByUserId(params);
+    } else {
+        throw 'Provide either a username and provider type or a user ID';
+    }
+};
 
 /**
  * Transfers a token by user id
@@ -40,7 +57,7 @@ const tokenTransferByUserId = async ({
                                          toUserId,
                                          tokenType,
                                          tokenAddress,
-                                     }: TokenTransferByUserIdParams): Promise<TokenTransferByUserIdResult> => {
+                                     }: TokenTransferParams): Promise<TokenTransferResult> => {
     const headers = {
         'Content-type': 'application/json',
         Authorization: 'Bearer ' + accessToken,
@@ -66,12 +83,12 @@ const tokenTransferByUserId = async ({
             },
         });
 
-        return { result: response.data, loading: false, error: response.data.error };
+        return { status: response.data.status, hash: response.data.hash, error: response.data.error };
     } catch (error) {
         if (error?.response?.status === 401) {
             signOut();
         }
-        return { result: null, loading: false, error: error };
+        return { status: 'FAILURE', hash: '', error: error};
     }
 };
 
@@ -87,7 +104,7 @@ const tokenTransferByUserId = async ({
  * @returns {Object} The result of the transfer in the form { result, loading, error }
  * @throws {string} If any of the required parameters are missing or incorrect
  */
-const tokenTransferByUsername = async ({ accessToken, amount, tokenId, toUserUsername, toUserProviderType, tokenType, tokenAddress }: TokenTransferByUserIdParams): Promise<TokenTransferByUserIdResult>  => {
+const tokenTransferByUsername = async ({ accessToken, amount, tokenId, toUserUsername, toUserProviderType, tokenType, tokenAddress }: TokenTransferParams): Promise<TokenTransferResult>  => {
     const headers = {
         'Content-type': 'application/json',
         Authorization: 'Bearer ' + accessToken,
@@ -97,6 +114,7 @@ const tokenTransferByUsername = async ({ accessToken, amount, tokenId, toUserUse
     if (!tokenId && tokenType === 'ERC721') throw 'Invalid tokenId'
     if (!tokenAddress) throw 'Invalid token address'
     if (!tokenType) throw 'Invalid token type'
+    if (!toUserUsername || !toUserProviderType) throw 'Invalid username or provider type'
 
     try {
         const response: AxiosResponse = await keypClient({
@@ -112,13 +130,13 @@ const tokenTransferByUsername = async ({ accessToken, amount, tokenId, toUserUse
             },
         });
 
-        return { result: response.data, loading: false, error: response.data.error };
+        return { status: response.data.status, hash: response.data.hash, error: response.data.error };
     } catch (error) {
         if (error?.response?.status === 401) {
             signOut();
         }
-        return { result: null , loading: false, error};
+        return { status: 'FAILURE', hash: '', error: error};
     }
 };
 
-export { tokenTransferByUsername, tokenTransferByUserId };
+export { tokenTransfer };

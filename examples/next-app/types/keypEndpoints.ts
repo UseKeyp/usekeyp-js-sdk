@@ -20,7 +20,7 @@ export type UserBalance = {
 };
 
 export type TransferError = {
-  status: "FAILED" | "SUCCESS";
+  status: string;
   hash: string;
   error: string;
 };
