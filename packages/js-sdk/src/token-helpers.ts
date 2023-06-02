@@ -1,5 +1,24 @@
 import { signOut } from "next-auth/react";
 import { keypClient } from "./keypClient";
+import { AxiosResponse } from 'axios';
+
+interface TokenTransferByUserIdParams {
+    accessToken: string;
+    amount?: string;
+    tokenId?: string;
+    toAddress?: string;
+    toUserId?: string;
+    tokenType: string;
+    tokenAddress: string;
+    toUserUsername?: string;
+    toUserProviderType?: string;
+}
+
+interface TokenTransferByUserIdResult {
+    result: string;
+    loading: boolean;
+    error: string;
+}
 
 /**
  * Transfers a token by user id
@@ -13,19 +32,27 @@ import { keypClient } from "./keypClient";
  * @returns {Object} The result of the transfer in the form { result, loading, error }
  * @throws {string} If any of the required parameters are missing or incorrect
  */
-const tokenTransferByUserId = async ({ accessToken, amount, tokenId, toAddress, toUserId, tokenType, tokenAddress }) => {
+const tokenTransferByUserId = async ({
+                                         accessToken,
+                                         amount,
+                                         tokenId,
+                                         toAddress,
+                                         toUserId,
+                                         tokenType,
+                                         tokenAddress,
+                                     }: TokenTransferByUserIdParams): Promise<TokenTransferByUserIdResult> => {
     const headers = {
         'Content-type': 'application/json',
         Authorization: 'Bearer ' + accessToken,
     };
 
-    if (!amount && tokenType === 'ERC20') throw 'Invalid amount'
-    if (!tokenId && tokenType === 'ERC721') throw 'Invalid tokenId'
-    if (!tokenAddress) throw 'Invalid token address'
-    if (!tokenType) throw 'Invalid token type'
+    if (!amount && tokenType === 'ERC20') throw 'Invalid amount';
+    if (!tokenId && tokenType === 'ERC721') throw 'Invalid tokenId';
+    if (!tokenAddress) throw 'Invalid token address';
+    if (!tokenType) throw 'Invalid token type';
 
     try {
-        const response = await keypClient({
+        const response: AxiosResponse = await keypClient({
             method: 'POST',
             headers,
             url: 'tokens/transfers',
@@ -60,7 +87,7 @@ const tokenTransferByUserId = async ({ accessToken, amount, tokenId, toAddress, 
  * @returns {Object} The result of the transfer in the form { result, loading, error }
  * @throws {string} If any of the required parameters are missing or incorrect
  */
-const tokenTransferByUsername = async ({ accessToken, amount, tokenId, toUserUsername, toUserProviderType, tokenType, tokenAddress }) => {
+const tokenTransferByUsername = async ({ accessToken, amount, tokenId, toUserUsername, toUserProviderType, tokenType, tokenAddress }: TokenTransferByUserIdParams): Promise<TokenTransferByUserIdResult>  => {
     const headers = {
         'Content-type': 'application/json',
         Authorization: 'Bearer ' + accessToken,
@@ -72,7 +99,7 @@ const tokenTransferByUsername = async ({ accessToken, amount, tokenId, toUserUse
     if (!tokenType) throw 'Invalid token type'
 
     try {
-        const response = await keypClient({
+        const response: AxiosResponse = await keypClient({
             method: 'POST',
             headers,
             url: 'tokens/transfers',

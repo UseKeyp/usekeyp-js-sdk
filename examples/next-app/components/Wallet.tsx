@@ -4,7 +4,6 @@ import { useSession } from "next-auth/react";
 import React, { useEffect, useState } from "react";
 import { UserBalance } from "types/keypEndpoints";
 import { supportedAssets } from "utils/general";
-// @ts-ignore
 import { keypClient } from "@usekeyp/js-sdk";
 
 const Wallet = () => {

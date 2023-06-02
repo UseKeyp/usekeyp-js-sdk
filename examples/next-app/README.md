@@ -22,7 +22,6 @@ Kaching's key features are:
 ## Installation
 
 Kaching is a web application that does not require installation. Simply navigate to https://kaching.money/ to start using the application.
-Support
 
 ## License
 
