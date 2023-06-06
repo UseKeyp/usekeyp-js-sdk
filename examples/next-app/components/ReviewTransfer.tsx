@@ -18,6 +18,7 @@ import { supportedAssets } from "utils/general";
 import { TransferData } from "types/restAPI";
 import { TransferError } from "types/keypEndpoints";
 import { KEYP_BASE_URL_V1 } from "utils/general";
+import { tokenTransfer } from "@usekeyp/js-sdk";
 
 /**
  * @remarks code below is used for request feature. DO NOT REMOVE
@@ -63,7 +64,7 @@ const ReviewTransfer = () => {
     token: string,
     amount: string
   ): Promise<TransferData> => {
-    const request: TransferData = await UseKeypApi({
+    return await UseKeypApi({
       accessToken: session?.user.accessToken,
       method: "POST",
       endpointUrl: `${KEYP_BASE_URL_V1}/tokens/transfers`,
@@ -75,28 +76,34 @@ const ReviewTransfer = () => {
         amount,
       },
     });
-
-    return request;
   };
 
   const handleSendTx = async () => {
     if (asset && amount && username) {
-      const req = await handleTokenTransfer(username, asset, amount.toString());
-      console.log(req);
-      if (req.status === "SUCCESS") {
-        console.log(req);
+      const params = {
+        accessToken: session?.user.accessToken,
+        amount: amount.toString(),
+        tokenAddress: supportedAssets[asset],
+        tokenType: 'ERC20',
+        toUserUsername: username,
+        toUserProviderType: platform === "discord" ? "DISCORD" : "GOOGLE",
+      };
+
+      const res = await tokenTransfer(params);
+
+      if (res.status === "SUCCESS") {
         router.push({
           pathname: "/confirmation/send",
           query: {
             amount,
             asset,
             username,
-            hash: req.hash,
+            hash: res.hash,
           },
         });
-        return req;
+        return res;
       } else {
-        setResponseError(req);
+        setResponseError({status: res.status, hash: res.hash, error: res.error});
         setSendingTx(false);
       }
     }

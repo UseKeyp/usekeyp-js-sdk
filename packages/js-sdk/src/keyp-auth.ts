@@ -1,6 +1,7 @@
 type Options = {
-    clientId: string;
-    secret?: string;
+    clientId: string | undefined;
+    secret?: string | undefined;
+    redirectUrl?: string | undefined;
 };
 
 type Profile = {
