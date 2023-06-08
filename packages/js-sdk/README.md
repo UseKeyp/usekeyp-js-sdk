@@ -25,6 +25,7 @@ Currently, the SDK supports the following:
 - A Keyp plugin for integration between Keyp and NextAuth.js (keyp-auth.ts)
 - Helper method for signing in using Keyp and NextAuth.js (keyp-helpers.ts)
 - Helper tokenTransfer method for token transfers (token-helpers.ts)
+- Helper readContract and writeContract methods for interacting with smart contracts (contract-helpers.ts)
 - Axios client for easily making requests to Keyp's API (keypClient.ts)
 
 For an example of how to use the SDK, see the Next.js example app in the `examples` directory.

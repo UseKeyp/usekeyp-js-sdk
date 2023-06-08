@@ -1,4 +1,3 @@
-import { signOut } from "next-auth/react";
 import { keypClient } from "./keypClient";
 import { AxiosResponse } from 'axios';
 
@@ -85,9 +84,6 @@ const tokenTransferByUserId = async ({
 
         return { status: response.data.status, hash: response.data.hash, error: response.data.error };
     } catch (error) {
-        if (error?.response?.status === 401) {
-            signOut();
-        }
         return { status: 'FAILURE', hash: '', error: error};
     }
 };
@@ -132,9 +128,6 @@ const tokenTransferByUsername = async ({ accessToken, amount, tokenId, toUserUse
 
         return { status: response.data.status, hash: response.data.hash, error: response.data.error };
     } catch (error) {
-        if (error?.response?.status === 401) {
-            signOut();
-        }
         return { status: 'FAILURE', hash: '', error: error};
     }
 };
