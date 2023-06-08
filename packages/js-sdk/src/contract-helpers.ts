@@ -50,8 +50,6 @@ const readContract = async ({accessToken, address, abi, args}: ReadContractParam
         'Content-type': 'application/json',
         Authorization: 'Bearer ' + accessToken,
     };
-
-    try {
         const response: AxiosResponse = await keypClient.post('/contracts/method/read', {
             address: address,
             abi: abi,
@@ -59,16 +57,11 @@ const readContract = async ({accessToken, address, abi, args}: ReadContractParam
         }, {
             headers,
         });
-
         return {
             status: response.data.status,
             explorerUrl: response.data.explorerUrl,
             response: response.data.response,
         };
-    } catch (error) {
-        console.log(error.message, 'error')
-        return { status: 'FAILURE', explorerUrl: '', response: { type: '', hex: ''} };
-    }
 };
 
 /**
@@ -87,8 +80,6 @@ const writeContract = async ({accessToken, address, abi, args, value}: WriteCont
         'Content-type': 'application/json',
         Authorization: 'Bearer ' + accessToken,
     };
-
-    try {
         const response: AxiosResponse = await keypClient.post('/contracts/method/write', {
             address: address,
             abi: abi,
@@ -97,16 +88,12 @@ const writeContract = async ({accessToken, address, abi, args, value}: WriteCont
         }, {
             headers,
         });
-
         return {
             status: response.data.status,
             hash: response.data.hash,
             explorerUrl: response.data.explorerUrl,
             tx: response.data.tx,
         };
-    } catch (error) {
-        return { status: 'FAILURE', hash: '', explorerUrl: '', tx: { type: '', chainId: ''} };
-    }
 };
 
 export { readContract, writeContract };
