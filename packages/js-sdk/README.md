@@ -11,26 +11,105 @@
 
 > Tools for building apps using Keyp
 
+Currently, the SDK supports the following:
+
+- Authenication using NextAuth.js
+- ERC20 and ERC721 token transfers
+- Read and write smart contracts
+
 ## Install 📦
 
 ```sh
-npm install @usekeyp/js-sdk
+yarn add @usekeyp/js-sdk
 ```
 
 ## Usage 📖
 
-Keyp's SDK provides a simple interface for interacting with Keyp's API. 
+### Authenication using NextAuth.js
 
-Currently, the SDK supports the following: 
-- A Keyp plugin for integration between Keyp and NextAuth.js (keyp-auth.ts)
-- Helper method for signing in using Keyp and NextAuth.js (keyp-helpers.ts)
-- Helper tokenTransfer method for token transfers (token-helpers.ts)
-- Helper readContract and writeContract methods for interacting with smart contracts (contract-helpers.ts)
-- Axios client for easily making requests to Keyp's API (keypClient.ts)
+Configure using the Keyp [NextAuth provider](https://next-auth.js.org/configuration/providers/oauth#using-a-custom-provider)
 
-For an example of how to use the SDK, see the Next.js example app in the `examples` directory.
+```js
+// pages/api/auth/[...nextauth].js
+import { KeypAuth } from "@usekeyp/js-sdk";
+import NextAuth from "next-auth";
 
-For full instructions see the [Docs](https://docs.usekeyp.com/).
+const NextAuthOptions = KeypAuth({
+    clientId: process.env.KEYP_CLIENT_ID, // From dev portal
+    secret: process.env.KEYP_COOKIE_SECRET, // Random string
+    redirectUrl: "http://localhost:3000/api/auth/callback/keyp",
+});
+
+export default NextAuth(NextAuthOptions);
+```
+
+Trigger a login for a specific social provider using `signInKeyp()` 
+
+```js
+import { signInKeyp } from "@usekeyp/js-sdk"
+
+export default function SignInPage() {
+    return (
+        <div>
+        <button onClick={() => signInKeyp("GOOGLE")}>Sign in with Google</button>
+        <button onClick={() => signInKeyp("DISCORD")}>Sign in with Discord</button>
+        </div>
+    )
+}
+```
+
+### ERC20 and ERC721 token transfers
+
+```js
+import { tokenTransfer } from "@usekeyp/js-sdk";
+import { useSession } from "next-auth/react";
+
+const { data: session } = useSession();
+const ACCESS_TOKEN = session.user.accessToken
+
+const data = {
+    accessToken: ACCESS_TOKEN,
+    toUserUsername: "pi0neerpat#1337",
+    toUserProviderType: "DISCORD",
+    tokenAddress: '0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063',
+    tokenType: 'ERC20',
+    amount: '.01',
+}
+
+const result = await tokenTransfer(data)
+```
+
+### Read and write smart contracts
+
+```js
+import { readContract, writeContract } from "@usekeyp/js-sdk";
+import { useSession } from "next-auth/react";
+
+const { data: session } = useSession();
+const ACCESS_TOKEN = session.user.accessToken
+
+// Read from a smart contract
+const resultWrite = await readContract(
+    {
+        accessToken: ACCESS_TOKEN,
+        address: "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+        abi: "balanceOf(address) public view returns (uint256)",
+        args: ['0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063'],
+    });
+
+// Write to a smart contract
+const resultRead = await writeContract(
+    {
+        accessToken: ACCESS_TOKEN,
+        address: "0x55d4dfb578daa4d60380995fff7a706471d7c719",
+        abi: "pay(uint256,uint256,address) public returns (bool success)",
+        args: ['1', '10000000', '0x9ca6a77c8b38159fd2da9bd25bc3e259c33f5e39'],
+    });
+```
+
+## Resources 🧑‍💻
+
+For more instructions, see the [Docs](https://docs.usekeyp.com/).
 
 ## License 📝
 
