@@ -1,6 +1,6 @@
 {
   "name": "@usekeyp/js-sdk",
-  "private": true,
+  "version":"0.1.6",
   "type": "module",
   "description": "Tools for building apps using Keyp",
   "packageManager": "yarn@3.2.3",
@@ -9,7 +9,8 @@
   "license": "MIT",
   "main": "src/index.ts",
   "scripts": {
-    "lint": "npx eslint ."
+    "lint": "npx eslint .",
+    "pre-publish": "exit 0"
   },
   "files": [
     "lib"
