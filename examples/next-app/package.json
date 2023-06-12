@@ -19,6 +19,7 @@
     "@types/node": "18.11.18",
     "@types/react": "18.0.26",
     "@types/react-dom": "18.0.10",
+    "@usekeyp/js-sdk": "PR58",
     "@usekeyp/ui-kit": "^0.1.6",
     "axios": "^1.2.3",
     "cheerio": "^1.0.0-rc.12",
