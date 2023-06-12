@@ -24,5 +24,4 @@ yarn-debug.log*
 yarn-error.log*
 install-state.gz
 yarn-error.log
-.yarnrc.yml
 .env
