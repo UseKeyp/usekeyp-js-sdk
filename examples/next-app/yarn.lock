@@ -5886,9 +5886,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@usekeyp/js-sdk@npm:PR58":
-  version: 0.1.7-PR58.fea447e.0
-  resolution: "@usekeyp/js-sdk@npm:0.1.7-PR58.fea447e.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40usekeyp%2Fjs-sdk%2F0.1.7-PR58.fea447e.0%2Fa656901f0ce437bc6b9833eea33ae4ff2b26adbc"
+"@usekeyp/js-sdk@npm:PR59":
+  version: 0.1.7-PR59.a3d89d4.0
+  resolution: "@usekeyp/js-sdk@npm:0.1.7-PR59.a3d89d4.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40usekeyp%2Fjs-sdk%2F0.1.7-PR59.a3d89d4.0%2Fa3f4501176c9c651e09d49cb876c3393f7946c7b"
   dependencies:
     "@redwoodjs/router": ^3.3.0
     next-auth: ^4.22.1
@@ -5896,7 +5896,7 @@ __metadata:
     react: ^18.2.0
     react-dom: ^18.2.0
     react-scripts: 5.0.1
-  checksum: 44021b631d07e3b83cd8f560ac32c7c656fa5056039a38b6a2d1020bc1ad0c61c83a221ff79e278d09f3cbfe4be001cbb914b38376a38205b19b7fa45415dbb1
+  checksum: 8ea2f01d547d36f455c8833ec616ec09801a734769c2ed8d57ffb759b84ddd813ae1be3f74c58d7f5ebd8941e33273330c2b1b01af29d2adebfb86d9b0fc77d2
   languageName: node
   linkType: hard
 
@@ -13028,7 +13028,7 @@ __metadata:
     "@types/node": 18.11.18
     "@types/react": 18.0.26
     "@types/react-dom": 18.0.10
-    "@usekeyp/js-sdk": PR58
+    "@usekeyp/js-sdk": PR59
     "@usekeyp/ui-kit": ^0.1.6
     autoprefixer: ^10.4.14
     axios: ^1.2.3
