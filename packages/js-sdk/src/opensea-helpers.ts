@@ -6,7 +6,7 @@ interface RetrieveListingsParams {
     apiKey: string;
     asset_contract_address?: string;
     limit?: number;
-    token_ids?: string[];
+    token_ids?: string[] | string;
     maker?: string;
     taker?: string;
     order_by?: string;
