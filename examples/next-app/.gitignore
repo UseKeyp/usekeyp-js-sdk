@@ -30,3 +30,4 @@ lerna-debug.log
 install-state.gz
 yarn-error.log
 .yarnrc.yml
+.next

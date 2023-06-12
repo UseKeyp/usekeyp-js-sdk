@@ -12,9 +12,6 @@
     "lint": "npx eslint .",
     "pre-publish": "exit 0"
   },
-  "files": [
-    "lib"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/UseKeyp/usekeyp-js-sdk.git"
