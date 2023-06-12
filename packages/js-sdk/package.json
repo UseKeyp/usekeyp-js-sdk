@@ -5,7 +5,9 @@
   "author": "Keyp Team",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "files": ["lib/"],
+  "files": [
+    "lib/"
+  ],
   "scripts": {
     "lint": "npx eslint .",
     "pre-publish": "yarn build",
