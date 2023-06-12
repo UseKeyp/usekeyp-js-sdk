@@ -1,7 +1,6 @@
 {
   "name": "@usekeyp/js-sdk",
   "version":"0.1.6",
-  "private": true,
   "type": "module",
   "description": "Tools for building apps using Keyp",
   "packageManager": "yarn@3.2.3",
