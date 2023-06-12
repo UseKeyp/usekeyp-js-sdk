@@ -3,36 +3,38 @@ import { AxiosResponse } from 'axios';
 
 interface ReadContractParams {
     accessToken?: string;
-    address?: string;
-    abi?: string;
-    args?: string[];
+    address: string;
+    abi: string;
+    args: string[];
 }
 
 interface ReadContractResult {
-    status?: string;
+    status: string;
     explorerUrl?: string;
     response?: {
         type?: string;
         hex?: string;
     };
+    error?: string;
 }
 
 interface WriteContractParams {
     accessToken?: string;
-    address?: string;
-    abi?: string;
-    args?: string[];
+    address: string;
+    abi: string;
+    args: string[];
     value?: string;
 }
 
 interface WriteContractResult {
-    status?: string;
+    status: string;
     hash?: string;
     explorerUrl?: string;
     tx?: {
         type: number | string;
         chainId: number | string;
     }
+    error?: string;
 }
 
 /**
@@ -50,6 +52,7 @@ const readContract = async ({accessToken, address, abi, args}: ReadContractParam
         'Content-type': 'application/json',
         Authorization: 'Bearer ' + accessToken,
     };
+    try {
         const response: AxiosResponse = await keypClient.post('/contracts/method/read', {
             address: address,
             abi: abi,
@@ -62,6 +65,9 @@ const readContract = async ({accessToken, address, abi, args}: ReadContractParam
             explorerUrl: response.data.explorerUrl,
             response: response.data.response,
         };
+    } catch (error) {
+        return { status: 'FAILURE', explorerUrl: '', response: { type: '', hex: '' }, error: error };
+    }
 };
 
 /**
@@ -80,6 +86,7 @@ const writeContract = async ({accessToken, address, abi, args, value}: WriteCont
         'Content-type': 'application/json',
         Authorization: 'Bearer ' + accessToken,
     };
+    try {
         const response: AxiosResponse = await keypClient.post('/contracts/method/write', {
             address: address,
             abi: abi,
@@ -94,6 +101,9 @@ const writeContract = async ({accessToken, address, abi, args, value}: WriteCont
             explorerUrl: response.data.explorerUrl,
             tx: response.data.tx,
         };
+    } catch (error) {
+        return { status: 'FAILURE', hash: '', explorerUrl: '', tx: { type: '', chainId: '' }, error: error };
+    }
 };
 
 export { readContract, writeContract };

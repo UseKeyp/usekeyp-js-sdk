@@ -2,7 +2,7 @@ import { keypClient } from "./keypClient";
 import { AxiosResponse } from 'axios';
 
 interface TokenTransferParams {
-    accessToken: string | undefined;
+    accessToken?: string;
     amount?: string;
     tokenId?: string;
     toAddress?: string;
