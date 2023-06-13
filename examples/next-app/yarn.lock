@@ -3789,22 +3789,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@floating-ui/core@npm:^1.3.0":
-  version: 1.3.0
-  resolution: "@floating-ui/core@npm:1.3.0"
-  checksum: e78837c86817213d3ff90376fe48cc2f06d4dda1d70bf5bf06bc36dbfde0ecba372ee1b3679259fff9a0320d44309fbec13b3caefae4693a347280ab7ce19127
-  languageName: node
-  linkType: hard
-
-"@floating-ui/dom@npm:^1.0.0":
-  version: 1.3.0
-  resolution: "@floating-ui/dom@npm:1.3.0"
-  dependencies:
-    "@floating-ui/core": ^1.3.0
-  checksum: 1a89de17499996fede35c4116e0280df81739a31552b166b12eca2d368190752bccde2a6cb23c15ee7d67148820c037b972f12964c088ca76fa732efbd0435f5
-  languageName: node
-  linkType: hard
-
 "@fontsource/inter@npm:^4.5.15":
   version: 4.5.15
   resolution: "@fontsource/inter@npm:4.5.15"
@@ -5902,9 +5886,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@usekeyp/js-sdk@npm:PR59":
-  version: 0.1.7-PR59.a3d89d4.0
-  resolution: "@usekeyp/js-sdk@npm:0.1.7-PR59.a3d89d4.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40usekeyp%2Fjs-sdk%2F0.1.7-PR59.a3d89d4.0%2Fa3f4501176c9c651e09d49cb876c3393f7946c7b"
+"@usekeyp/js-sdk@portal:/home/dev/repos/keyp/usekeyp-js-sdk/packages/js-sdk::locator=kaching%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "@usekeyp/js-sdk@portal:/home/dev/repos/keyp/usekeyp-js-sdk/packages/js-sdk::locator=kaching%40workspace%3A."
   dependencies:
     "@redwoodjs/router": ^3.3.0
     next-auth: ^4.22.1
@@ -5912,20 +5896,19 @@ __metadata:
     react: ^18.2.0
     react-dom: ^18.2.0
     react-scripts: 5.0.1
-  checksum: 8ea2f01d547d36f455c8833ec616ec09801a734769c2ed8d57ffb759b84ddd813ae1be3f74c58d7f5ebd8941e33273330c2b1b01af29d2adebfb86d9b0fc77d2
   languageName: node
-  linkType: hard
+  linkType: soft
 
-"@usekeyp/ui-kit@npm:PR59":
-  version: 0.1.7-PR59.a3d89d4.0
-  resolution: "@usekeyp/ui-kit@npm:0.1.7-PR59.a3d89d4.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40usekeyp%2Fui-kit%2F0.1.7-PR59.a3d89d4.0%2F6b194ee44abb7e0992079b5fd506f2352bdd4935"
+"@usekeyp/ui-kit@npm:0.1.6":
+  version: 0.1.6
+  resolution: "@usekeyp/ui-kit@npm:0.1.6"
   dependencies:
+    "@redwoodjs/router": ^3.3.0
     prop-types: ^15.8.1
     react: ^18.2.0
     react-dom: ^18.2.0
     react-scripts: 5.0.1
-    react-tooltip: ^5.11.2
-  checksum: d080a4c2e17bd636738fb056e97c84dbee9f849262ccce5befba6b7b027d592ef2d8e4bee6a1be6906e51ad842dac8c0e49017f8075c3e6621c4b14bf61069d1
+  checksum: 45408855a4c4163b29ce0f42dccefb65e536a8d5e00c89a31183cbc5da628aa7169129bcd990e0a91c2321623ff5af1e4db02c860033475619f5c5dc5a741976
   languageName: node
   linkType: hard
 
@@ -8122,13 +8105,6 @@ __metadata:
   version: 1.2.2
   resolution: "cjs-module-lexer@npm:1.2.2"
   checksum: 83330e1feda2e3699b8c305bfa8f841b41822049393f5eefeb574e60bde556e2a251ee9b7971cde0cb47ac4f7823bf4ab4a6005b8471f86ad9f5509eefb66cbd
-  languageName: node
-  linkType: hard
-
-"classnames@npm:^2.3.0":
-  version: 2.3.2
-  resolution: "classnames@npm:2.3.2"
-  checksum: cd50ead57b4f97436aaa9f9885c6926323efc7c2bea8e3d4eb10e4e972aa6a1cfca1c7a0e06f8a199ca7498d4339e30bb6002e589e61c9f21248cbf3e8b0b18d
   languageName: node
   linkType: hard
 
@@ -13051,8 +13027,8 @@ __metadata:
     "@types/node": 18.11.18
     "@types/react": 18.0.26
     "@types/react-dom": 18.0.10
-    "@usekeyp/js-sdk": PR59
-    "@usekeyp/ui-kit": PR59
+    "@usekeyp/js-sdk": ^0.1.6
+    "@usekeyp/ui-kit": 0.1.6
     autoprefixer: ^10.4.14
     axios: ^1.2.3
     cheerio: ^1.0.0-rc.12
@@ -16212,19 +16188,6 @@ __metadata:
     "@types/react":
       optional: true
   checksum: 6d66f3bdb65e1ec79089f80314da97c9a005087a04ee034255a5de129a4c0d9fd0bf99fa7bf642781ac2dc745ca687aae3de082bd8afdd0d117bc953241e15ad
-  languageName: node
-  linkType: hard
-
-"react-tooltip@npm:^5.11.2":
-  version: 5.13.2
-  resolution: "react-tooltip@npm:5.13.2"
-  dependencies:
-    "@floating-ui/dom": ^1.0.0
-    classnames: ^2.3.0
-  peerDependencies:
-    react: ">=16.14.0"
-    react-dom: ">=16.14.0"
-  checksum: cedd6f858f35df3ab26ae6a44f158e2917519f5a5204d2a34c8b322c7848b956ec89df3ffba3897fa068026b2e8aa5f38e33ff759f491a0f2b6161a604448dd0
   languageName: node
   linkType: hard
 
