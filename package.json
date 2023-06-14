@@ -11,6 +11,6 @@
     "nodemon": "^2.0.22"
   },
   "scripts": {
-    "test": "nodemon -r dotenv/config tests/test-sdk.js"
+    "test": "nodemon tests/test-sdk.js"
   }
 }
