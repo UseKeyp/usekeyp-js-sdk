@@ -13,7 +13,7 @@
 
 Currently, the SDK supports the following:
 
-- Authenication using NextAuth.js
+- Use the Keyp SDK and ui-kit to quickly set up authentication
 - ERC20 and ERC721 token transfers
 - Read and write smart contracts
 
@@ -25,7 +25,7 @@ yarn add @usekeyp/js-sdk
 
 ## Usage 📖
 
-### Authenication using NextAuth.js
+### Authentication
 
 Configure using the Keyp [NextAuth provider](https://next-auth.js.org/configuration/providers/oauth#using-a-custom-provider)
 
