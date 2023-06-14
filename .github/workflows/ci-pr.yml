@@ -17,6 +17,13 @@ jobs:
       - name: Publish Package
         uses: UseKeyp/publish-pr-packages@v1.0.2
         with:
+          # REQUIRED - Github Personal Access Token or Npm Auth Token 
           token: ${{ secrets.PAT }}
+          # Command to build run for each package
           build-command: "yarn pre-publish"
+          # Relative path to your package(s)
+          packages-directory: packages
+          # Which registry to use: github, npm
+          registry: github 
+          # Name which will appear in the installation instruction
           package-name: "@usekeyp/ui-kit"
