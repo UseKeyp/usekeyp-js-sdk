@@ -9,7 +9,7 @@
   </a>
 </p>
 
-> Tools for building apps using Keyp
+> Easily manage wallets, enable SSOs, interact with smart contracts and more with just a few lines of code
 
 Currently, the SDK supports the following:
 
