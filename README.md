@@ -17,7 +17,7 @@
 | Package                      | Description                                  | Latest Version                                                                                                                                                       |
 | ---------------------------- | -------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [/ui-kit](./packages/ui-kit) | Frontend components for apps built with Keyp | <a href="https://www.npmjs.com/package/@usekeyp/ui-kit"><img src="https://img.shields.io/npm/v/@usekeyp/ui-kit?color=red&label=npm&logo=npm" alt="npm version"/></a> |
-| [/sdk](./packages/sdk)       | wallet and making transactions               | Coming soon                                                                                                                                                          |
+| [/js-sdk](./packages/js-sdk)       | Authenticate users and make transactions               | <a href="https://www.npmjs.com/package/@usekeyp/js-sdk"><img src="https://img.shields.io/npm/v/@usekeyp/js-sdk?color=red&label=npm&logo=npm" alt="npm version"/></a>                                                                                                                                                          |
 
 Also see
 
