@@ -4,5 +4,6 @@ import LoginFrame from "./LoginFrame/LoginFrame";
 import Icon from "./Icon/Icon";
 import LoginButton from "./LoginButton/LoginButton";
 import MoreAccordion from "./MoreAccordion/MoreAccordion";
+import Tooltip from "./Tooltip/Tooltip"
 
-export { Button, LoginPortal, LoginFrame, Icon, LoginButton, MoreAccordion };
+export { Button, LoginPortal, LoginFrame, Icon, LoginButton, MoreAccordion, Tooltip };
