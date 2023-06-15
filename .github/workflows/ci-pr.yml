@@ -26,4 +26,4 @@ jobs:
           # Which registry to use: github, npm
           registry: github 
           # Name which will appear in the installation instruction
-          package-name: "@usekeyp/ui-kit"
+          package-name: "@usekeyp/js-sdk"

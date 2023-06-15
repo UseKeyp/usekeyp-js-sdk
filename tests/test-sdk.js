@@ -25,20 +25,31 @@ const ACCESS_TOKEN = process.env.ACCESS_TOKEN
 
 
 // Read from a smart contract
-readContract(
-  {
-    accessToken: ACCESS_TOKEN,
-    address: "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
-    abi: "balanceOf(address) public view returns (uint256)",
-    args: ['0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063'],
-  }).then(response => console.log(response))
+// readContract(
+//   {
+//     accessToken: ACCESS_TOKEN,
+//     address: "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+//     abi: "balanceOf(address) public view returns (uint256)",
+//     args: ['0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063'],
+//   }).then(response => console.log(response))
 
 // Write to a smart contract
-writeContract(
-  {
-    accessToken: ACCESS_TOKEN,
-    address: "0x55d4dfb578daa4d60380995fff7a706471d7c719",
-    abi: "pay(uint256,uint256,address) public returns (bool success)",
-    args: ['1', '10000000', '0x9ca6a77c8b38159fd2da9bd25bc3e259c33f5e39'],
-  }).then(response => console.log(response))
+
+// Juicebox
+// writeContract(
+//   {
+//     accessToken: ACCESS_TOKEN,
+//     address: "0x55d4dfb578daa4d60380995fff7a706471d7c719",
+//     abi: "pay(uint256,uint256,address) public returns (bool success)",
+//     args: ['1', '10000000', '0x9ca6a77c8b38159fd2da9bd25bc3e259c33f5e39'],
+//   }).then(response => console.log(response))
+
+// Optimism WETH
+writeContract( {
+  accessToken: ACCESS_TOKEN,
+  address: "0x4200000000000000000000000000000000000006",
+  abi: "approve(address, uint256) public returns (bool success)",
+  args: ['0x656814A3a8CB93a6B50113058ee77a068A853aE7','1'],
+
+}).then(response => console.log(response))
 
