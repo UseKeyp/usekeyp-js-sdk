@@ -4155,7 +4155,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@usekeyp/js-sdk@0.1.6, @usekeyp/js-sdk@workspace:packages/js-sdk":
+"@usekeyp/js-sdk@npm:0.1.6":
+  version: 0.1.6
+  resolution: "@usekeyp/js-sdk@npm:0.1.6"
+  dependencies:
+    "@redwoodjs/router": ^3.3.0
+    next-auth: ^4.22.1
+    prop-types: ^15.8.1
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    react-scripts: 5.0.1
+  checksum: a55e3362a83e9fb2abfcd463d35a522e0be1943d8a03c98c195984b3b34ac655535bbee79a4b089e348600af37a4c9a1364594cc7fe2545626386297f13ddd1a
+  languageName: node
+  linkType: hard
+
+"@usekeyp/js-sdk@workspace:packages/js-sdk":
   version: 0.0.0-use.local
   resolution: "@usekeyp/js-sdk@workspace:packages/js-sdk"
   dependencies:
