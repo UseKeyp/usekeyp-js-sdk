@@ -6,59 +6,31 @@
   </a>
   <a href="https://twitter.com/UseKeyp" target="_blank">
     <img alt="Twitter: UseKeyp" src="https://img.shields.io/twitter/follow/UseKeyp.svg?style=social" />
-  </a>
+  </a><br/>
+
 </p>
 
-> Keyp JavaScript tools
+<p align="center"><strong>JavaScript tooling</strong></p>
 
-This is a monorepo which includes mutliple things:
+## Packages
 
-- `@usekeyp/ui-kit` frontend components
-- `@usekeyp/js-sdk` wallet and making transactions 
+| Package                      | Description                                  | Latest Version                                                                                                                                                       |
+| ---------------------------- | -------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [/ui-kit](./packages/ui-kit) | Frontend components for apps built with Keyp | <a href="https://www.npmjs.com/package/@usekeyp/ui-kit"><img src="https://img.shields.io/npm/v/@usekeyp/ui-kit?color=red&label=npm&logo=npm" alt="npm version"/></a> |
+| [/js-sdk](./packages/js-sdk)       | Authenticate users and make transactions               | <a href="https://www.npmjs.com/package/@usekeyp/js-sdk"><img src="https://img.shields.io/npm/v/@usekeyp/js-sdk?color=red&label=npm&logo=npm" alt="npm version"/></a>                                                                                                                                                          |
+
+Also see
+
 - Examples see `/examples`
 - Brand Assets see `/brand-assets`
 
-See also [Keyp Developer Docs](https://docs.usekeyp.com/)
+## Documentation
 
-## ✨ UI-Kit
-
-To use the UI components directly in your app, install the package:
-
-```bash
-yarn add @usekeyp/ui-kit
-```
-
-Components are used like this:
-
-```js
-import { LoginPortal } from "@usekeyp/ui-kit";
-
-const LoginPage = () => {
-
-  const onClick = (providerType) => {
-  // custom auth logic depending on the app
-  }
-
-  return (<>
-        <LoginPortal
-          providers={["TWITTER", "GITHUB", "APPLE"]}
-          additionalProviders={["DISCORD", "GOOGLE"]}
-          onClick={onClick}
-        /><>)
-}
-```
-
-For full instructions see the README in `/packages/ui-kit` or the [Docs](https://docs.usekeyp.com/).
-
-## ⚡ JS SDK
-
-Coming soon!
+View the full docs at [https://docs.usekeyp.com](https://docs.usekeyp.com/)
 
 ## Contributing
 
 Make a contribution and we'll send you USDC or USD! Check out the contributing guide `CONTRIBUTING.md`.
-
-## Examples
 
 
 ## License 📝
