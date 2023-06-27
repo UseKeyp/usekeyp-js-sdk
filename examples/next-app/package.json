@@ -45,6 +45,6 @@
     "tailwindcss": "^3.3.2"
   },
   "resolutions": {
-    "@usekeyp/js-sdk": "portal:/home/dev/repos/keyp/usekeyp-js-sdk/packages/js-sdk"
+    "@usekeyp/js-sdk": "0.1.7"
   }
 }
