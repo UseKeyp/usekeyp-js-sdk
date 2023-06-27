@@ -5886,7 +5886,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@usekeyp/js-sdk@npm:0.1.7":
+"@usekeyp/js-sdk@npm:^0.1.7":
   version: 0.1.7
   resolution: "@usekeyp/js-sdk@npm:0.1.7"
   dependencies:
@@ -13028,7 +13028,7 @@ __metadata:
     "@types/node": 18.11.18
     "@types/react": 18.0.26
     "@types/react-dom": 18.0.10
-    "@usekeyp/js-sdk": ^0.1.6
+    "@usekeyp/js-sdk": ^0.1.7
     "@usekeyp/ui-kit": 0.1.6
     autoprefixer: ^10.4.14
     axios: ^1.2.3
