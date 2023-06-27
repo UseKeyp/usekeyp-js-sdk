@@ -4244,7 +4244,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@usekeyp/js-sdk@0.1.6, @usekeyp/js-sdk@workspace:packages/js-sdk":
+"@usekeyp/js-sdk@npm:0.1.7":
+  version: 0.1.7
+  resolution: "@usekeyp/js-sdk@npm:0.1.7"
+  dependencies:
+    "@redwoodjs/router": ^3.3.0
+    next-auth: ^4.22.1
+    prop-types: ^15.8.1
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    react-scripts: 5.0.1
+  checksum: f7f9c38c5c09b3a83980016834add6b3f4162d99ca9898eb4f24f056bc465cc49147a4d4a5da88499ce64c92e161acd24924d2a971e5cf0d8db11ce8751be23b
+  languageName: node
+  linkType: hard
+
+"@usekeyp/js-sdk@workspace:packages/js-sdk":
   version: 0.0.0-use.local
   resolution: "@usekeyp/js-sdk@workspace:packages/js-sdk"
   dependencies:
@@ -18800,7 +18814,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "usekeyp-js-sdk-monorepo@workspace:."
   dependencies:
-    "@usekeyp/js-sdk": 0.1.6
+    "@usekeyp/js-sdk": 0.1.7
     dotenv: ^16.1.4
     lerna: ^7.0.1
     nodemon: ^2.0.22
