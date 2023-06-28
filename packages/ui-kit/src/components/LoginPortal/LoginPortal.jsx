@@ -3,7 +3,9 @@ import LoginButton from "../LoginButton/LoginButton";
 import LoginFrame from "../LoginFrame/LoginFrame";
 import { MoreAccordion } from "../MoreAccordion/MoreAccordion";
 
-const LoginPortal = ({ providers, additionalProviders, onClick }) => {
+// bg: transparent or white
+
+const LoginPortal = ({ providers, additionalProviders, onClick, bg }) => {
   const [loading, setLoading] = useState({});
   const [disabled, setDisabled] = useState(false);
 
@@ -14,7 +16,7 @@ const LoginPortal = ({ providers, additionalProviders, onClick }) => {
   };
 
   return (
-    <LoginFrame>
+    <LoginFrame bg={bg}>
       {providers.map((provider) => (
         <LoginButton
           provider={provider}

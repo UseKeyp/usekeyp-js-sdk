@@ -1,9 +1,17 @@
 import React from "react";
 import Icon from "../Icon/Icon";
 
-const LoginFrame = ({ children }) => {
+// bg transparent or white
+
+const LoginFrame = ({ children, bg }) => {
   return (
-    <div className="border rounded-[6px] border-gray-200 w-[327px] p-6 bg-white">
+    <div
+      className={`w-[327px] p-6 ${
+        bg === "transparent"
+          ? "bg-transparent"
+          : "bg-white border rounded-[6px] border-gray-200"
+      }`}
+    >
       <div className="flex font-normal text-base text-gray-1600 mb-4">
         Log in with
       </div>
