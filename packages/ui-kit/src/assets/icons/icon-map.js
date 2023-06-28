@@ -618,7 +618,7 @@ const Google = ({ loading, disabled, width, height }) => {
   );
 };
 
-const KeypNameAndLogo = ({ height, width, fill }) => {
+const KeypNameAndLogo = ({ height, width }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

@@ -6,17 +6,17 @@ import Icon from "../Icon/Icon";
 const LoginFrame = ({ children, bg }) => {
   return (
     <div
-      className={`w-[327px] p-6 ${
+      className={`ui-kit_login-frame w-[327px] p-6 ${
         bg === "transparent"
           ? "bg-transparent"
           : "bg-white border rounded-[6px] border-gray-200"
       }`}
     >
-      <div className="flex font-normal text-base text-gray-1600 mb-4">
+      <div className="ui-kit_login-title flex font-normal text-base text-gray-1600 mb-4">
         Log in with
       </div>
       <div>{children}</div>
-      <div className="flex">
+      <div className="ui-kit_login-powered-by flex">
         <div className="font-normal text-[9px] text-gray-800 mr-0.5">
           Powered by{" "}
         </div>
@@ -25,7 +25,6 @@ const LoginFrame = ({ children, bg }) => {
             key="keypnameandlogo"
             name="keypnameandlogo"
             width="35px"
-            color="fill-red"
           ></Icon>
         </div>
       </div>

@@ -5,7 +5,7 @@ export const MoreAccordion = ({ title, children }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="flex flex-col min-h-[48px] rounded-lg border border-gray-300 w-full">
+    <div className="ui-kit_more-accordion flex flex-col min-h-[48px] rounded-lg border border-gray-300 w-full">
       <div
         className="flex items-center pt-3 px-3 justify-between cursor-pointer"
         onClick={() => setIsOpen(!isOpen)}
