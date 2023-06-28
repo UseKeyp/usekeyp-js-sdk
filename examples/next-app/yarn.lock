@@ -5886,9 +5886,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@usekeyp/js-sdk@portal:/home/dev/repos/keyp/usekeyp-js-sdk/packages/js-sdk::locator=kaching%40workspace%3A.":
-  version: 0.0.0-use.local
-  resolution: "@usekeyp/js-sdk@portal:/home/dev/repos/keyp/usekeyp-js-sdk/packages/js-sdk::locator=kaching%40workspace%3A."
+"@usekeyp/js-sdk@npm:^0.1.7":
+  version: 0.1.7
+  resolution: "@usekeyp/js-sdk@npm:0.1.7"
   dependencies:
     "@redwoodjs/router": ^3.3.0
     next-auth: ^4.22.1
@@ -5896,8 +5896,9 @@ __metadata:
     react: ^18.2.0
     react-dom: ^18.2.0
     react-scripts: 5.0.1
+  checksum: f7f9c38c5c09b3a83980016834add6b3f4162d99ca9898eb4f24f056bc465cc49147a4d4a5da88499ce64c92e161acd24924d2a971e5cf0d8db11ce8751be23b
   languageName: node
-  linkType: soft
+  linkType: hard
 
 "@usekeyp/ui-kit@npm:0.1.6":
   version: 0.1.6
@@ -13027,7 +13028,7 @@ __metadata:
     "@types/node": 18.11.18
     "@types/react": 18.0.26
     "@types/react-dom": 18.0.10
-    "@usekeyp/js-sdk": ^0.1.6
+    "@usekeyp/js-sdk": ^0.1.7
     "@usekeyp/ui-kit": 0.1.6
     autoprefixer: ^10.4.14
     axios: ^1.2.3
