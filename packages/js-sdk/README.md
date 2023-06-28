@@ -29,18 +29,52 @@ yarn add @usekeyp/js-sdk
 
 Configure using the Keyp [NextAuth provider](https://next-auth.js.org/configuration/providers/oauth#using-a-custom-provider)
 
-```js
-// pages/api/auth/[...nextauth].js
-import { KeypAuth } from "@usekeyp/js-sdk";
-import NextAuth from "next-auth";
+```ts
+// pages/api/auth/[...nextauth].ts
+import { Keyp } from "@usekeyp/js-sdk";
+import NextAuth, {Account, CallbacksOptions, NextAuthOptions, Profile} from "next-auth";
 
-const NextAuthOptions = KeypAuth({
-    clientId: process.env.KEYP_CLIENT_ID, // From dev portal
-    secret: process.env.KEYP_COOKIE_SECRET, // Random string
-    redirectUrl: "http://localhost:3000/api/auth/callback/keyp",
-});
+// Define the callbacks needed to expose the Keyp user data to the client
+const callbacks : Partial<CallbacksOptions<Profile, Account>> | undefined = {
+    async jwt({token, account, profile}) {
+        if (account) {
+            // Comes from the returned JWT from Keyp
+            token.accessToken = account.access_token;
+        }
+        if (profile) {
+            // Comes from the /userinfo endpoint
+            token.username = profile.username;
+            token.address = profile.address;
+            if (profile.sub != null) {
+                token.sub = profile.sub;
+            }
+        }
+        return token;
+    },
+    async session({ session, token }) {
+        // Send properties to the client, like an access_token from a provider.
+        if (token) {
+            session.user.accessToken = token.accessToken;
+            session.user.username = token.username;
+            session.user.address = token.address;
+            session.user.id = token.sub;
+        }
+        return session;
+    },
+}
 
-export default NextAuth(NextAuthOptions);
+const keypAuthOptions: NextAuthOptions = {
+    providers: [
+        //@ts-expect-error issue https://github.com/nextauthjs/next-auth/issues/6174
+        Keyp({
+            clientId: process.env.KEYP_CLIENT_ID || '', // From dev portal
+            clientSecret: process.env.KEYP_COOKIE_SECRET || '', // Random string
+        }),
+    ],
+    callbacks: callbacks,
+}
+
+export default NextAuth(keypAuthOptions);
 ```
 
 Trigger a login for a specific social provider using `signInKeyp()` 
