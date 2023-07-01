@@ -5,7 +5,7 @@ import { MoreAccordion } from "../MoreAccordion/MoreAccordion";
 
 // bg: transparent or white
 
-const LoginPortal = ({ providers, additionalProviders, onClick, bg }) => {
+const LoginPortal = ({ providers, additionalProviders, onClick, bg, align }) => {
   const [loading, setLoading] = useState({});
   const [disabled, setDisabled] = useState(false);
 
@@ -17,7 +17,7 @@ const LoginPortal = ({ providers, additionalProviders, onClick, bg }) => {
 
   return (
     <div className="ui-kit_login-portal">
-      <LoginFrame bg={bg}>
+      <LoginFrame bg={bg} align={align}>
         {providers.map((provider) => (
           <LoginButton
             provider={provider}

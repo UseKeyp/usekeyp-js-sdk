@@ -1,9 +1,7 @@
 import React from "react";
 import Icon from "../Icon/Icon";
 
-// bg transparent or white
-
-const LoginFrame = ({ children, bg }) => {
+const LoginFrame = ({ children, bg, align }) => {
   return (
     <div
       className={`ui-kit_login-frame w-[327px] p-6 ${
@@ -12,12 +10,23 @@ const LoginFrame = ({ children, bg }) => {
           : "bg-white border rounded-[6px] border-gray-200"
       }`}
     >
-      <div className="ui-kit_login-title flex font-normal text-base text-gray-1600 mb-4">
+      <div
+        className={`ui-kit_login-title flex font-normal text-base  mb-4
+        ${bg === "transparent" ? "text-white" : "text-gray-1600"}
+        ${align === "center" && "flex justify-center"}`}
+      >
         Log in with
       </div>
       <div>{children}</div>
-      <div className="ui-kit_login-powered-by flex">
-        <div className="font-normal text-[9px] text-gray-800 mr-0.5">
+      <div
+        className={`ui-kit_login-powered-by flex ${
+          align === "center" && "flex justify-center"
+        }`}
+      >
+        <div
+          className={`font-normal text-[9px] text-gray-800 mr-0.5 
+          ${bg === "transparent" ? "text-white" : "text-gray-800"}`}
+        >
           Powered by{" "}
         </div>
         <div className="flex mt-px">
@@ -25,6 +34,7 @@ const LoginFrame = ({ children, bg }) => {
             key="keypnameandlogo"
             name="keypnameandlogo"
             width="35px"
+            variant={bg === "transparent" ? "white" : "blue"}
           ></Icon>
         </div>
       </div>
