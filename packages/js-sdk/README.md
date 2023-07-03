@@ -92,6 +92,14 @@ export default function SignInPage() {
 }
 ```
 
+Currently, the SDK supports the following: 
+- A Keyp plugin for integration between Keyp and NextAuth.js (keyp-auth.ts)
+- Helper method for signing in using Keyp and NextAuth.js (keyp-helpers.ts)
+- Helper tokenTransfer method for token transfers (token-helpers.ts)
+- Helper readContract and writeContract methods for interacting with smart contracts (contract-helpers.ts)
+- Helper retrieveListings method for retrieving OpenSea listings (opensea-helpers.ts)
+- Axios client for easily making requests to Keyp's API (keypClient.ts)
+
 ### ERC20 and ERC721 token transfers
 
 ```js
