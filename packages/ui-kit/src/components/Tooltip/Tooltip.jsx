@@ -1,5 +1,5 @@
+import React from "react";
 import { Tooltip as ReactTooltip } from "react-tooltip";
-import "react-tooltip/dist/react-tooltip.css";
 
 /**
  * Text will be rendered as text within the tooltip; if not provided, it will be blank or render 'TooltipChild'

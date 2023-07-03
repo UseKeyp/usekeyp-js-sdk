@@ -31,5 +31,14 @@ const onClick = (provider) => {
     providers={["REDDIT", "SPOTIFY", "MICROSOFT", "CHESS", "TWITCH"]}
     onClick={onClick}
   />
+  <div className="bg-[#0079AD] mt-10">
+    <LoginPortal
+      providers={["REDDIT", "SPOTIFY", "MICROSOFT", "CHESS", "TWITCH"]}
+      additionalProviders={["TWITCH"]}
+      onClick={onClick}
+      bg="transparent"
+      align="center"
+    />
+  </div>
 </div>;
 ```

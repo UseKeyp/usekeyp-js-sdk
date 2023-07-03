@@ -130,7 +130,7 @@ const LoginButton = ({
     activeTextColor,
   } = getBrandColor(provider);
   return (
-    <div className="mb-4">
+    <div className="ui-kit_login-button mb-4">
       {size === "square" ? (
         <Button
           size={size}

@@ -4266,23 +4266,24 @@ __metadata:
     "@babel/core": ^7.21.4
     "@babel/preset-env": ^7.21.4
     "@babel/preset-react": ^7.18.6
-    "@redwoodjs/router": ^3.3.0
     "@typescript-eslint/eslint-plugin": ^5.59.8
     "@typescript-eslint/parser": ^5.59.8
     babel-loader: ^9.1.2
     eslint: ^8.41.0
     lerna: ^6.4.0
-    next-auth: ^4.22.1
     postcss: ^8.4.18
-    prop-types: ^15.8.1
-    react: ^18.2.0
-    react-dom: ^18.2.0
-    react-scripts: 5.0.1
     react-styleguidist: ^13.0.0
     surge: ^0.23.1
     tailwindcss: ^3.3.1
     typescript: ^5.1.3
     webpack: ^5.80.0
+  peerDependencies:
+    "@redwoodjs/router": ^3.3.0
+    next-auth: ^4.22.1
+    prop-types: ^15.8.1
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    react-scripts: 5.0.1
   languageName: unknown
   linkType: soft
 
@@ -4301,7 +4302,7 @@ __metadata:
     react-dom: ^18.2.0
     react-scripts: 5.0.1
     react-styleguidist: ^13.1.1
-    react-tooltip: ^5.11.2
+    react-tooltip: ^5.16.1
     surge: ^0.23.1
     tailwindcss: ^3.3.1
     webpack: ^5.80.0
@@ -16004,16 +16005,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-tooltip@npm:^5.11.2":
-  version: 5.11.2
-  resolution: "react-tooltip@npm:5.11.2"
+"react-tooltip@npm:^5.16.1":
+  version: 5.16.1
+  resolution: "react-tooltip@npm:5.16.1"
   dependencies:
     "@floating-ui/dom": ^1.0.0
     classnames: ^2.3.0
   peerDependencies:
     react: ">=16.14.0"
     react-dom: ">=16.14.0"
-  checksum: 947f7d3fb42750059caa709d9163ba94a49e8be39e263931551305521c7b8caccda7382c4f7f70f3356c31078dab1149184ab0a9698e02a27fbe96d63ebeb06f
+  checksum: 5421d3a493eff485d98fe725cffad008d8a1ad0f7ee841ce77a0dd4c17ca8a941053200a50e0461aac21e85484b775d10f96f2e124110546f9761922dea54172
   languageName: node
   linkType: hard
 
