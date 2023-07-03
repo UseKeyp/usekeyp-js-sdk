@@ -28,82 +28,6 @@ interface Order {
 
 }
 
-interface CreateListingParams {
-    chain: string;
-    apiKey: string;
-    parameters: OrderParameters;
-    signature: string;
-    protocol_address: string;
-}
-
-interface OrderParameters {
-    offerer: string;
-    zone: string;
-    zoneHash: string;
-    startTime: string;
-    endTime: string;
-    orderType: number;
-    offer: OfferItem[];
-    consideration: ConsiderationItem[];
-    totalOriginalConsiderationItems: number;
-    salt: number | string;
-    conduitKey: string;
-    nonce: number;
-}
-
-interface OfferItem {
-    itemType: number;
-    token: string;
-    identifierOrCriteria: string;
-    startAmount: string;
-    endAmount: string;
-}
-
-interface ConsiderationItem {
-    itemType: number;
-    token: string;
-    identifierOrCriteria: string;
-    startAmount: string;
-    endAmount: string;
-    recipient?: string;
-}
-
-interface CreateListingResponse {
-    status: string;
-    error?: string;
-}
-
-/**
- * Create a listing on a Seaport contract on OpenSea
- * @param params
- */
-const createListing = async (
-    params: CreateListingParams
-): Promise<CreateListingResponse> => {
-    const { chain, apiKey, ...bodyParams } = params;
-
-    if (!apiKey) {
-        throw 'No API key provided';
-    }
-    const headers = {
-        'Content-Type': 'application/json',
-        'X-API-KEY': apiKey,
-    };
-
-    try {
-        const response: AxiosResponse<CreateListingResponse> = await axios.post(
-            `https://api.opensea.io/v2/orders/${chain}/seaport/listings`,
-            bodyParams,
-            {
-                headers,
-            }
-        );
-        return response.data;
-    } catch (error) {
-        return { status: 'FAILURE', error: error };
-    }
-};
-
 /**
  * Retrieve active listings on a given NFT for a Seaport contract on OpenSea
  * @param params
@@ -132,4 +56,4 @@ const retrieveListings = async (
     }
 };
 
-export { createListing, retrieveListings };
+export { retrieveListings };

@@ -26,7 +26,7 @@ Currently, the SDK supports the following:
 - Helper method for signing in using Keyp and NextAuth.js (keyp-helpers.ts)
 - Helper tokenTransfer method for token transfers (token-helpers.ts)
 - Helper readContract and writeContract methods for interacting with smart contracts (contract-helpers.ts)
-- Helper createListing and retrieveListings methods for creating and retrieving OpenSea listings (opensea-helpers.ts)
+- Helper retrieveListings method for retrieving OpenSea listings (opensea-helpers.ts)
 - Axios client for easily making requests to Keyp's API (keypClient.ts)
 
 For an example of how to use the SDK, see the Next.js example app in the `examples` directory.
