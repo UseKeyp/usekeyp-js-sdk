@@ -13,7 +13,7 @@ export function Keyp<P extends KeypProfile>(
     const { clientId } = options;
 
     const KEYP_API_DOMAIN =
-        process.env.NEXT_PUBLIC_KEYP_API_DOMAIN || "https://api.usekeyp.com";
+        process.env.KEYP_LOCAL_API_DOMAIN || "https://api.usekeyp.com";
 
     return {
         id: "keyp",

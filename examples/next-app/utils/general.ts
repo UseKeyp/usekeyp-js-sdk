@@ -1,5 +1,5 @@
 export const KEYP_API_DOMAIN =
-  process.env.NEXT_PUBLIC_KEYP_API_DOMAIN || "https://api.usekeyp.com";
+  process.env.KEYP_LOCAL_API_DOMAIN || "https://api.usekeyp.com";
 export const KEYP_BASE_URL_V1 = `${KEYP_API_DOMAIN}/v1`;
 
 export const blockExplorerLink = (hash: string) =>
