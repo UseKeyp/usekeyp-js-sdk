@@ -1,6 +1,6 @@
 {
   "name": "@usekeyp/js-sdk",
-  "version": "0.1.7",
+  "version": "0.1.8-staging.0",
   "description": "Tools for building apps using Keyp",
   "author": "Keyp Team",
   "main": "lib/index.js",
