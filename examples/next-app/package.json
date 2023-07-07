@@ -43,5 +43,8 @@
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.24",
     "tailwindcss": "^3.3.2"
+  },
+  "resolutions": {
+    "minimist": "^1.2.6"
   }
 }
