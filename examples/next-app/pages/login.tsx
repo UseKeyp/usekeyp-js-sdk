@@ -58,7 +58,7 @@ const Login = () => {
             >
               <div className="justify-center">
                 <LoginPortal
-                    providers={["GOOGLE", "DISCORD"]}
+                    providers={["GOOGLE", "DISCORD", "CHESS"]}
                     onClick={handleLoginClick}
                 />
               </div>
