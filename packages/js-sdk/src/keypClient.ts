@@ -5,7 +5,8 @@ import { signOut } from 'next-auth/react';
  * Axios client for Keyp to interact with Keyp's API and sign out the user if an access token is invalid
  */
 const keypClient = axios.create({
-    baseURL: 'https://api.usekeyp.com/v1',
+    // baseURL: 'https://api.usekeyp.com/v1',
+    baseURL: 'http://localhost:4001/v1',
     headers: {
         'Content-Type': 'application/json',
     },

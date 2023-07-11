@@ -1,5 +1,6 @@
 import { AxiosResponse } from 'axios';
 import axios from 'axios';
+import {keypClient} from "./keypClient";
 
 interface RetrieveListingsParams {
     chain: string;
@@ -23,10 +24,84 @@ interface RetrieveListingsResponse {
     previous?: string;
 }
 
+interface ListingParams {
+    accessToken?: string;
+    network?: string;
+    apiKey?: string;
+    chain: string;
+    parameters: object;
+    signature: string;
+    protocol_address: string;
+}
+
+interface ListingResult {
+    status: string;
+    hash: string;
+    error: string;
+}
+
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface Order {
 
 }
+
+/**
+ * Creates a new NFT listing on OpenSea
+ * @param params
+ */
+const createListing = async(params: ListingParams): Promise<ListingResult> => {
+    const { apiKey, accessToken } = params;
+    if (!apiKey) {
+        throw 'No API key provided';
+    }
+
+    const headers = {
+        'Content-type': 'application/json',
+        Authorization: 'Bearer ' + accessToken,
+    };
+
+    const openSeaHeaders = {
+        'Content-type': 'application/json',
+        'Accept': 'application/json',
+        'X-API-KEY': apiKey,
+    }
+
+    if (!params.chain || !params.parameters || !params.protocol_address) {
+        throw 'Required information is missing';
+    }
+
+    try {
+        const responseSign: AxiosResponse = await keypClient({
+            method: 'POST',
+            headers,
+            url: '/sign',
+            data: {
+                message: {...params.parameters}.toString(),
+            },
+        });
+
+        console.log(responseSign.data.signature, 'signature')
+        console.log(responseSign, 'responseSign')
+
+        const signature = responseSign.data.signature;
+
+        const responseOpenSea: AxiosResponse = await axios.post(`https://api.opensea.io/v2/orders/${params.chain}/seaport/listings`, {
+            parameters: params.parameters,
+            protocol_address: '0x00000000000000ADc04C56Bf30aC9d3c0aAF14dC',
+            signature: signature,
+            },
+            {
+                headers: openSeaHeaders,
+            },
+            );
+        console.log(responseOpenSea, 'responseOpenSea')
+
+        return { status: responseOpenSea.data.status, hash: responseOpenSea.data.hash, error: responseOpenSea.data.error };
+
+    } catch (error) {
+        return { status: 'FAILURE', hash: '', error: error };
+    }
+};
 
 /**
  * Retrieve active listings on a given NFT for a Seaport contract on OpenSea
@@ -56,4 +131,4 @@ const retrieveListings = async (
     }
 };
 
-export { retrieveListings };
+export { retrieveListings, createListing };
