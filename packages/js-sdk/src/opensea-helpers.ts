@@ -76,7 +76,7 @@ const createListing = async(params: ListingParams): Promise<ListingResult> => {
             headers,
             url: '/sign',
             data: {
-                message: {...params.parameters}.toString(),
+                message: JSON.stringify({...params.parameters}),
             },
         });
 
@@ -86,18 +86,13 @@ const createListing = async(params: ListingParams): Promise<ListingResult> => {
         const signature = responseSign.data.signature;
 
         const responseOpenSea: AxiosResponse = await axios.post(`https://api.opensea.io/v2/orders/${params.chain}/seaport/listings`, {
-            parameters: params.parameters,
-            protocol_address: '0x00000000000000ADc04C56Bf30aC9d3c0aAF14dC',
-            signature: signature,
-            },
-            {
-                headers: openSeaHeaders,
-            },
-            );
-        console.log(responseOpenSea, 'responseOpenSea')
-
+            ...params.parameters,
+            signature,
+            protocol_address: params.protocol_address,
+        }, {
+            headers: openSeaHeaders,
+        });
         return { status: responseOpenSea.data.status, hash: responseOpenSea.data.hash, error: responseOpenSea.data.error };
-
     } catch (error) {
         return { status: 'FAILURE', hash: '', error: error };
     }

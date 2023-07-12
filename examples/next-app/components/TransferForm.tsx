@@ -16,12 +16,18 @@ import ButtonSpacingWrapper from "./ButtonSpacingWrapper";
 import AssetBalance from "./AssetBalance";
 import { inputColorLogicErrors } from "utils/general";
 import ToPlatformSelection from "./ToPlatformSelection";
+import {useSession} from "next-auth/react";
+import { keypClient } from "@usekeyp/js-sdk";
+import {Chain, OpenSeaSDK} from "opensea-js";
+import {AlchemyProvider} from "@ethersproject/providers";
+import {AxiosResponse} from "axios";
 
 /**
  * @remarks - this component renders a form that allows user to send a transaction. ButtonSpacingWrapper is used to make sure the Review button stays at the bottom of the page
  * @returns div containing a form
  */
 const TransferForm = () => {
+  const { data: session } = useSession();
   const [balanceError, setBalanceError] = useState(false);
   const [isHigherThan300] = useMediaQuery("(max-height: 300px)");
 
@@ -50,33 +56,6 @@ const TransferForm = () => {
   const values = getValues();
   watch();
 
-  const emailValidation = (val: string) => {
-    if (platform === "google") {
-      return val.includes("@") || "must be valid gmail address";
-    } else {
-      return val.includes("#") || "must be valid discord address";
-    }
-  };
-
-  const handleReview = async (): Promise<void> => {
-    const valid = await trigger();
-    if (valid) {
-      const stateUpdates = () => {
-        setAmount(values.amount);
-        setUsername(values.username);
-        setRenderTxPage(false);
-        setRenderReviewPage(true);
-      };
-
-      if (type === "send") {
-        stateUpdates();
-      } else if (type === "request") {
-        stateUpdates();
-      }
-    }
-    return;
-  };
-
   useEffect(() => {
     if (balanceError) {
       setError("amount", { type: "custom", message: "Insufficient balance" });
@@ -84,6 +63,80 @@ const TransferForm = () => {
       clearErrors("amount");
     }
   }, [balanceError, setError, clearErrors]);
+
+
+  async function testTransaction() {
+    const provider = new AlchemyProvider(
+        "maticmum", process.env.ALCHEMY_API_KEY
+    );
+    console.log(provider, 'provider')
+    const headers = {
+      'Content-type': 'application/json',
+      Authorization: 'Bearer ' + process.env.LOCAL_ACCESS_TOKEN,
+    };
+    const expirationTime = Math.round(Date.now() / 1000 + 60 * 60 * 24);
+
+    const params = {
+      asset: {
+        tokenId: "97",
+        tokenAddress: "0xc9234371D7943C0A333AB1eE4e9E6583323efD5d",
+      },
+      accountAddress: session?.user.address || "",
+      startAmount: 3,
+      endAmount: 0.1,
+      expirationTime,
+    }
+
+    const responseSign: AxiosResponse = await keypClient({
+      method: 'POST',
+      headers,
+      url: '/sign',
+      data: {
+        message: JSON.stringify({...params}),
+      },
+    });
+
+    const signature = responseSign.data.signature;
+
+    provider.getSigner = function() {
+      return {
+        signMessage: () => {
+        return signature
+        },
+        getAddress() {
+          return "0x1a4abb5217112e7bb1e96023c8a5329ecd3629b6"
+        },
+        signTransaction: () => {
+            console.log('signing transaction')
+        return ""
+        }
+      }
+    }
+    console.log(provider.getSigner(), 'signer')
+
+    const openseaSDK = new OpenSeaSDK(provider, {
+      chain: Chain.Mumbai,
+      //apiKey must be blank for test networks
+      apiKey: "",
+    });
+
+    try {
+      const listing = await openseaSDK.createSellOrder({
+        asset: {
+          tokenId: "97",
+          tokenAddress: "0xc9234371D7943C0A333AB1eE4e9E6583323efD5d",
+        },
+        accountAddress: "0x1a4abb5217112e7bb1e96023c8a5329ecd3629b6",
+        startAmount: 3,
+        endAmount: 0.1,
+        expirationTime,
+      });
+      console.log(listing);
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
 
   return (
     <ButtonSpacingWrapper isTransactionSlider={true}>
@@ -110,6 +163,13 @@ const TransferForm = () => {
             }}
           />
           {/* Input */}
+          <Button
+              onClick={() => testTransaction()}
+              variant="secondary"
+              mx="0.5rem"
+          >
+            Send Unsigned Transaction
+          </Button>
           <Box
             position="relative"
             mt={balanceError ? "1rem" : 0}
@@ -193,7 +253,7 @@ const TransferForm = () => {
                   value: 1,
                   message: "cannot be blank",
                 },
-                validate: emailValidation,
+                // validate: emailValidation,
               })}
             />
           </Box>
@@ -201,7 +261,7 @@ const TransferForm = () => {
       </SimpleGrid>
       <Box mx="-1.5rem">
         <Button
-          onClick={() => handleReview()}
+          // onClick={() => handleReview()}
           variant={!isValid ? "formGray" : "formBlue"}
         >
           Review
