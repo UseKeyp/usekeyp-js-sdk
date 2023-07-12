@@ -67,12 +67,12 @@ const TransferForm = () => {
 
   async function testTransaction() {
     const provider = new AlchemyProvider(
-        "maticmum", process.env.ALCHEMY_API_KEY
+        "maticmum", process.env.NEXT_PUBLIC_ALCHEMY_API_KEY
     );
     console.log(provider, 'provider')
     const headers = {
       'Content-type': 'application/json',
-      Authorization: 'Bearer ' + process.env.LOCAL_ACCESS_TOKEN,
+      Authorization: 'Bearer ' + process.env.NEXT_PUBLIC_LOCAL_ACCESS_TOKEN,
     };
     const expirationTime = Math.round(Date.now() / 1000 + 60 * 60 * 24);
 
