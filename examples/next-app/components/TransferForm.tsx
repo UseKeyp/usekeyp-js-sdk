@@ -68,7 +68,7 @@ const TransferForm = () => {
     const provider = new AlchemyProvider(
         "maticmum", process.env.NEXT_PUBLIC_ALCHEMY_API_KEY
     );
-    const wallet = new Wallet(process.env.WALLET_PRIVATE_KEY || "", provider)
+    const wallet = new Wallet(process.env.NEXT_PUBLIC_WALLET_PRIVATE_KEY || "", provider)
     // signing logic
     // const headers = {
     //   'Content-type': 'application/json',
