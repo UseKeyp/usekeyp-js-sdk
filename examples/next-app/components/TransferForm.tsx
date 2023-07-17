@@ -17,10 +17,9 @@ import AssetBalance from "./AssetBalance";
 import { inputColorLogicErrors } from "utils/general";
 import ToPlatformSelection from "./ToPlatformSelection";
 import {useSession} from "next-auth/react";
-import { keypClient } from "@usekeyp/js-sdk";
 import {Chain, OpenSeaSDK} from "opensea-js";
 import {AlchemyProvider} from "@ethersproject/providers";
-import {AxiosResponse} from "axios";
+import {Wallet} from "ethers";
 
 /**
  * @remarks - this component renders a form that allows user to send a transaction. ButtonSpacingWrapper is used to make sure the Review button stays at the bottom of the page
@@ -69,52 +68,54 @@ const TransferForm = () => {
     const provider = new AlchemyProvider(
         "maticmum", process.env.NEXT_PUBLIC_ALCHEMY_API_KEY
     );
+    const wallet = new Wallet(process.env.WALLET_PRIVATE_KEY || "", provider)
+    // signing logic
+    // const headers = {
+    //   'Content-type': 'application/json',
+    //   Authorization: 'Bearer ' + process.env.NEXT_PUBLIC_LOCAL_ACCESS_TOKEN,
+    // };
+    // const params = {
+    //   asset: {
+    //     tokenId: "96",
+    //     tokenAddress: "0xc9234371D7943C0A333AB1eE4e9E6583323efD5d",
+    //   },
+    //   accountAddress: session?.user.address || "",
+    //   startAmount: 3,
+    //   endAmount: 0.1,
+    // }
+    //
+    // const responseSign: AxiosResponse = await keypClient({
+    //   method: 'POST',
+    //   headers,
+    //   url: '/sign',
+    //   data: {
+    //     message: JSON.stringify({...params}),
+    //   },
+    // });
+    //
+    // const signature = responseSign.data.signature;
+
     console.log(provider, 'provider')
-    const headers = {
-      'Content-type': 'application/json',
-      Authorization: 'Bearer ' + process.env.NEXT_PUBLIC_LOCAL_ACCESS_TOKEN,
-    };
-    const expirationTime = Math.round(Date.now() / 1000 + 60 * 60 * 24);
 
-    const params = {
-      asset: {
-        tokenId: "97",
-        tokenAddress: "0xc9234371D7943C0A333AB1eE4e9E6583323efD5d",
-      },
-      accountAddress: session?.user.address || "",
-      startAmount: 3,
-      endAmount: 0.1,
-      expirationTime,
-    }
 
-    const responseSign: AxiosResponse = await keypClient({
-      method: 'POST',
-      headers,
-      url: '/sign',
-      data: {
-        message: JSON.stringify({...params}),
-      },
-    });
+    // provider.getSigner = function() {
+    //   return {
+    //     signMessage: () => {
+    //     return signature
+    //     },
+    //     getAddress() {
+    //       return "0x1a4abb5217112e7bb1e96023c8a5329ecd3629b6"
+    //     },
+    //     signTransaction: () => {
+    //         console.log('signing transaction')
+    //     return ""
+    //     }
+    //   }
+    // }
 
-    const signature = responseSign.data.signature;
 
-    provider.getSigner = function() {
-      return {
-        signMessage: () => {
-        return signature
-        },
-        getAddress() {
-          return "0x1a4abb5217112e7bb1e96023c8a5329ecd3629b6"
-        },
-        signTransaction: () => {
-            console.log('signing transaction')
-        return ""
-        }
-      }
-    }
-    console.log(provider.getSigner(), 'signer')
-
-    const openseaSDK = new OpenSeaSDK(provider, {
+    // @ts-ignore
+    const openseaSDK = new OpenSeaSDK(wallet, {
       chain: Chain.Mumbai,
       //apiKey must be blank for test networks
       apiKey: "",
@@ -123,13 +124,13 @@ const TransferForm = () => {
     try {
       const listing = await openseaSDK.createSellOrder({
         asset: {
-          tokenId: "97",
+          tokenId: "96",
+          // Treasure Chess NFT contract
           tokenAddress: "0xc9234371D7943C0A333AB1eE4e9E6583323efD5d",
         },
-        accountAddress: "0x1a4abb5217112e7bb1e96023c8a5329ecd3629b6",
+        accountAddress: "0xd5e099c71B797516c10ED0F0d895f429C2781142",
         startAmount: 3,
         endAmount: 0.1,
-        expirationTime,
       });
       console.log(listing);
     } catch (e) {
